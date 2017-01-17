@@ -1,0 +1,10 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+
+
+users_list:
+    path:      /users/list
+    defaults:  { _controller: "AppBundle:Products:list" }
+    methods:  [POST]
