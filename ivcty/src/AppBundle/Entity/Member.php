@@ -41,6 +41,12 @@ class Member
     private $username;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="InvestPlan", mappedBy="user", fetch="EAGER")
+     */
+    private $investments;
+
+
 
     /**
      * Get id

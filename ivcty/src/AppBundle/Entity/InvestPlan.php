@@ -20,131 +20,131 @@ class InvestPlan
      */
     private $id;
 
+
     /**
-     * @ORM\Column(type="integer", length=10)
+     * @ORM\ManyToOne(targetEntity="Member", inversedBy="investments")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
-    private $tstamp;
+    private $user;
+
+    /** @Column(type="datetime") */
+    private $creationTime;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $firstname;
+    private $website;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lastname;
+    private $investmentname;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=1024)
      */
-    private $username;
+    private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $youtubelink;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $planname;
+
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $runtime;
+
+    /**
+     * @ORM\Column(type="double")
+     */
+    private $number;
+
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $paytax;
 
 
     /**
-     * Get id
-     *
-     * @return integer
+     * @ORM\Column(type="integer", length=3)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $profitIncoming;
+
 
     /**
-     * Set tstamp
-     *
-     * @param integer $tstamp
-     *
-     * @return Member
+     * @ORM\Column(type="double")
      */
-    public function setTstamp($tstamp)
-    {
-        $this->tstamp = $tstamp;
-
-        return $this;
-    }
+    private $roi;
 
     /**
-     * Get tstamp
-     *
-     * @return integer
+     * @ORM\Column(type="integer", length=3)
      */
-    public function getTstamp()
-    {
-        return $this->tstamp;
-    }
+    private $principal;
 
     /**
-     * Set firstname
-     *
-     * @param string $firstname
-     *
-     * @return Member
+     * @ORM\ManyToOne(targetEntity="MemberWallets", inversedBy="investmentsPayedIn")
+     * @ORM\JoinColumn(name="payInWallet", referencedColumnName="id")
      */
-    public function setFirstname($firstname)
-    {
-        $this->firstname = $firstname;
-
-        return $this;
-    }
+    private $payInWallet;
 
     /**
-     * Get firstname
-     *
-     * @return string
+     * @ORM\ManyToOne(targetEntity="MemberWallets", inversedBy="investmentsPayedOut")
+     * @ORM\JoinColumn(name="payOutWallet", referencedColumnName="id")
      */
-    public function getFirstname()
-    {
-        return $this->firstname;
-    }
+    private $payOutWallet;
 
     /**
-     * Set lastname
-     *
-     * @param string $lastname
-     *
-     * @return Member
+     * @ORM\Column(type="double", length=20)
      */
-    public function setLastname($lastname)
-    {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
+    private $amount;
 
     /**
-     * Get lastname
-     *
-     * @return string
+     * @ORM\Column(type="datetime")
      */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
+    private $startdatetime;
+
 
     /**
-     * Set username
-     *
-     * @param string $username
-     *
-     * @return Member
+     * @ORM\Column(type="bool")
      */
-    public function setUsername($username)
-    {
-        $this->username = $username;
+    private $pending;
 
-        return $this;
-    }
+     /**
+     * @ORM\Column(type="bool")
+     */
+    private $open;
 
     /**
-     * Get username
-     *
-     * @return string
+     * @ORM\Column(type="bool")
      */
-    public function getUsername()
-    {
-        return $this->username;
-    }
+    private $closed;
+
+    /**
+     * @ORM\Column(type="bool")
+     */
+    private $warning;
+
+
+    /**
+     * @ORM\Column(type="integer", length=1)
+     */
+    private $rating;
+
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $comment;
+
+    /**
+     * @ORM\OneToMany(targetEntity="InvestmentHistory", mappedBy="investment", fetch="EAGER")
+     */
+    private $investmentHistoryEvents;
+
 }
