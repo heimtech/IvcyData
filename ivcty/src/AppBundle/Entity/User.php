@@ -47,7 +47,7 @@ class User
     /**
      * @ORM\Column(type="string", length=32)
      */
-    private $backendTheme;
+    private $backendtheme;
 
     /**
      * @ORM\Column(type="string", length=32)
@@ -57,7 +57,7 @@ class User
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
      */
-    private $showHelp;
+    private $showhelp;
 
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
