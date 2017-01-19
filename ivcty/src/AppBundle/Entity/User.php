@@ -47,7 +47,7 @@ class User
     /**
      * @ORM\Column(type="string", length=32)
      */
-    private $backendTheme;
+    private $backendtheme;
 
     /**
      * @ORM\Column(type="string", length=32)
@@ -57,7 +57,7 @@ class User
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
      */
-    private $showHelp;
+    private $showhelp;
 
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
@@ -67,12 +67,12 @@ class User
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
      */
-    private $useRTE;
+    private $userte;
 
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
      */
-    private $useCE;
+    private $usece;
 
     /**
      * @ORM\Column(type="string", length=128)
@@ -82,7 +82,7 @@ class User
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
      */
-    private $pwChange;
+    private $pwchange;
 
     /**
      * @ORM\Column(type="string", length=1, options={"fixed" = true})
@@ -162,23 +162,23 @@ class User
     /**
      * @ORM\Column(type="integer", length=10)
      */
-    private $dateAdded;
+    private $dateadded;
 
     /**
      * @ORM\Column(type="integer", length=10)
      */
-    private $lastLogin;
+    private $lastlogin;
 
     /**
      * @ORM\Column(type="integer", length=10)
      */
-    private $currentLogin;
+    private $currentlogin;
 
 
     /**
      * @ORM\Column(type="smallint", length=5)
      */
-    private $loginCount;
+    private $logincount;
 
     /**
      * @ORM\Column(type="integer", length=10)
@@ -209,7 +209,7 @@ class User
     private $news;   /**
  * @ORM\Column(type="blob")
  */
-    private $newsp;   /**
+    private $newp;   /**
  * @ORM\Column(type="blob")
  */
     private $newsfeeds;   /**
@@ -1313,5 +1313,29 @@ class User
     public function getAvatar()
     {
         return $this->avatar;
+    }
+
+    /**
+     * Set newp
+     *
+     * @param string $newp
+     *
+     * @return User
+     */
+    public function setNewp($newp)
+    {
+        $this->newp = $newp;
+
+        return $this;
+    }
+
+    /**
+     * Get newp
+     *
+     * @return string
+     */
+    public function getNewp()
+    {
+        return $this->newp;
     }
 }
