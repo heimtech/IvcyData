@@ -1,0 +1,31 @@
+<section class="site-content site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 site-block">
+
+<form class="form-horizontal" <?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> id="<?= $this->formId ?>" method="post" enctype="<?= $this->enctype ?>">
+        <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId ?>">
+        <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+       
+           
+                <?= $this->fields ?>
+          
+    <div class="form-group form-actions">
+        <div class="col-xs-6">
+            <label class="switch switch-primary" data-toggle="tooltip" title="Agree to the terms">
+                <input type="checkbox" id="register-terms" name="register-terms"><span></span>
+            </label>
+            <a href="#modal-terms" data-toggle="modal" class="register-terms"><small>View Terms</small></a>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Sign Up</button>
+        </div>
+    </div>
+       
+    
+</form>
+
+            </div>
+        </div>
+    </div>
+</section>

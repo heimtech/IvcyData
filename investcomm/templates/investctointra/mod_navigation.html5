@@ -1,0 +1,27 @@
+
+<!-- indexer::continue -->
+
+   <div id="navigation">
+        <div class="profile-picture">
+            <a href="index.html">
+              {{avatar}}
+             
+                
+            </a>
+  
+
+            <div class="stats-label text-color">
+                <span class="font-extra-bold font-uppercase">{{user::username}}</span>
+
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="User-Profile.html" data-toggle="dropdown">
+                        <small class="text-muted">Community User</small>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+  <?= $this->items ?>
+
+    </div>

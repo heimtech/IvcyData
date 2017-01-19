@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<head>
+     <?php $this->block('head'); ?>
+    <meta charset="<?= $this->charset ?>">
+    <title><?= $this->title ?></title>
+    <base href="<?= $this->base ?>">
+
+    <?php $this->block('meta'); ?>
+      <meta name="robots" content="<?= $this->robots ?>">
+      <meta name="description" content="<?= $this->description ?>">
+      <meta name="keywords" content="<?= $this->keywords ?>">
+      <meta name="generator" content="Contao Open Source CMS">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <?php if( $this->viewport): ?>
+      	<?= $this->viewport; ?>
+      <?php else: ?>
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      <?php endif; ?>
+      
+    <?php $this->endblock(); ?>
+	
+
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="replaceIcon.png" type="image/x-icon" />
+
+
+    <?= $this->framework ?>
+    <?= $this->stylesheets ?>
+    <?= $this->mooScripts ?>
+    <?= $this->head ?>
+   
+   <?php 
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/fontawesome/css/font-awesome.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/animate.css/animate.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/bootstrap/dist/css/bootstrap.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/helper.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/style.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/customstyleLandingpage.css';
+
+                       
+
+                
+            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery/dist/jquery.min.js|static';
+                     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery-ui/jquery-ui.min.js';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/slimScroll/jquery.slimscroll.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/bootstrap/dist/js/bootstrap.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/iCheck/icheck.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/sparkline.js|static'; 
+      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/homer.js|static';        
+   	
+?>
+   <?php $this->endblock(); ?>
+  
+
+</head>
+
+<body id="top"
+      class="preload {{ua::class}} landing-page">
+
+<?php /*    Quick contact form    */ ?>
+
+<?php /*    Go to top icon    */ ?>
+
+<?php $this->block('body'); ?>
+<?php $this->sections('top'); ?>
+
+
+
+    <?php $this->block('header'); ?>
+    <?php if ($this->header) : ?>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand">myPM</a>
+                    <div class="brand-desc">
+                        My Portfolio Manager
+                    </div>
+                </div>
+                <?= $this->header ?>
+            </div>
+        </nav>
+
+
+
+    <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->sections('before'); ?>
+
+    <?php $this->block('container'); ?>
+
+        <?php /*	Full width	*/ ?>
+        <?php if (!$this->left && !$this->right): ?>
+            <?php $this->block('main'); ?>
+           
+                <?php echo $this->main; ?>
+                <?php echo $this->getCustomSections('main'); ?>
+          
+            <?php $this->endblock(); ?>
+        <?php endif; ?>
+        <?php /*	Right column	*/ ?>
+        <?php if ($this->right && !$this->left): ?>
+            <div
+                class="<?php if ($this->layout->pro_content_layout == 'boxed'): ?> container <?php else: ?> container-fluid <?php endif; ?>">
+                <div class="row">
+                    <?php $this->block('main'); ?>
+                    <div id="main"
+                         class="col-md-<?php if ($this->layout->pro_main_cl_width) echo $this->layout->pro_main_cl_width; else echo '9'; ?> <?php echo $this->layout->pro_main_cl_class; ?>">
+                        <?php echo $this->main; ?>
+                        <?php echo $this->getCustomSections('main'); ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+
+                    <?php $this->block('right'); ?>
+                    <div id="right"
+                         class="col-md-<?php if ($this->layout->pro_right_cl_width) echo $this->layout->pro_right_cl_width; else echo '3'; ?> <?php echo $this->layout->pro_right_cl_class; ?>">
+                        <?php echo $this->right; ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php /*	Left column		*/ ?>
+        <?php if ($this->left && !$this->right): ?>
+            <div
+                class="<?php if ($this->layout->pro_content_layout == 'boxed'): ?> container <?php else: ?> container-fluid <?php endif; ?>">
+                <div class="row">
+                    <?php $this->block('left'); ?>
+                    <div id="left"
+                         class="col-md-<?php if ($this->layout->pro_left_cl_width) echo $this->layout->pro_left_cl_width; else echo '3'; ?> <?php echo $this->layout->pro_left_cl_class; ?>">
+                        <?php echo $this->left; ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+
+                    <?php $this->block('main'); ?>
+                    <div id="main"
+                         class="col-md-<?php if ($this->layout->pro_main_cl_width) echo $this->layout->pro_main_cl_width; else echo '9'; ?> <?php echo $this->layout->pro_main_cl_class; ?>">
+                        <?php echo $this->main; ?>
+                        <?php echo $this->getCustomSections('main'); ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php /*	Three columns	*/ ?>
+        <?php if ($this->right && $this->left): ?>
+            <div
+                class="<?php if ($this->layout->pro_content_layout == 'boxed'): ?> container <?php else: ?> container-fluid <?php endif; ?>">
+                <div class="row">
+                    <?php $this->block('left'); ?>
+                    <div id="left"
+                         class="col-md-<?php if ($this->layout->pro_left_cl_width) echo $this->layout->pro_left_cl_width; else echo '3'; ?> <?php echo $this->layout->pro_left_cl_class; ?>">
+                        <?php echo $this->left; ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+
+                    <?php $this->block('main'); ?>
+                    <div id="main"
+                         class="col-md-<?php if ($this->layout->pro_main_cl_width) echo $this->layout->pro_main_cl_width; else echo '6'; ?> <?php echo $this->layout->pro_main_cl_class; ?>">
+                        <?php echo $this->main; ?>
+                        <?php echo $this->getCustomSections('main'); ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+
+                    <?php $this->block('right'); ?>
+                    <div id="right"
+                         class="col-md-<?php if ($this->layout->pro_right_cl_width) echo $this->layout->pro_right_cl_width; else echo '3'; ?> <?php echo $this->layout->pro_right_cl_class; ?>">
+                        <?php echo $this->right; ?>
+                    </div>
+                    <?php $this->endblock(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->sections('after'); ?>
+
+    <?php $this->block('footer'); ?>
+    <?php if ($this->footer): ?>
+
+        <footer class="site-footer site-section">
+            <div class="container">
+                <div class="row">
+                    <?= $this->footer ?>
+
+
+                </div>
+            </div>
+        </footer>
+    <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+
+
+<?php $this->sections('bottom'); ?>
+<?php $this->endblock(); ?>
+<?= $this->mootools ?>
+
+</body>
+</html>

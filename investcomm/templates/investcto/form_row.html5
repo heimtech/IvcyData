@@ -1,0 +1,10 @@
+
+
+
+  <div class="form-group <?= $this->prefix ?><?php if ($this->class) echo ' ' . $this->class; ?>">
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->block('field'); ?>
+    <?php $this->endblock(); ?>
+  </div>

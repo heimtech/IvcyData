@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<head>
+     <?php $this->block('head'); ?>
+    <meta charset="<?= $this->charset ?>">
+    <title><?= $this->title ?></title>
+    <base href="<?= $this->base ?>">
+
+    <?php $this->block('meta'); ?>
+      <meta name="robots" content="<?= $this->robots ?>">
+      <meta name="description" content="<?= $this->description ?>">
+      <meta name="keywords" content="<?= $this->keywords ?>">
+      <meta name="generator" content="Contao Open Source CMS">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <?php if( $this->viewport): ?>
+      	<?= $this->viewport; ?>
+      <?php else: ?>
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      <?php endif; ?>
+      
+    <?php $this->endblock(); ?>
+	
+
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="replaceIcon.png" type="image/x-icon" />
+
+
+    <?= $this->framework ?>
+    <?= $this->stylesheets ?>
+    <?= $this->mooScripts ?>
+    <?= $this->head ?>
+   
+   <?php 
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/fontawesome/css/font-awesome.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/animate.css/animate.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/bootstrap/dist/css/bootstrap.css|static';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/helper.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/style.css';
+
+     
+?>
+   <?php $this->endblock(); ?>
+  
+
+</head>
+
+<body class="preload {{ua::class}} fixed-navbar fixed-sidebar">
+
+
+
+<?php $this->block('body'); ?>
+<?php $this->sections('top'); ?>
+
+
+    <?php $this->block('header'); ?>
+<div id="header">
+    <div class="color-line">
+    </div>
+    <div id="logo" class="light-version">
+        <span>
+            myPM
+        </span>
+    </div>
+	<nav role="navigation" class="blackColor">
+        <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+		<div class="header-link"><i class="gi gi-settings"></i></div>
+		
+        <div class="small-logo">
+            <span class="text-primary">myPM</span>
+        </div>
+        <form role="search" class="navbar-form-custom" method="post" action="#">
+            <div class="form-group">
+                <input type="text" placeholder="Search" class="form-control" name="search">
+            </div>
+        </form>
+		
+		<ul class="nav navbar-nav-custom pull-right">
+			<!-- User Dropdown -->
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+				{{avatar}} <i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+					<li class="dropdown-header text-center">Account</li>
+														
+					<li>
+						<a href="Dashboard.html">
+							<i class="fa fa-user fa-fw pull-right"></i>
+							Profile
+						</a>
+						<!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
+						<a href="#" data-toggle="modal">
+							<i class="fa fa-cog fa-fw pull-right"></i>
+							Settings
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account</a>
+						<a href="#"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+					</li>
+				   
+					<li>
+						<div class="alert alert-success alert-alt">
+							<small>5 min ago</small><br>
+							<i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
+						</div>
+						<div class="alert alert-info alert-alt">
+							<small>10 min ago</small><br>
+							<i class="fa fa-arrow-up fa-fw"></i> Upgraded to Pro plan
+						</div>
+						<div class="alert alert-warning alert-alt">
+							<small>3 hours ago</small><br>
+							<i class="fa fa-exclamation fa-fw"></i> Running low on space<br><strong>18GB in use</strong> 2GB left
+						</div>
+						<div class="alert alert-danger alert-alt">
+							<small>Yesterday</small><br>
+							<i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)" class="alert-link">New bug submitted</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<!-- END User Dropdown -->
+		</ul>
+       
+		<div class="header-link FloatRight"><i class="gi gi-share_alt"></i><span class="label label-primary label-indicator animation-floating">4</span></div>
+    </nav>
+</div>
+
+    <?php $this->endblock(); ?>
+
+    <?php $this->sections('before'); ?>
+    
+    
+    
+      <?php $this->block('left'); ?>
+    <?php if ($this->left): ?>
+    <aside id="menu">
+
+<?php echo $this->left; ?> 
+</aside>
+<?php endif; ?>
+    <?php $this->endblock(); ?>
+    
+    
+          <?php $this->block('main'); ?>
+    <?php if ($this->main): ?>
+   <div id="wrapper">
+<div class="content">
+	
+
+<?php echo $this->main; ?> 
+</div>
+</div>
+<?php endif; ?>
+    <?php $this->endblock(); ?>
+
+
+    <?php $this->sections('after'); ?>
+
+    <?php $this->block('footer'); ?>
+    <?php if ($this->footer): ?>
+
+        <footer class="site-footer site-section">
+            <div class="container">
+                <div class="row">
+                    <?= $this->footer ?>
+
+
+                </div>
+            </div>
+        </footer>
+    <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+
+<?php $this->sections('bottom'); ?>
+<?php $this->endblock(); ?>  <!-- endblock of body -->
+<?= $this->mootools ?>
+
+<?php
+       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery/dist/jquery.min.js|static';
+                     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery-ui/jquery-ui.min.js';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/slimScroll/jquery.slimscroll.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/bootstrap/dist/js/bootstrap.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/iCheck/icheck.min.js|static';
+                       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/sparkline.js|static'; 
+      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/homer.js|static';        
+   	
+?>
+
+<!-- Local script for menu handle -->
+<!-- It can be also directive -->
+<script>
+    $(document).ready(function () {
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+        });
+
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 80
+        });
+
+    });
+</script>
+
+
+</body>
+</html>
