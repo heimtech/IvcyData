@@ -12,3 +12,8 @@ users_list:
 member_list:
     path:      /member/list
     defaults:  { _controller: "AppBundle:Member:list" }
+
+
+invest_plan:
+    path:      /investplan/create
+    defaults:  { _controller: "AppBundle:InvestPlan:create" }
