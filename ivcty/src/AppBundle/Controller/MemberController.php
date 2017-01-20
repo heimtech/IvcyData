@@ -137,24 +137,26 @@ class MemberController extends Controller {
 	}
 	
 	
-	public function getSingleUserAction(Request $request) {
+	public function getSingleMemberAction($pUserID) {
 	
 		
-		$myArray = $this->prepareQuery($request);
-	
+	$myArray = [];
+    $myArray["id"] = $pUserID;
 		
 			
 		$repository = $this->getDoctrine()
-		->getRepository('AppBundle:Product');
+		->getRepository('AppBundle:Member');
+
+
 	
-		$products = $repository->findOneBy($myArray);
+		$member = $repository->findOneBy($myArray);
 		
 		
-		$jsonContent =  $this->generateJSONContentByEntity($products);
+
 	
 	
 	
-			return new Response($jsonContent);
+			return $member;
 	}
 	
 
@@ -177,43 +179,7 @@ class MemberController extends Controller {
 		return $route;
 	}
 	
-	public function prepareQuery($request) {
-		
-		$myArray = [];
-		
-		$productID = $request->get("productID");
-		$owner = $request->get("owner");
-		$productName = $request->get("productName");
-		$typeOfDelivery 	= $request->get("lieferArt");
-		
-		if($productID != null) {
-			$myArray['id'] = $productID;
-		}
-		
-		if($owner != null) {
-			$myArray['owner'] = $owner;
-		}
-		
 
-		if($owner != null) {
-			$myArray['owner'] = $owner;
-		}
-		
-
-		if($productName != null) {
-			$myArray['name'] = $productName;
-		}
-		
-
-		if($typeOfDelivery != null) {
-			$myArray['deliveryType'] = $typeOfDelivery;
-		}
-		
-	
-		
-		return $myArray;
-		
-	}
 	
 	public function generateJSONContentByEntity($object) {
 		

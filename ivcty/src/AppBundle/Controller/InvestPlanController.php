@@ -13,6 +13,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 
 
+
 class InvestPlanController extends Controller {
 
 	public function listAction(Request $request) {
@@ -139,23 +140,90 @@ class InvestPlanController extends Controller {
     public function createAction(Request $request) {
 
         $params = json_decode(file_get_contents('php://input'),true);
-echo var_dump($params);
+
+        $investPlan = new InvestPlan();
+
+        if (array_key_exists('website', $params)) {
+           $investPlan->setWebsite($params["website"]);
+        }
+
+        if (array_key_exists('name', $params)) {
+            $investPlan->setInvestmentname($params["name"]);
+        }
+
+        if (array_key_exists('user', $params)) {
+
+            $memberController = $this->get('member_service');
+            $member = $memberController.getSingleMemberAction($params["user"]);
+            $investPlan->setMember($member);
+        }
 
 
-        $website = $params["website"];
-        echo var_dump($website);
 
-        echo var_dump($request);
+        if (array_key_exists('banner', $params)) {
+         //TODO add to DB
+        }
 
-        $youtube = $request->request->get ( "youtubeurl" );
-      echo var_dump($youtube);
+        if (array_key_exists('description', $params)) {
+            $investPlan->setDescription($params["description"]);
+        }
 
-        $params = json_decode(file_get_contents('php://input'),true);
+        if (array_key_exists('youtubeurl', $params)) {
+            $investPlan->setYoutubelink($params["youtubeurl"]);
+        }
+
+        if (array_key_exists('runtime', $params)) {
+            $investPlan->setRuntime($params["runtime"]);
+        }
+
+        if (array_key_exists('number', $params)) {
+            $investPlan->setNumber($params["number"]);
+        }
+
+        if (array_key_exists('paytax', $params)) {
+            $investPlan->setPaytax($params["paytax"]);
+        }
+
+        if (array_key_exists('roi', $params)) {
+            $investPlan->setROI($params["roi"]);
+        }
+
+        if (array_key_exists('principal', $params)) {
+            $investPlan->setPrincipal($params["principal"]);
+        }
+
+        if (array_key_exists('payInWallet', $params)) {
+            $investPlan->setPayInWallet($params["payInWallet"]);
+        }
+
+        if (array_key_exists('payOutWallet', $params)) {
+            $investPlan->setPayOutWallet($params["payOutWallet"]);
+        }
+
+        if (array_key_exists('amount', $params)) {
+            $investPlan->setAmount($params["amount"]);
+        }
+
+        if (array_key_exists('date', $params)) {
+            $investPlan->setDate($params["date"]);
+        }
+
+        if (array_key_exists('time', $params)) {
+            $investPlan->setTime($params["time"]);
+        }
+
+        if (array_key_exists('comment', $params)) {
+            $investPlan->setComment($params["comment"]);
+        }
+
+        if (array_key_exists('comment', $params)) {
+            $investPlan->setComment($params["comment"]);
+        }
 
 
-        $investPlan = new InvestPlan ();
 
-        $em = $this->getDoctrine ()->getManager ();
+
+          $em = $this->getDoctrine ()->getManager ();
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
 
@@ -164,78 +232,13 @@ echo var_dump($params);
         // actually executes the queries (i.e. the INSERT query)
         $em->flush ();
 
-        $productID = $investPlan->getId ();
 
 
-        $file1 = $request->files->get ( "file1" );
-        $file2 = $request->files->get ( "file2" );
-        $file3 = $request->files->get ( "file3" );
-        $file4 = $request->files->get ( "file4" );
-        $file5 = $request->files->get ( "file5" );
 
 
-        if ($file1 != null) {
-            $fileName1 = $this->saveProductImage ( $file1, $productID );
-            if ($fileName1 != null) {
-                $this->persistProductImage ( $fileName1, $em, $product );
-            }
-        }
-        if ($file2 != null) {
-            $fileName2 = $this->saveProductImage ( $file2, $productID );
-            if ($fileName2 != null) {
-                $this->persistProductImage ( $fileName2, $em, $product );
-            }
-        }
-        if ($file3 != null) {
-            $fileName3 = $this->saveProductImage ( $file3, $productID );
-            if ($fileName3 != null) {
-                $this->persistProductImage ( $fileName3, $em, $product );
-            }
-        }
-        if ($file4 != null) {
-            $fileName4 = $this->saveProductImage ( $file4, $productID );
-            if ($fileName4 != null) {
-                $this->persistProductImage ( $fileName4, $em, $product );
-            }
-        }
-        if ($file5 != null) {
-            $fileName5 = $this->saveProductImage ( $file5, $productID );
-            if ($fileName5 != null) {
-                $this->persistProductImage ( $fileName5, $em, $product );
-            }
-        }
 
 
-        $productName = $request->request->get ( "productName" );
-        $price = $request->request->get ( "price" );
-        $quantityOfPieces = $request->request->get ( "quantityOfPieces" );
-        $lieferArt = $request->request->get ( "lieferArt" );
-        $lieferZeit = $request->request->get ( "deliveryTime" );
-        $typeOfPackage = $request->request->get ( "typeOfPackage" );
-        $quantityCategory = $request->request->get ( "quantityCategory" );
-        $shortDescription = $request->request->get ( "shortDescription" );
-        $description = $request->request->get ( "description" );
 
-        $owner = $request->request->get ( "userID" );
-
-
-        $product->setName ( $productName );
-        $product->setPrice ( $price );
-        $product->setDeliveryTime ( $lieferZeit );
-        $product->setDeliveryTimeType ( "Tage" );
-        $product->setDeliveryType ( $lieferArt );
-        $product->setQuantity ( $quantityOfPieces );
-        $product->setPackaging ( $typeOfPackage);
-        $product->setQuantityCategory($quantityCategory);
-        $product->setDescription($description);
-        $product->setShortDescription($shortDescription);
-
-        $product->setOwner ( $owner );
-
-        $em->persist ( $product );
-
-        // actually executes the queries (i.e. the INSERT query)
-        $em->flush ();
 
 
 
