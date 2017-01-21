@@ -5,10 +5,8 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use AppBundle\Entity\Product;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use AppBundle\Entity\ProductImage;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use AppBundle\Entity\InvestPlan;
+use AppBundle\Entity\WalletProvider;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 
@@ -58,77 +56,7 @@ class InvestPlanController extends Controller {
 
         echo var_dump($products);
 
-        /*
-		$filteredProducts = [];
-		
-		$priceLow = $request->get("priceLow");
-		$priceHigh 	= $request->get("priceHigh");
-		$maxDelivery 	= $request->get("maxDelivery");
-		
-		foreach($products as $singleProduct) {
-			
-			$priceFilterValid = false;
-			$deliveryFilterValid = false;
-			
-			if($priceLow != null || $priceHigh != null) {
-				
-				 $price =	$singleProduct->getPrice();
-				 
-				 if($priceLow != null && $priceHigh == null) {
-				 	
-				 	if($price >= $priceLow) {
-				 		
-				 		$priceFilterValid = true;
-				 			
-				 	}
-				 	
-				 } else if  ($priceLow == null && $priceHigh != null) {
-				 	
-				 	if($price <= $priceHigh) {
-				 		$priceFilterValid = true;
-				 			
-				 	}
-				 	
-				 } else if  ($priceLow != null && $priceHigh != null) {
-				 	
-				 	if($price >= $priceLow && $price <= $priceHigh) {
-				 		
-				 		$priceFilterValid = true;
-				 			
-				 	}
-				 	
-				 }
-			} else {
-				$priceFilterValid = true;
-				
-			}
-			
-			
-			if($maxDelivery!= null) {
-				
-				if($maxDelivery <= $singleProduct->getDeliveryTime()) {
-					$deliveryFilterValid = true;
-				}
-				
-				
-			} else {
-				
-				$deliveryFilterValid = true;
-			}
-			
-			if($deliveryFilterValid && $priceFilterValid) {
-				array_push($filteredProducts, $singleProduct);
-				
-			}
-				
-		
-			
-		}
-				
-	*/
-		
-		
-			
+
 		$jsonContent = $this->generateJSONContentByEntity($products);
 			
 		return new Response($jsonContent);
@@ -143,27 +71,32 @@ class InvestPlanController extends Controller {
 
         $investPlan = new InvestPlan();
 
-        if (array_key_exists('website', $params)) {
-           $investPlan->setWebsite($params["website"]);
-        }
+        echo var_dump($investPlan);
 
         if (array_key_exists('name', $params)) {
-            $investPlan->setInvestmentname($params["name"]);
+            $name =  $params["name"];
+                echo "name is " . $name;
+            echo var_dump($investPlan);
+            $investPlan->setInvestmentname($name);
         }
+
+        if (array_key_exists('website', $params)) {
+            $investPlan->setWebsite($params["website"]);
+        }
+
 
         if (array_key_exists('user', $params)) {
 
-            $memberController = $this->get('member_service');
-            $member = $memberController.getSingleMemberAction($params["user"]);
-            $investPlan->setMember($member);
+          //  $memberController = $this->get('member_service');
+           // $member = $memberController.getSingleMemberAction($params["user"]);
+            $investPlan->setMember($params["user"]);
         }
 
-
+       $investPlan->setCreationTime(date("Y-m-d H:i:s"));
 
         if (array_key_exists('banner', $params)) {
          //TODO add to DB
         }
-
         if (array_key_exists('description', $params)) {
             $investPlan->setDescription($params["description"]);
         }
@@ -177,6 +110,8 @@ class InvestPlanController extends Controller {
         }
 
         if (array_key_exists('number', $params)) {
+
+          //  $numberAsFloat = floatval($params["number"]);
             $investPlan->setNumber($params["number"]);
         }
 
@@ -192,12 +127,45 @@ class InvestPlanController extends Controller {
             $investPlan->setPrincipal($params["principal"]);
         }
 
+        echo("before PayInWallet");
+
         if (array_key_exists('payInWallet', $params)) {
-            $investPlan->setPayInWallet($params["payInWallet"]);
+
+
+
+            $memberWalletsRepository =  $this->getDoctrine()->getManager()->getRepository('AppBundle:MemberWallets');
+            echo("before FindOny");
+            echo var_dump($memberWalletsRepository);
+
+            $myArray = [];
+            $myArray["member"] = $params["user"];
+            $myArray["walletProvider"] =  $params["payInWallet"];
+
+            echo var_dump($myArray);
+
+            $memberWallets = $memberWalletsRepository->findOneBy($myArray);
+            echo var_dump($memberWallets);
+
+            $investPlan->setPayInWallet($memberWallets);
+
+
         }
 
+        echo("before PayOutWallet");
+
+
         if (array_key_exists('payOutWallet', $params)) {
-            $investPlan->setPayOutWallet($params["payOutWallet"]);
+
+            $memberWalletsRepository =  $this->getDoctrine()->getManager()->getRepository('AppBundle:MemberWallets');
+
+            $myArray = [];
+            $myArray["member"] = $params["user"];
+            $myArray["walletProvider"] =  $params["payOutWallet"];
+
+            $memberWallet = $memberWalletsRepository->findOneBy($myArray);
+
+            $investPlan->setPayOutWallet($memberWallet);
+
         }
 
         if (array_key_exists('amount', $params)) {
@@ -216,14 +184,10 @@ class InvestPlanController extends Controller {
             $investPlan->setComment($params["comment"]);
         }
 
-        if (array_key_exists('comment', $params)) {
-            $investPlan->setComment($params["comment"]);
-        }
+        echo("before Persist");
 
 
-
-
-          $em = $this->getDoctrine ()->getManager ();
+        $em = $this->getDoctrine ()->getManager ();
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
 

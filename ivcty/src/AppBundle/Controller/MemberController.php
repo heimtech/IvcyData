@@ -11,6 +11,8 @@ use AppBundle\Entity\ProductImage;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
+use AppBundle\Entity\WalletProvider;
+
 
 
 class MemberController extends Controller {
@@ -137,27 +139,7 @@ class MemberController extends Controller {
 	}
 	
 	
-	public function getSingleMemberAction($pUserID) {
-	
-		
-	$myArray = [];
-    $myArray["id"] = $pUserID;
-		
-			
-		$repository = $this->getDoctrine()
-		->getRepository('AppBundle:Member');
 
-
-	
-		$member = $repository->findOneBy($myArray);
-		
-		
-
-	
-	
-	
-			return $member;
-	}
 	
 
 

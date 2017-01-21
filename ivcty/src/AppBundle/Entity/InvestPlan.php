@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class InvestPlan
 {
     /**
-     * @ORM\Column(type="integer", length=10)
+     * @ORM\Column(type="integer", length=10, nullable=true)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -22,123 +22,129 @@ class InvestPlan
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Member", inversedBy="investments")
-     * @ORM\JoinColumn(name="user", referencedColumnName="id")
+     * @var integer
+     *
+     * @ORM\Column(type="integer", length=20, nullable=true)
      */
-    private $user;
+    private $member;
 
-    /** @ORM\Column(type="datetime") */
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $creationTime;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $website;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $investmentname;
 
     /**
-     * @ORM\Column(type="string", length=1024)
+     * @ORM\Column(type="string", length=1024, nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $youtubelink;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $planname;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $runtime;
 
     /**
-     * @ORM\Column(type="double")
+     * @ORM\Column(type="decimal", nullable=true)
      */
     private $number;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $paytax;
 
 
     /**
-     * @ORM\Column(type="integer", length=3)
+     * @ORM\Column(type="integer", length=3, nullable=true)
      */
     private $profitIncoming;
 
 
     /**
-     * @ORM\Column(type="double")
+     * @ORM\Column(type="decimal", nullable=true)
      */
     private $roi;
 
     /**
-     * @ORM\Column(type="integer", length=3)
+    /**
+     * @ORM\Column(type="integer", length=3, nullable=true)
      */
     private $principal;
 
     /**
      * @ORM\ManyToOne(targetEntity="MemberWallets", inversedBy="investmentsPayedIn")
-     * @ORM\JoinColumn(name="payInWallet", referencedColumnName="id")
+     * @ORM\JoinColumn(name="payInWallet", referencedColumnName="id", nullable=true)
      */
     private $payInWallet;
 
     /**
      * @ORM\ManyToOne(targetEntity="MemberWallets", inversedBy="investmentsPayedOut")
-     * @ORM\JoinColumn(name="payOutWallet", referencedColumnName="id")
+     * @ORM\JoinColumn(name="payOutWallet", referencedColumnName="id", nullable=true)
      */
     private $payOutWallet;
 
     /**
-     * @ORM\Column(type="double", length=20)
+     * @ORM\Column(type="decimal", length=20, nullable=true)
      */
     private $amount;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $startdatetime;
 
 
     /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $pending;
 
      /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $open;
 
     /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $closed;
 
     /**
-     * @ORM\Column(type="bool")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $warning;
 
 
     /**
-     * @ORM\Column(type="integer", length=1)
+     * @ORM\Column(type="integer", length=1, nullable=true)
      */
     private $rating;
 
 
     /**
-     * @ORM\Column(type="string", length=1024)
+     * @ORM\Column(type="string", length=1024, nullable=true)
      */
     private $comment;
 
@@ -146,6 +152,9 @@ class InvestPlan
      * @ORM\OneToMany(targetEntity="InvestmentHistory", mappedBy="investment", fetch="EAGER")
      */
     private $investmentHistoryEvents;
+
+
+
 
     /**
      * Constructor
@@ -166,23 +175,47 @@ class InvestPlan
     }
 
     /**
+     * Set member
+     *
+     * @param integer $member
+     *
+     * @return InvestPlan
+     */
+    public function setMember($member)
+    {
+        $this->member = $member;
+
+        return $this;
+    }
+
+    /**
+     * Get member
+     *
+     * @return integer
+     */
+    public function getMember()
+    {
+        return $this->member;
+    }
+
+    /**
      * Set creationTime
      *
-     * @param \DateTime $creationTime
+     * @param string $creationTime
      *
      * @return InvestPlan
      */
     public function setCreationTime($creationTime)
     {
         $this->creationTime = $creationTime;
-    
+
         return $this;
     }
 
     /**
      * Get creationTime
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreationTime()
     {
@@ -199,7 +232,7 @@ class InvestPlan
     public function setWebsite($website)
     {
         $this->website = $website;
-    
+
         return $this;
     }
 
@@ -223,7 +256,7 @@ class InvestPlan
     public function setInvestmentname($investmentname)
     {
         $this->investmentname = $investmentname;
-    
+
         return $this;
     }
 
@@ -247,7 +280,7 @@ class InvestPlan
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
@@ -271,7 +304,7 @@ class InvestPlan
     public function setYoutubelink($youtubelink)
     {
         $this->youtubelink = $youtubelink;
-    
+
         return $this;
     }
 
@@ -295,7 +328,7 @@ class InvestPlan
     public function setPlanname($planname)
     {
         $this->planname = $planname;
-    
+
         return $this;
     }
 
@@ -319,7 +352,7 @@ class InvestPlan
     public function setRuntime($runtime)
     {
         $this->runtime = $runtime;
-    
+
         return $this;
     }
 
@@ -336,21 +369,21 @@ class InvestPlan
     /**
      * Set number
      *
-     * @param \double $number
+     * @param string $number
      *
      * @return InvestPlan
      */
-    public function setNumber(\double $number)
+    public function setNumber($number)
     {
         $this->number = $number;
-    
+
         return $this;
     }
 
     /**
      * Get number
      *
-     * @return \double
+     * @return string
      */
     public function getNumber()
     {
@@ -367,7 +400,7 @@ class InvestPlan
     public function setPaytax($paytax)
     {
         $this->paytax = $paytax;
-    
+
         return $this;
     }
 
@@ -391,7 +424,7 @@ class InvestPlan
     public function setProfitIncoming($profitIncoming)
     {
         $this->profitIncoming = $profitIncoming;
-    
+
         return $this;
     }
 
@@ -408,21 +441,21 @@ class InvestPlan
     /**
      * Set roi
      *
-     * @param \double $roi
+     * @param string $roi
      *
      * @return InvestPlan
      */
-    public function setRoi(\double $roi)
+    public function setRoi($roi)
     {
         $this->roi = $roi;
-    
+
         return $this;
     }
 
     /**
      * Get roi
      *
-     * @return \double
+     * @return string
      */
     public function getRoi()
     {
@@ -439,7 +472,7 @@ class InvestPlan
     public function setPrincipal($principal)
     {
         $this->principal = $principal;
-    
+
         return $this;
     }
 
@@ -456,21 +489,21 @@ class InvestPlan
     /**
      * Set amount
      *
-     * @param \double $amount
+     * @param string $amount
      *
      * @return InvestPlan
      */
-    public function setAmount(\double $amount)
+    public function setAmount($amount)
     {
         $this->amount = $amount;
-    
+
         return $this;
     }
 
     /**
      * Get amount
      *
-     * @return \double
+     * @return string
      */
     public function getAmount()
     {
@@ -487,7 +520,7 @@ class InvestPlan
     public function setStartdatetime($startdatetime)
     {
         $this->startdatetime = $startdatetime;
-    
+
         return $this;
     }
 
@@ -504,21 +537,21 @@ class InvestPlan
     /**
      * Set pending
      *
-     * @param \bool $pending
+     * @param boolean $pending
      *
      * @return InvestPlan
      */
-    public function setPending(\bool $pending)
+    public function setPending($pending)
     {
         $this->pending = $pending;
-    
+
         return $this;
     }
 
     /**
      * Get pending
      *
-     * @return \bool
+     * @return boolean
      */
     public function getPending()
     {
@@ -528,21 +561,21 @@ class InvestPlan
     /**
      * Set open
      *
-     * @param \bool $open
+     * @param boolean $open
      *
      * @return InvestPlan
      */
-    public function setOpen(\bool $open)
+    public function setOpen($open)
     {
         $this->open = $open;
-    
+
         return $this;
     }
 
     /**
      * Get open
      *
-     * @return \bool
+     * @return boolean
      */
     public function getOpen()
     {
@@ -552,21 +585,21 @@ class InvestPlan
     /**
      * Set closed
      *
-     * @param \bool $closed
+     * @param boolean $closed
      *
      * @return InvestPlan
      */
-    public function setClosed(\bool $closed)
+    public function setClosed($closed)
     {
         $this->closed = $closed;
-    
+
         return $this;
     }
 
     /**
      * Get closed
      *
-     * @return \bool
+     * @return boolean
      */
     public function getClosed()
     {
@@ -576,21 +609,21 @@ class InvestPlan
     /**
      * Set warning
      *
-     * @param \bool $warning
+     * @param boolean $warning
      *
      * @return InvestPlan
      */
-    public function setWarning(\bool $warning)
+    public function setWarning($warning)
     {
         $this->warning = $warning;
-    
+
         return $this;
     }
 
     /**
      * Get warning
      *
-     * @return \bool
+     * @return boolean
      */
     public function getWarning()
     {
@@ -607,7 +640,7 @@ class InvestPlan
     public function setRating($rating)
     {
         $this->rating = $rating;
-    
+
         return $this;
     }
 
@@ -631,9 +664,10 @@ class InvestPlan
     public function setComment($comment)
     {
         $this->comment = $comment;
-    
+
         return $this;
     }
+
 
     /**
      * Get comment
@@ -646,30 +680,6 @@ class InvestPlan
     }
 
     /**
-     * Set user
-     *
-     * @param \AppBundle\Entity\Member $user
-     *
-     * @return InvestPlan
-     */
-    public function setUser(\AppBundle\Entity\Member $user = null)
-    {
-        $this->user = $user;
-    
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \AppBundle\Entity\Member
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
      * Set payInWallet
      *
      * @param \AppBundle\Entity\MemberWallets $payInWallet
@@ -679,7 +689,7 @@ class InvestPlan
     public function setPayInWallet(\AppBundle\Entity\MemberWallets $payInWallet = null)
     {
         $this->payInWallet = $payInWallet;
-    
+
         return $this;
     }
 
@@ -703,7 +713,7 @@ class InvestPlan
     public function setPayOutWallet(\AppBundle\Entity\MemberWallets $payOutWallet = null)
     {
         $this->payOutWallet = $payOutWallet;
-    
+
         return $this;
     }
 
@@ -727,7 +737,7 @@ class InvestPlan
     public function addInvestmentHistoryEvent(\AppBundle\Entity\InvestmentHistory $investmentHistoryEvent)
     {
         $this->investmentHistoryEvents[] = $investmentHistoryEvent;
-    
+
         return $this;
     }
 

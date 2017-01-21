@@ -17,3 +17,8 @@ member_list:
 invest_plan:
     path:      /investplan/create
     defaults:  { _controller: "AppBundle:InvestPlan:create" }
+
+
+create_unexisting_wallet:
+    path:      /wallet/createunexisting
+    defaults:  { _controller: "AppBundle:Wallet:createUnexisting" }

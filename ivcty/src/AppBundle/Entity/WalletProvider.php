@@ -9,7 +9,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
- * @ORM\Table(name="wallet")
+ * @ORM\Table(name="walletprovider")
  */
 class WalletProvider
 {
@@ -25,8 +25,66 @@ class WalletProvider
     private $walletProvider;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $walletIcon;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set walletProvider
+     *
+     * @param string $walletProvider
+     *
+     * @return WalletProvider
+     */
+    public function setWalletProvider($walletProvider)
+    {
+        $this->walletProvider = $walletProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get walletProvider
+     *
+     * @return string
+     */
+    public function getWalletProvider()
+    {
+        return $this->walletProvider;
+    }
+
+    /**
+     * Set walletIcon
+     *
+     * @param string $walletIcon
+     *
+     * @return WalletProvider
+     */
+    public function setWalletIcon($walletIcon)
+    {
+        $this->walletIcon = $walletIcon;
+
+        return $this;
+    }
+
+    /**
+     * Get walletIcon
+     *
+     * @return string
+     */
+    public function getWalletIcon()
+    {
+        return $this->walletIcon;
+    }
 }

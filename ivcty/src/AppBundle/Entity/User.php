@@ -225,6 +225,8 @@ class User
 
 
 
+   
+
     /**
      * Get id
      *
@@ -356,27 +358,27 @@ class User
     }
 
     /**
-     * Set backendTheme
+     * Set backendtheme
      *
-     * @param string $backendTheme
+     * @param string $backendtheme
      *
      * @return User
      */
-    public function setBackendTheme($backendTheme)
+    public function setBackendtheme($backendtheme)
     {
-        $this->backendTheme = $backendTheme;
+        $this->backendtheme = $backendtheme;
 
         return $this;
     }
 
     /**
-     * Get backendTheme
+     * Get backendtheme
      *
      * @return string
      */
-    public function getBackendTheme()
+    public function getBackendtheme()
     {
-        return $this->backendTheme;
+        return $this->backendtheme;
     }
 
     /**
@@ -404,37 +406,37 @@ class User
     }
 
     /**
-     * Set showHelp
+     * Set showhelp
      *
-     * @param \character $showHelp
+     * @param string $showhelp
      *
      * @return User
      */
-    public function setShowHelp(\character $showHelp)
+    public function setShowhelp($showhelp)
     {
-        $this->showHelp = $showHelp;
+        $this->showhelp = $showhelp;
 
         return $this;
     }
 
     /**
-     * Get showHelp
+     * Get showhelp
      *
-     * @return \character
+     * @return string
      */
-    public function getShowHelp()
+    public function getShowhelp()
     {
-        return $this->showHelp;
+        return $this->showhelp;
     }
 
     /**
      * Set thumbnails
      *
-     * @param \character $thumbnails
+     * @param string $thumbnails
      *
      * @return User
      */
-    public function setThumbnails(\character $thumbnails)
+    public function setThumbnails($thumbnails)
     {
         $this->thumbnails = $thumbnails;
 
@@ -444,7 +446,7 @@ class User
     /**
      * Get thumbnails
      *
-     * @return \character
+     * @return string
      */
     public function getThumbnails()
     {
@@ -452,51 +454,51 @@ class User
     }
 
     /**
-     * Set useRTE
+     * Set userte
      *
-     * @param \character $useRTE
+     * @param string $userte
      *
      * @return User
      */
-    public function setUseRTE(\character $useRTE)
+    public function setUserte($userte)
     {
-        $this->useRTE = $useRTE;
+        $this->userte = $userte;
 
         return $this;
     }
 
     /**
-     * Get useRTE
+     * Get userte
      *
-     * @return \character
+     * @return string
      */
-    public function getUseRTE()
+    public function getUserte()
     {
-        return $this->useRTE;
+        return $this->userte;
     }
 
     /**
-     * Set useCE
+     * Set usece
      *
-     * @param \character $useCE
+     * @param string $usece
      *
      * @return User
      */
-    public function setUseCE(\character $useCE)
+    public function setUsece($usece)
     {
-        $this->useCE = $useCE;
+        $this->usece = $usece;
 
         return $this;
     }
 
     /**
-     * Get useCE
+     * Get usece
      *
-     * @return \character
+     * @return string
      */
-    public function getUseCE()
+    public function getUsece()
     {
-        return $this->useCE;
+        return $this->usece;
     }
 
     /**
@@ -524,37 +526,37 @@ class User
     }
 
     /**
-     * Set pwChange
+     * Set pwchange
      *
-     * @param \character $pwChange
+     * @param string $pwchange
      *
      * @return User
      */
-    public function setPwChange(\character $pwChange)
+    public function setPwchange($pwchange)
     {
-        $this->pwChange = $pwChange;
+        $this->pwchange = $pwchange;
 
         return $this;
     }
 
     /**
-     * Get pwChange
+     * Get pwchange
      *
-     * @return \character
+     * @return string
      */
-    public function getPwChange()
+    public function getPwchange()
     {
-        return $this->pwChange;
+        return $this->pwchange;
     }
 
     /**
      * Set admin
      *
-     * @param \character $admin
+     * @param string $admin
      *
      * @return User
      */
-    public function setAdmin(\character $admin)
+    public function setAdmin($admin)
     {
         $this->admin = $admin;
 
@@ -564,7 +566,7 @@ class User
     /**
      * Get admin
      *
-     * @return \character
+     * @return string
      */
     public function getAdmin()
     {
@@ -814,11 +816,11 @@ class User
     /**
      * Set disable
      *
-     * @param \character $disable
+     * @param string $disable
      *
      * @return User
      */
-    public function setDisable(\character $disable)
+    public function setDisable($disable)
     {
         $this->disable = $disable;
 
@@ -828,7 +830,7 @@ class User
     /**
      * Get disable
      *
-     * @return \character
+     * @return string
      */
     public function getDisable()
     {
@@ -908,99 +910,99 @@ class User
     }
 
     /**
-     * Set dateAdded
+     * Set dateadded
      *
-     * @param integer $dateAdded
+     * @param integer $dateadded
      *
      * @return User
      */
-    public function setDateAdded($dateAdded)
+    public function setDateadded($dateadded)
     {
-        $this->dateAdded = $dateAdded;
+        $this->dateadded = $dateadded;
 
         return $this;
     }
 
     /**
-     * Get dateAdded
+     * Get dateadded
      *
      * @return integer
      */
-    public function getDateAdded()
+    public function getDateadded()
     {
-        return $this->dateAdded;
+        return $this->dateadded;
     }
 
     /**
-     * Set lastLogin
+     * Set lastlogin
      *
-     * @param integer $lastLogin
+     * @param integer $lastlogin
      *
      * @return User
      */
-    public function setLastLogin($lastLogin)
+    public function setLastlogin($lastlogin)
     {
-        $this->lastLogin = $lastLogin;
+        $this->lastlogin = $lastlogin;
 
         return $this;
     }
 
     /**
-     * Get lastLogin
+     * Get lastlogin
      *
      * @return integer
      */
-    public function getLastLogin()
+    public function getLastlogin()
     {
-        return $this->lastLogin;
+        return $this->lastlogin;
     }
 
     /**
-     * Set currentLogin
+     * Set currentlogin
      *
-     * @param integer $currentLogin
+     * @param integer $currentlogin
      *
      * @return User
      */
-    public function setCurrentLogin($currentLogin)
+    public function setCurrentlogin($currentlogin)
     {
-        $this->currentLogin = $currentLogin;
+        $this->currentlogin = $currentlogin;
 
         return $this;
     }
 
     /**
-     * Get currentLogin
+     * Get currentlogin
      *
      * @return integer
      */
-    public function getCurrentLogin()
+    public function getCurrentlogin()
     {
-        return $this->currentLogin;
+        return $this->currentlogin;
     }
 
     /**
-     * Set loginCount
+     * Set logincount
      *
-     * @param integer $loginCount
+     * @param integer $logincount
      *
      * @return User
      */
-    public function setLoginCount($loginCount)
+    public function setLogincount($logincount)
     {
-        $this->loginCount = $loginCount;
+        $this->logincount = $logincount;
 
         return $this;
     }
 
     /**
-     * Get loginCount
+     * Get logincount
      *
      * @return integer
      */
-    public function getLoginCount()
+    public function getLogincount()
     {
-        return $this->loginCount;
+        return $this->logincount;
     }
 
     /**
@@ -1196,27 +1198,27 @@ class User
     }
 
     /**
-     * Set newsp
+     * Set newp
      *
-     * @param string $newsp
+     * @param string $newp
      *
      * @return User
      */
-    public function setNewsp($newsp)
+    public function setNewp($newp)
     {
-        $this->newsp = $newsp;
+        $this->newp = $newp;
 
         return $this;
     }
 
     /**
-     * Get newsp
+     * Get newp
      *
      * @return string
      */
-    public function getNewsp()
+    public function getNewp()
     {
-        return $this->newsp;
+        return $this->newp;
     }
 
     /**
@@ -1313,29 +1315,5 @@ class User
     public function getAvatar()
     {
         return $this->avatar;
-    }
-
-    /**
-     * Set newp
-     *
-     * @param string $newp
-     *
-     * @return User
-     */
-    public function setNewp($newp)
-    {
-        $this->newp = $newp;
-
-        return $this;
-    }
-
-    /**
-     * Get newp
-     *
-     * @return string
-     */
-    public function getNewp()
-    {
-        return $this->newp;
     }
 }

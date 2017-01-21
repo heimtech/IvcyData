@@ -9,6 +9,3 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
 
-services:
-    member_service:
-        class: AppBundle\Controller\MemberController
