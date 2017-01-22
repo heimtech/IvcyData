@@ -1,0 +1,25 @@
+/**    Custom List    **/
+
+.ce_t4c_custom_list{
+	ul{
+		list-style: none;
+		margin: 0px 20px;
+		padding:0;
+		
+		li{
+			margin-bottom: 10px;
+			clear:both;
+			
+			i{
+				margin-right: 15px;
+				margin-top: 3px;
+				float:left;
+			}
+			
+			> span{
+				display:block;
+				overflow:hidden;
+			}
+		}
+	}
+}

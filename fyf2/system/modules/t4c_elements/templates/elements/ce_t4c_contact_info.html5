@@ -1,0 +1,15 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+  <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+  <?php endif; ?>
+
+    <ul>
+	<?php if ( count($this->items)>0 ): ?>
+		<?php foreach ($this->items as $item): ?>
+            <li>
+                <i class="<?php echo $item['t4c_contact_info_icon']; ?>"></i><span><?php echo nl2br($item['t4c_contact_info_value']); ?></span>
+            </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+	</ul>
+</div>

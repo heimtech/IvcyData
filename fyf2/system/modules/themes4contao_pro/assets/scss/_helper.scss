@@ -1,0 +1,153 @@
+/**    Helper classes    **/
+ 
+.uppercase{ text-transform:uppercase; }
+
+.underline-on-hover a{ text-decoration:none; }
+.underline-on-hover a:hover{ text-decoration:underline; }
+
+.opacity-on-hover { @include transition(); }
+.opacity-on-hover:hover { opacity: 0.7;}
+
+.invert-opacity-on-hover { @include transition(); opacity: 0.7 }
+.invert-opacity-on-hover:hover { opacity: 1;}
+
+.hover-off a  { text-decoration:none; color:inherit;}
+.hover-off a:hover,.hover-off a:focus  {text-decoration:none; color:inherit;}
+
+.text-serif {font-family:Georgia, "Times New Roman", Times, serif;}
+
+.margin-off, 
+.margin-off p, 
+.margin-off h1, 
+.margin-off h2,
+.margin-off h3,
+.margin-off h4,
+.margin-off h5,
+.margin-off h6,
+h1.margin-off,
+h2.margin-off,
+h3.margin-off,
+h4.margin-off,
+h5.margin-off,
+h6.margin-off{ margin:0;}
+
+.padding-off,
+.padding-off p,
+.padding-off h1,
+.padding-off h2,
+.padding-off h3,
+.padding-off h4,
+.padding-off h5,
+.padding-off h6{padding:0;}
+
+/**    Color    **/
+.color-white{ color: #fff; }
+.color-dark{ color: $darkGrey; }
+.color-theme{ color: $themeColor;}
+
+/**    Size     **/
+.font-size-10{ font-size:10px; line-height:normal; }
+.font-size-11{ font-size:11px; line-height:normal; }
+.font-size-12{ font-size:12px; line-height:normal; }
+.font-size-13{ font-size:13px; line-height:normal; }
+.font-size-14{ font-size:14px; line-height:normal; }
+.font-size-15{ font-size:15px; line-height:normal; }
+.font-size-16{ font-size:16px; line-height:normal; }
+.font-size-18{ font-size:18px; line-height:normal; }
+.font-size-20{ font-size:20px; line-height:normal; }
+.font-size-25{ font-size:25px; line-height:normal; }
+.font-size-30{ font-size:30px; line-height:30px; }
+.font-size-35{ font-size:35px; line-height:35px; }
+.font-size-40{ font-size:40px; line-height:40px; }
+.font-size-45{ font-size:45px; line-height:45px; }
+.font-size-50{ font-size:50px; line-height:50px; }
+.font-size-55{ font-size:55px; line-height:55px; }
+.font-size-60{ font-size:60px; line-height:60px; }
+.font-size-65{ font-size:65px; line-height:65px; }
+.font-size-70{ font-size:70px; line-height:70px; }
+.font-size-75{ font-size:75px; line-height:75px; }
+.font-size-80{ font-size:80px; line-height:80px; }
+.font-size-85{ font-size:85px; line-height:86px; }
+.font-size-90{ font-size:90px; line-height:90px; }
+
+
+/**    Line height     **/
+.line-height-14{ line-height: 14px; }
+.line-height-15{ line-height: 15px; }
+.line-height-16{ line-height: 16px; }
+.line-height-17{ line-height: 17px; }
+.line-height-18{ line-height: 18px; }
+.line-height-19{ line-height: 19px; }
+.line-height-20{ line-height: 20px; }
+.line-height-22{ line-height: 22px; }
+.line-height-24{ line-height: 24px; }
+.line-height-26{ line-height: 26px; }
+.line-height-28{ line-height: 28px; }
+.line-height-30{ line-height: 30px; }
+.line-height-34{ line-height: 34px; }
+.line-height-38{ line-height: 38px; }
+.line-height-40{ line-height: 40px; }
+.line-height-46{ line-height: 46px; }
+.line-height-50{ line-height: 50px; }
+.line-height-55{ line-height: 55px; }
+.line-height-60{ line-height: 60px; }
+
+
+/**    Image    **/
+.image-circle img{ @include borderRadius(50%); }
+.text-center img{ margin:0px auto;}
+
+/**    Font style    **/
+.font-bold{ font-weight:bold; }
+.font-normal{ font-weight:normal; }
+.font-italic{ font-style:italic; }
+
+/**    Opacity    **/
+.opacity-95{ opacity: .95; }
+.opacity-90{ opacity: .9; }
+.opacity-85{ opacity: .85; }
+.opacity-80{ opacity: .8; }
+.opacity-75{ opacity: .75; }
+.opacity-70{ opacity: .7; }
+.opacity-65{ opacity: .65; }
+.opacity-60{ opacity: .6; }
+.opacity-55{ opacity: .55; }
+.opacity-50{ opacity: .5; }
+.opacity-45{ opacity: .45; }
+.opacity-40{ opacity: .4; }
+.opacity-35{ opacity: .35; }
+.opacity-30{ opacity: .3; }
+
+/**    Position    **/
+.position-top-left img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.position-top-right img{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.position-bottom-left img{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.position-bottom-right img{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+@media (max-width: 768px) {
+	
+	/**    Mobile text center    **/
+	.mobile-text-center{
+		text-align:center;
+		margin:0px auto;
+	}
+}

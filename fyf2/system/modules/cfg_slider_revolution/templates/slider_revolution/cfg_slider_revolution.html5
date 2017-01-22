@@ -1,0 +1,37 @@
+<?php if ($this->slides): ?>
+    <div class="cfg_slider_revolution"<?php if ($this->maxWidth): ?> style="max-width:<?= $this->maxWidth ?>px;margin:auto"<?php endif; ?>>
+        <div class="rev_slider_wrapper" style="height: <?php echo $this->config['gridheight']; ?>">
+            <div id="slider-revolution-<?php echo $this->id; ?>" class="rev_slider" data-version="5.0">
+                <ul>
+                    <?php foreach ($this->slides as $slide): ?>
+                        <li<?php foreach ($slide['config'] as $k => $v): ?> data-<?php echo $k; ?>="<?php echo $v; ?>"<?php endforeach; ?>>
+                            <img class="rev-slidebg" alt=""<?php foreach ($slide['imageConfig'] as $k => $v): ?> <?php echo $k; ?>="<?php echo $v; ?>"<?php endforeach; ?>>
+
+                            <?php foreach ($slide['layers'] as $layer): ?>
+                                <div class="<?php echo $layer['_class']; ?>" style="<?php echo $layer['_style']; ?>"<?php if ($layer['_actions']): ?> data-actions='<?= $layer['_actions'] ?>'<?php endif; ?><?php foreach ($layer['_config'] as $k => $v): ?> data-<?php echo $k; ?>="<?php echo $v; ?>"<?php endforeach; ?>>
+                                    <?php if ($layer['_loop']): ?>
+                                        <div class="<?= $layer['_loop']['class'] ?>"<?php foreach ($layer['_loop']['config'] as $k => $v): ?> data-<?php echo $k; ?>="<?php echo $v; ?>"<?php endforeach; ?>>
+                                    <?php endif; ?>
+
+                                    <?php echo $layer['_content']; ?>
+
+                                    <?php if ($layer['_loop']): ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $('#slider-revolution-<?php echo $this->id; ?>').revolution(<?php echo json_encode($this->config); ?>);
+            });
+        })(jQuery);
+    </script>
+<?php endif; ?>

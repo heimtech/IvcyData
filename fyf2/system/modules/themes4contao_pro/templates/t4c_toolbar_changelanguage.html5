@@ -1,0 +1,6 @@
+<div class="t4c_change_language t4c_toolbar_form t4c_toolbar_element <?php echo $this->elementClass; ?> <?php if ($this->header_changelanguage_position == 'right') echo 'pull-right'; else echo 'pull-left'; ?>">
+	<?php echo $GLOBALS['TL_LANG']['MSC']['t4c.changelanguage_title']; ?><i class="pro-angle-down"></i>
+	<div class="t4c_toolbar_form_box t4c_hidden_form">
+		<?php echo Contao\Controller::getFrontendModule($this->header_changelanguage_module); ?>
+	</div>
+</div>

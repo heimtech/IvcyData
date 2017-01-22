@@ -1,0 +1,15 @@
+# themes4contao extension license
+# http://themes4contao.com
+
+This extension is an integral part of the theme brought to you by themes4contao.
+By purchasing a theme with this extension you agree to the below terms:
+
+You are licensed to use the extension only with the purchased theme.
+
+You are not allowed to sell the extension, except to one client.
+
+You are allowed to adjust the extension to your needs, but you are not allowed to extract any part of it and use it separately from the genuine extension.
+
+You can't re-distribute the extension in any possible form.
+
+You are not allowed to remove the extension copyrights.

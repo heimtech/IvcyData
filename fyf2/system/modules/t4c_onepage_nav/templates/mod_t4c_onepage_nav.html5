@@ -1,0 +1,20 @@
+<?php $first = true; ?>
+<nav  class="<?= $this->class ?> mod_navigation block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+    <ul class="sf-menu level_1">
+        <?php foreach($this->items as $item): ?>
+        <li <?php if ($first): ?>class="active"<?php $first=false; endif; ?>><a href="<?php if ($item['t4c_onepage_link']) echo $item['t4c_onepage_link']; else echo $item['t4c_onepage_section']; ?>" <?php if ($item['t4c_onepage_link']): ?> class="external" <?php endif; ?> <?php if ($item['t4c_onepage_target']): ?>target="_blank"<?php endif; ?>><?php if ($item['t4c_onepage_icon']): ?><i class="<?php echo $item['t4c_onepage_icon']; ?>"></i> <?php endif; ?><?= $item['t4c_onepage_title']; ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</nav>
+<?php 
+$GLOBALS['TL_BODY'][] = '<script type="text/javascript">
+					(function ($) {
+						$(document).ready(function(){
+							$(".mod_t4c_onepage_nav").onePageNav({
+								currentClass : "active",
+								filter: ":not(.external)"
+							});
+						})
+					})(jQuery)
+				</script>';	
+?>

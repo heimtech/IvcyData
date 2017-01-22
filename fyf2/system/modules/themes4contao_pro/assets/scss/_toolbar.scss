@@ -1,0 +1,579 @@
+/**    Toolbar    **/
+
+.t4c_toolbar{
+	background: $toolbarBackground;
+	height:$toolbarHeight;
+	line-height:$toolbarHeight;
+	font-size: $toolbarFontSize;
+	color: $toolbarColor;
+	border-bottom: $toolbarBottomBorder;
+	z-index:999;
+	position:relative;
+	
+	&.t4c_transparent_toolbar{
+		position:absolute;
+		width:100%;
+		z-index:999;
+		background:none;
+	}
+	
+	&.t4c_transparent_toolbar.visible{
+		position:absolute;
+		width:100%;
+		z-index:9999;
+	}
+	
+	.t4c_toolbar_show_icon{
+		display:none;
+	}
+	
+	.inside{
+		display: block; 
+		max-height: $toolbarHeight;
+		background: none;
+	}
+
+	
+	i{
+		position: relative;
+		top:1px;
+	}
+	
+	&.boxed{
+		background:none !important;
+		> div {
+			background: $toolbarBackground;	
+		}	
+	}	
+	
+	a{
+		text-decoration: none;
+		color:inherit;
+	}
+	
+	a:hover{
+		color: inherit;
+		text-decoration: underline;
+		opacity: 0.8;
+	}
+	
+	.t4c_change_language i{
+		margin:0px 0px 0px 12px;
+	}
+	
+	.t4c_toolbar_element > div i{
+		margin: 0px 7px 0px 20px;
+		font-size:14px; 
+	}
+	
+	.t4c_toolbar_element.pull-right > div:first-child i{
+		margin: 0px 7px 0px 0px;
+	}
+	
+	ul.t4c_social_list i{
+		margin:0px 14px 0px 0px;
+		display:inline-block;
+	}
+	
+	ul.t4c_social_list li:last-child i{
+		margin:0;
+	}
+	
+	.t4c_toolbar_element.pull-left{
+		padding: 0px 0px 0px 23px;
+		margin: 0px 0px 0px 23px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_element.pull-left div:first-child i{
+		margin-left:0px;
+	}
+	
+	.t4c_toolbar_element.pull-left:before{
+		content:"";
+		width:1px;
+		background: $toolbarSeparatorColor;
+		height: $toolbarHeight - 10;
+		position: absolute;
+		left:0px;
+		top:($toolbarHeight - ($toolbarHeight - 10))/2;
+	}
+	
+	.t4c_toolbar_element.pull-left.first{
+		padding: 0px;
+		margin: 0px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_element.pull-left.first:before{
+		display:none;
+	}
+
+	
+	.t4c_toolbar_element.pull-right{
+		padding: 0px 23px 0px 0px;
+		margin: 0px 23px 0px 0px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_element.pull-right:before{
+		content:"";
+		width:1px;
+		background: $toolbarSeparatorColor;
+		height: $toolbarHeight - 10;
+		position: absolute;
+		right:0px;
+		top:($toolbarHeight - ($toolbarHeight - 10))/2;
+	}
+	
+	.t4c_toolbar_element.pull-right.first{
+		padding: 0px;
+		margin: 0px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_element.pull-right.first:before{
+		display:none;
+	}
+	
+	
+	.t4c_change_language{
+		
+		.mod_changelanguage{
+			padding: 15px 10px;
+			display:block;
+		}
+		
+		&.t4c_toolbar_form .t4c_toolbar_form_box{
+			width:44px;
+			padding: 0px;
+			left:auto;
+			right: 0px;
+		}
+		
+		&.t4c_toolbar_form .t4c_toolbar_form_box.t4c_show_box{
+			right:0px;
+		}
+		
+		ul{
+			list-style: none;
+			margin:0;
+			padding:0;
+			
+			li{
+				display: block;
+				margin:0px 0px 1px 0px;
+				padding:0px;
+
+				a,
+				span{
+					display:block; 
+					height:24px;
+					line-height:24px;
+					width:24px;
+					text-align:center;
+					background: $darkGrey;
+					margin:0px auto;
+					color: #fff;
+					@include transition(all, .3s, ease-in); 
+				}
+				
+				a:hover,
+				a.active,
+				span.active{
+					background: $themeColor;
+					color: #fff;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	
+	.t4c_toolbar_contact{
+		float:left;
+	
+		span{
+			display:inline-block;
+		}
+	}
+	
+	.t4c_toolbar_contact_separator{		
+		padding: 0px 14px 0px 0px;
+		margin: 0px 13px 0px 0px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_contact_separator:before{
+		content:"";
+		width:1px;
+		background: $toolbarSeparatorColor;
+		height:13px;
+		position: absolute;
+		right:0px;
+		top: 11px;
+	}
+	
+	.t4c_toolbar_separator_big{		
+		padding: 0px 0px 0px 23px;
+		margin: 0px 0px 0px 23px;
+		position:relative;
+		overflow:visible;
+	}
+	
+	.t4c_toolbar_separator_big:before{
+		content:"";
+		width:1px;
+		background: $toolbarSeparatorColor;
+		height: $toolbarHeight - 10;
+		position: absolute;
+		left:0px;
+		top:($toolbarHeight - ($toolbarHeight - 10))/2;
+	}
+	
+	.t4c_toolbar_form{
+		position:relative;
+		cursor: pointer;
+		display: inline-block;
+		.t4c_toolbar_form_box{
+			background-color: $toolbarDropdownBackground;
+			border-bottom:2px solid $themeColor;
+			display: block;
+			max-height:0;
+			overflow:hidden;
+			padding:0px;
+			position: absolute;
+			left: 0px;
+			top: 80px;
+			width: 230px;
+			z-index:99;
+			opacity: 0;
+			line-height:1;
+			@include transition(all, .2s, linear);
+			
+			> div{
+				padding: 20px 15px;
+			}
+			
+			label{
+				display:none;
+				margin-bottom:4px;
+			}
+			
+			.mod_registration .widget-select label{
+				display: block;
+			}
+			
+			.checkbox_container label,
+			.radio_container label{
+				display:inline-block;
+				margin-bottom:0px;
+			}
+			
+			.checkbox_container,
+			.radiobox_container{
+				margin: 0px 0px 10px 0px;
+			}
+			
+			p.error{
+				line-height: 20px;
+				font-weight:bold;
+				color:$errorTextColor;
+				margin-top:0px;
+			}
+			
+			select.select{
+				margin: 0px 0px 10px 0px;
+			}
+			
+			.submit_container{
+				text-align: right;
+			}
+		}				
+		
+	}
+	
+	.formbody p.error{
+		margin:0px 0px 5px 0px;
+	}
+	
+	.t4c_toolbar_form_box.t4c_show_box{
+		opacity: 1;
+		max-height:2000px;
+		top: $toolbarHeight;
+		display:block;
+        overflow: visible;
+ 	    visibility: visible;
+		left:0px;
+		
+	}
+	
+	.t4c_social{
+	display: inline-block;
+}
+
+.t4c_social_list{
+	list-style: none;
+	margin:0;
+	padding:0;
+	display:inline;
+	
+	li{
+		margin:0px;
+		padding:0px;
+		display: inline;
+		
+		a{
+			line-height: $toolbarHeight;
+			@include transition(all, .3s, ease-in);
+			
+			i{
+				font-size: $toolbarSocialIconSize;
+			}
+		}
+		
+		a:hover{
+			opacity: 0.8;
+		}
+	}
+}
+	
+}
+
+.header_style_8 #header .t4c_toolbar,
+.header_style_9 #header .t4c_toolbar,
+.header_style_10 #header .t4c_toolbar,
+.header_style_11 #header .t4c_toolbar{
+	height:auto;
+	line-height:42px;
+	
+	.t4c_toolbar_show_icon{
+		display: block;
+		height: $toolbarHeight;
+		text-align:center;
+		
+		i{
+			@include transition(all, .3s, ease-in-out);
+			cursor:pointer;
+		}
+	}
+	
+	.t4c_toolbar_show_icon.visible i{
+		@include rotate(-180deg);
+	}
+	
+	.t4c_toolbar_show_icon:hover{
+		color: $darkGrey;
+	}
+	
+	.t4c_toolbar_show_icon.visible + .inside{
+			max-height: 1000px;
+			overflow:visible;
+	}
+	
+	.inside{
+		@include transition(all, .3s, ease-in-out);
+		max-height:0;
+		overflow:hidden;
+		margin:0px;
+	}
+	
+	.t4c_toolbar_form_box{
+		left:auto;
+	}
+	.t4c_toolbar_element{
+		float: none !important;
+		width:100%;
+		margin:0;
+		padding:0;
+		border-bottom: 1px solid $toolbarSeparatorColor;
+	}
+	
+	.t4c_toolbar_element:last-child{
+		border-bottom: none;
+	}
+	
+	.t4c_toolbar_contact{
+		text-align:center;
+
+		.t4c_toolbar_contact_separator{
+			margin:0;
+			padding:0;
+		}
+		
+		.t4c_toolbar_contact_separator:before{
+			display:none;
+		}
+	}
+	
+	.t4c_toolbar_form{
+		display: block;
+		width:100%;
+		
+		.t4c_toolbar_form_box{
+			right: auto;
+			bottom:auto;
+			top:0px;
+		}
+		
+	}
+	
+	.t4c_toolbar_form_box.t4c_show_box{
+		opacity: 1;
+		max-height:1000px;
+		top: 0px;
+		left: $headerWidth;
+		display:block;
+        overflow: visible;
+ 	    visibility: visible;
+		
+	}
+	
+	.inside > div:last-child{
+		border-bottom: none;
+	}
+	
+	
+	 .t4c_toolbar_element.pull-left::before,
+	 .t4c_toolbar_element.pull-right::before{
+		display:none;
+	}
+}
+
+
+.header_style_9 #header .t4c_toolbar,
+.header_style_11 #header .t4c_toolbar{
+	.t4c_toolbar_form_box.t4c_show_box{
+		right: $headerWidth;
+		left: auto;
+	}
+}
+
+@media (max-width: $menuBreakpoint) {
+	
+.header_style_10 #header .t4c_toolbar .t4c_toolbar_form_box.t4c_show_box,
+.header_style_11 #header .t4c_toolbar .t4c_toolbar_form_box.t4c_show_box{
+	left: auto;
+	right:auto;
+}	
+
+.header_style_8 #header .t4c_toolbar,
+.header_style_9 #header .t4c_toolbar,
+.t4c_toolbar{
+	height:auto;
+	background: $toolbarBackground;
+	line-height:42px;
+	font-size: $toolbarFontSize;
+	color: $toolbarColor;
+	position:relative;
+	
+	.t4c_toolbar_show_icon{
+		display: block;
+		height: $toolbarHeight;
+		line-height: $toolbarHeight;
+		text-align:center;
+		
+		i{
+			@include transition(all, .3s, ease-in-out);
+			cursor:pointer;
+		}
+	}
+	
+	.t4c_toolbar_show_icon.visible i{
+		@include rotate(-180deg);
+	}
+	
+	.t4c_toolbar_show_icon:hover{
+		color: $darkGrey;
+	}
+		
+	.t4c_toolbar_show_icon.visible + .inside{
+		max-height: 1000px;
+		overflow:visible;
+	}
+	
+	.container{
+		width: 100%;
+		
+		.inside{
+			margin: 0px;
+		}
+	}
+		
+	.inside{
+		@include transition(all, .3s, ease-in-out);
+		max-height:0;
+		overflow:hidden;
+		margin: 0px -15px;
+		background: $toolbarBackground;
+	}
+	
+	.t4c_change_language{
+		width: 100%;
+		text-align:center;
+	}
+	
+	.t4c_toolbar_form,
+	.t4c_social,
+	.t4c_toolbar_contact{
+		width: 100%;
+		border-bottom: 1px solid $toolbarSeparatorColor;
+		text-align:center;
+		display:block;
+	}
+	
+	.t4c_toolbar_contact span{
+		display: block;
+		text-align:center;
+		margin:0;
+		padding:0;
+	}
+	
+	.t4c_change_language.t4c_toolbar_form .t4c_toolbar_form_box{
+		padding:0px;
+	}
+	
+	.t4c_toolbar_form .t4c_toolbar_form_box{
+		top: auto;
+		left:0;
+		margin:0px auto;
+		border-bottom:none;
+		width:100%;
+		
+		&.t4c_show_box{
+			position: relative;
+			
+			> div{
+				padding:0px 30px 15px 30px;
+			}
+		}
+	}
+	
+	.t4c_toolbar_contact_separator::before,
+	.t4c_toolbar_element.pull-left::before,
+	.t4c_toolbar_element.pull-right::before{
+		display:none;
+	}
+	
+	.t4c_toolbar_element.pull-left,
+	.t4c_toolbar_element.pull-right{
+		padding:0;
+		margin:0;
+		width:100%;
+	}
+	
+	.t4c_toolbar_element span:last-child{
+		border-bottom:none;
+	}
+	
+	.t4c_toolbar_element > span i{
+		margin-left: 0px;
+	}
+	
+}
+
+}

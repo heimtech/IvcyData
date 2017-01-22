@@ -1,0 +1,700 @@
+/**    Button    **/
+.ce_t4c_button a{	
+	color:$themeColor;	
+	display: inline-block;
+	font-size:14px;
+	position:relative;
+	overflow:visible;
+	text-decoration:none;
+	line-height: 1;
+	text-transform:uppercase;
+	
+	@include borderRadius($buttonDefaultRadius);
+	@include transition(all, .3s, ease-out);
+}
+
+.ce_t4c_button{
+	overflow:visible !important;
+	
+	&.icon_position_left a span,
+	&.icon_position_right a span{
+		float:left;
+	}
+	
+	&.icon_position_left.button_tiny a{
+		font-size:10px;
+		
+		span{
+			display:inline-block;
+			height:20px;
+			line-height:19px;
+		}
+		
+		.button_label{
+			padding:0px 10px 0px 4px;
+		}
+		
+		.button_icon{
+			padding:0px 10px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+
+	}
+	
+	&.icon_position_left.button_small a{
+		font-size:12px;
+		
+		span{
+			display:inline-block;
+			height:26px;
+			line-height:25px;
+			
+		}
+		
+		.button_label{
+			padding:0px 12px 0px 7px;
+		}
+		
+		.button_icon{
+			padding:0px 12px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_left.button_normal a{
+		font-size:13px;
+		
+		span{
+			display:inline-block;
+			height:33px;
+			line-height:33px;
+		}
+		
+		.button_label{
+			padding:0px 13px 0px 7px;
+		}
+		
+		.button_icon{
+			padding:0px 13px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_left.button_large a{
+		font-size:15px;
+		
+		span{
+			display:inline-block;
+			height:42px;
+			line-height:40px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+		
+		.button_label{
+			padding:0px 15px 0px 13px;
+		}
+		
+		.button_icon{
+
+			padding:0px 15px;
+		}
+	}
+	
+	&.icon_position_left.button_jumbo a{
+		font-size:18px;
+		font-weight:normal;
+		
+		span{
+			display:inline-block;
+			line-height:58px;
+			height:60px;
+		}
+		
+		.button_label{
+			padding:0px 20px;
+		}
+		
+		.button_icon{
+			padding:0px 20px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_left.text_icon.icon_padding .button_label{
+		padding-left: 0px;
+	}
+	
+	&.icon_position_left.button_tiny.simple_text{
+		.button_label{
+			padding-right:13px;	
+			padding-left:13px;
+		}
+	}
+	
+	&.icon_position_left.button_small.simple_text{
+		.button_label{
+			padding-right:15px;	
+			padding-left:15px;			
+		}
+	}
+	
+	&.icon_position_left.button_normal.simple_text{
+		.button_label{
+			padding-right:20px;	
+			padding-left:20px;
+		}
+	}
+	
+	&.icon_position_left.button_large.simple_text{
+		.button_label{
+			padding-right:25px;	
+			padding-left:25px;
+		}
+	}
+	
+	&.icon_position_left.button_jumbo.simple_text{
+		.button_label{
+			padding-right:30px;	
+			padding-left:30px
+		}
+	}
+	
+	/**/
+	
+	&.icon_position_right.button_tiny a{
+		font-size:10px;
+		
+		span{
+			display:inline-block;
+			height: 20px;
+			line-height:19px;
+		}
+		
+		.button_label{
+			padding:0px 13px 0px 13px;
+		}
+		
+		.button_icon{
+			padding:0px 10px 0px 10px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+
+	}
+	
+	&.icon_position_right.button_small a{
+		font-size:12px;
+		
+		span{
+			display:inline-block;
+			height:26px;
+			line-height:25px;
+		}
+		
+		.button_label{
+			padding:0px 15px 0px 15px;
+		}
+		
+		.button_icon{
+			padding:0px 12px 0px 12px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_right.button_normal a{
+		font-size:13px;
+		
+		span{
+			display:inline-block;
+			height:33px;
+			line-height:33px;
+		}
+		
+		.button_label{
+			padding:0px 13px;
+		}
+		
+		.button_icon{
+			padding:0px 13px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_right.button_large a{
+		font-size:15px;
+		
+		span{
+			display:inline-block;
+			height: 42px;
+			line-height:40px;
+		}
+		
+		.button_label{
+			padding:0px 25px 0px 25px;
+		}
+		
+		.button_icon{
+			padding:0px 15px 0px 15px;
+			
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_right.button_jumbo a{
+		font-size:18px;
+		font-weight:normal;
+		
+		span{
+			display:inline-block;
+			height:60px;
+			line-height:58px;
+		}
+		
+		.button_label{
+			padding:0px 20px;
+			font-weight:normal;
+		}
+		
+		.button_icon{
+			padding:0px 20px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_right.text_icon.icon_padding .button_label{
+		padding-right: 0px;
+	}
+	
+	&.icon_position_right.button_tiny.simple_text{
+		.button_label{
+			padding-left:13px;	
+
+		}
+	}
+	
+	&.icon_position_right.button_small.simple_text{
+		.button_label{
+			padding-left:15px;	
+		}
+	}
+	
+	&.icon_position_right.button_normal.simple_text{
+		.button_label{
+			padding-left:20px;	
+		}
+	}
+	
+	&.icon_position_right.button_large.simple_text{
+		.button_label{
+			padding-left:25px;	
+		}
+	}
+	
+	&.icon_position_right.button_jumbo.simple_text{
+		.button_label{
+			padding-left:30px;	
+		}
+	}
+	
+	/**/
+	
+	&.icon_position_top.button_tiny a{
+		font-size:10px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:16px;
+		}
+		
+		.button_label{
+			padding:0px 13px 0px 13px;
+			line-height:14px;
+		}
+		
+		.button_icon{
+			padding:0px 10px 0px 10px;
+			line-height:18px;
+			i{
+				line-height:inherit;
+			}
+		}
+
+	}
+	
+	&.icon_position_top.button_small a{
+		font-size:12px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:20px;
+		}
+		
+		.button_label{
+			padding:0px 15px 0px 15px;
+			line-height:16px;
+		}
+		
+		.button_icon{
+			padding:0px 12px 0px 12px;
+			line-height:20px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_top.button_normal a{
+		font-size:13px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:26px;
+		}
+		
+		.button_label{
+			padding:0px 20px 0px 20px;
+			line-height:24px;
+		}
+		
+		.button_icon{
+			padding:0px 13px 0px 13px;
+			line-height:28px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_top.button_large a{
+		font-size:15px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:32px;
+		}
+		
+		.button_label{
+			padding:0px 25px;
+			line-height:30px;
+		}
+		
+		.button_icon{
+			padding:0px 15px;
+			line-height:34px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_top.button_jumbo a{
+		font-size:18px;
+		font-weight:normal;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:38px;
+		}
+		
+		.button_label{
+			padding:0px 30px;
+			line-height:36px;
+		}
+		
+		.button_icon{
+			padding:0px 20px;
+			line-height:40px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_top.text_icon.icon_padding .button_label{
+		padding-top: 0px;
+	}
+	
+	/**/
+	
+	&.icon_position_bottom.button_tiny a{
+		font-size:10px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:16px;
+		}
+		
+		.button_label{
+			padding:0px 13px;
+			line-height:18px;
+		}
+		
+		.button_icon{
+			padding:0px 10px;
+			line-height:14px;
+			i{
+				line-height:inherit;
+			}
+		}
+
+	}
+	
+	&.icon_position_bottom.button_small a{
+		font-size:12px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:20px;
+		}
+		
+		.button_label{
+			padding:0px 15px 0px 15px;
+			line-height:22px;
+		}
+		
+		.button_icon{
+			padding:0px 12px;
+			line-height:18px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_bottom.button_normal a{
+		font-size:13px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:26px;
+		}
+		
+		.button_label{
+			padding:0px 20px;
+			line-height:28px;
+		}
+		
+		.button_icon{
+			padding:0px 13px;
+			line-height:24px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_bottom.button_large a{
+		font-size:15px;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:32px;
+		}
+		
+		.button_label{
+			padding:0px 25px;
+			line-height:34px;
+		}
+		
+		.button_icon{
+			padding:0px 15px;
+			line-height:30px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_bottom.button_jumbo a{
+		font-size:18px;
+		font-weight:normal;
+		display:inline-block;
+		text-align:center;
+		
+		span{
+			display:block;
+			height:38px;
+		}
+		
+		.button_label{
+			padding:0px 30px;
+			line-height:40px;
+		}
+		
+		.button_icon{
+			padding:0px 20px;
+			line-height:36px;
+			i{
+				line-height:inherit;
+			}
+		}
+	}
+	
+	&.icon_position_bottom.text_icon.icon_padding .button_label{
+		padding-bottom: 0px;
+	}
+	
+	/**/
+	
+	&.rounded a{
+		background: $themeColor;
+		border: 1px solid $themeColor;
+		color: #fff;
+		
+		@include borderRadius($buttonDefaultRadius)
+	}
+	
+	&.square a{
+		background: $themeColor;
+		border: 1px solid $themeColor;
+		color: #fff;
+		
+		@include borderRadius(0px);
+	}
+	
+	&.round a{
+		background: $themeColor;
+		border: 1px solid $themeColor;
+		color: #fff;		
+		
+		@include borderRadius(10px);
+		
+	}
+	
+	&.outlined a{
+		background:none;
+		border: 1px solid $themeColor;
+		color: $themeColor;
+				
+		@include borderRadius($buttonDefaultRadius);
+	}
+	
+	&.square-outlined a{
+		background:none;
+		border: 1px solid $themeColor;
+		color: $themeColor;
+		
+		@include borderRadius(0px);
+	}
+	
+	&.round-outlined a{
+		background:none;
+		border: 1px solid $themeColor;
+		color: $themeColor;
+		
+		@include borderRadius(10px);
+	}
+	
+	&.custom a{
+		border-style: solid;
+	}
+	
+	/**/
+
+	& a:hover{
+		text-decoration:none;
+	}
+	
+	&.hover_darker a:hover{
+		color:#fff;
+	}
+	
+	&.hover_darker a:after{
+    	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+    	content: "";
+    	height: 100%;
+    	left: 0;
+    	position: absolute;
+    	top: 0;
+    	width: 0;
+   		z-index: 1;
+		
+		@include transition(all, .3s, ease-out);
+	}
+	
+	&.hover_darker a:hover:after{
+		width:100%;
+	}
+	
+	&.hover_lighter a:hover{
+		color:#fff;
+	}
+	
+	&.hover_lighter a:after{
+    	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    	content: "";
+    	height: 100%;
+    	left: 0;
+    	position: absolute;
+    	top: 0;
+    	width: 0;
+   		z-index: 1;
+		
+		@include transition(all, .3s, ease-out);
+	}
+	
+	&.hover_lighter a:hover:after{
+		width:100%;
+	}
+	
+	&.hover_opacity a:hover{
+		opacity:0.6
+	}
+	
+	&.hover_zoom_in a:hover{
+		@include scale(1.1);
+	}
+	
+	&.hover_zoom_out a:hover{
+		@include scale(0.9);
+	}
+	
+	&.hover_glow a:hover{
+		@include shadow();
+	}
+}
+

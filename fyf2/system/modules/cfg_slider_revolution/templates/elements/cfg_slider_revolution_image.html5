@@ -1,0 +1,3 @@
+<?php if ($this->src): ?>
+<img src="<?= $this->src ?>" width="<?= $this->width ?>" height="<?= $this->height ?>" alt=""<?php if ($this->ww): ?> data-ww="<?= $this->ww ?>"<?php endif; ?><?php if ($this->hh): ?> data-hh="<?= $this->hh ?>"<?php endif; ?>>
+<?php endif; ?>

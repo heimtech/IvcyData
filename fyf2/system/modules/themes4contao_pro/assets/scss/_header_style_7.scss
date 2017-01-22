@@ -1,0 +1,642 @@
+#modalMenu {
+    background: rgba(#000, 0.9) !important;
+    color: #fff;
+    .mod_navigation, .mod_t4c_megamenu {
+        font-size: $mainMenuFontSize;
+        padding: 0px 0px;
+        .sf-menu {
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            
+			li a{
+				font-family: $menuFont;
+			}
+			
+			ul, .sf-mega {
+                top: auto;
+                left: auto;
+                position: relative;
+                margin: 0px auto;
+                background: none;
+                background-image: none !important;
+                border-bottom: none;
+                display: none;
+                text-align: center;
+            }
+            .sf-mega {
+                height: auto;
+                padding: 15px;
+                width: $submenuWidth;
+				
+                ul {
+                    display: block;
+                    position: relative;
+                    width: $submenuWidth;
+                    border-bottom: none;
+                    text-align: left;
+                    background: none;
+                    li {
+                        border-bottom: none;
+                    }
+                }
+            }
+            ul {
+                width: $submenuWidth;
+                left: auto;
+                li {
+                    position: relative;
+                }
+            }
+            ul ul {
+                width: $submenuWidth;
+                left: auto;
+                top: 0% !important;
+                background: none;
+                li {
+                    @include transition(all, .3s, ease-in-out);
+                    border-bottom: 1px solid $submenuSeparator;
+                    line-height: 22px;
+                    a {
+                        color: $mainMenuSubmenuTextColor;
+                        @include transition(all, .3s, ease-in-out);
+                        text-decoration: none;
+                        padding: 7px 15px;
+                        display: block;
+                        text-align: left;
+                    }
+                }
+            }
+            ul > li {
+                float: none;
+            }
+            > li {
+                display: block;
+                border-bottom: none;
+                width: 100%;
+                text-align: center;
+            }
+            li:hover > .sf-mega,
+            li.sfHover > .sf-mega,
+            li:hover > ul,
+            li.sfHover > ul {
+                display: block;
+            }
+            > li:hover > a,
+            > li.sfHover > a {
+                background: none;
+            }
+            > li > a {
+                display: inline-block;
+                position: relative;
+                font-size: $mainMenuFontSize;
+                color: $mainMenuTextColor;
+                text-decoration: none;
+                padding: 0;
+                background: none;
+                text-align: center;
+                width: $submenuWidth;
+                margin: 0px auto;
+                @include transition(all, .3s, ease-in-out);
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    @include transition(all, .3s, ease-in-out);
+                    border-bottom: 1px solid $submenuSeparator;
+                    line-height: 22px;
+                    a {
+                        color: $mainMenuSubmenuTextColor;
+                        @include transition(all, .3s, ease-in-out);
+                        text-decoration: none;
+                        padding: 7px 15px;
+                        display: block;
+                        text-align: left;
+                    }
+                }
+                li:hover,
+                li.sfHover {
+                    > a {
+                        background: $submenuHoverBackgroundColor;
+                        color: $submenuHoverTextColor;
+                    }
+                }
+            }
+        }
+    }
+    // Menu Style 1
+    .menu_style1 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    > a {
+                        line-height: 54px;
+                        height: 54px;
+                    }
+                }
+                > li {
+                    margin: 0px;
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+            }
+        }
+    }
+    // Menu Style 1 - end
+    // Menu Style 2
+    .menu_style2 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                > li > a {
+                    position: relative;
+                    height: 54px;
+                    line-height: 54px;
+                }
+                > li > a:before {
+                    content: "";
+                    height: 3px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 30px;
+                    opacity: 0;
+                    @include transition();
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+                > li > a:hover:before,
+                > li.active > a:before,
+                > li > a.trail:before,
+                > li.sfHover > a:before {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    // Menu Style 2 - end
+    // Menu Style 3
+    .menu_style3 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 1px 0px;
+                }
+                > li > a {
+                    position: relative;
+                    line-height: 54px;
+                    height: 54px;
+                }
+                > li > a:before {
+                    content: "";
+                    height: 3px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 30px;
+                    opacity: 0;
+                    @include transition();
+                }
+                > li > a:after {
+                    content: "";
+                    height: 3px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    top: 30px;
+                    opacity: 0;
+                    @include transition();
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+                > li > a:hover:before,
+                > li.active > a:before,
+                > li > a.trail:before,
+                > li.sfHover > a:before {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+                > li > a:hover:after,
+                > li.active > a:after,
+                > li > a.trail:after,
+                > li.sfHover > a:after {
+                    top: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    // Menu Style 3 - end
+    // Menu Style 4
+    .menu_style4 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 1px 0px;
+                }
+                > li > a {
+                    height: 54px;
+                    line-height: 54px;
+                }
+                > li > a:before {
+                    content: "";
+                    height: 1px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: -30px;
+                    opacity: 0;
+                    @include transition();
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+                > li > a:hover:before,
+                > li.active > a:before,
+                > li > a.trail:before,
+                > li.sfHover > a:before {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    // Menu Style 4 - end
+    // Menu Style 5
+    .menu_style5 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 2px 0px;
+                }
+                > li > a {
+                    height: 38px;
+                    line-height: 38px;
+                    padding: 0px 14px;
+                    position: relative;
+                    background: none;
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: #fff;
+                    background: $mainMenuHoverTextColor;
+                }
+            }
+        }
+    }
+    // Menu Style 5 - end
+    // Menu Style 6
+    .menu_style6 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 4px 0px;
+                }
+                > li > a {
+                    height: 38px;
+                    line-height: 38px;
+                    padding: 0px 20px;
+                    position: relative;
+                    background: none;
+                    @include borderRadius($mainMenuBorderRadius);
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: #fff;
+                    background: $mainMenuHoverTextColor;
+                }
+            }
+        }
+    }
+    // Menu Style 6 - end
+    // Menu Style 7
+    .menu_style7 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 4px 0px;
+                }
+                > li > a {
+                    height: 38px;
+                    line-height: 38px;
+                    position: relative;
+                    padding: 0px 15px;
+                }
+                > li > a:before {
+                    content: "]";
+                    position: absolute;
+                    right: 5px;
+                    top: auto;
+                    opacity: 0;
+                    @include transition(all, .2s, ease-out);
+                }
+                > li > a:after {
+                    content: "[";
+                    position: absolute;
+                    left: 5px;
+                    top: auto;
+                    opacity: 0;
+                    @include transition(all, .2s, ease-out);
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+                > li > a:hover:before,
+                > li.active > a:before,
+                > li > a.trail:before,
+                > li.sfHover > a:before {
+                    right: 0px;
+                    opacity: 1;
+                }
+                > li > a:hover:after,
+                > li.active > a:after,
+                > li > a.trail:after,
+                > li.sfHover > a:after {
+                    left: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    // Menu Style 7 - end
+    // Menu Style 8
+    .menu_style8 {
+        .mod_navigation, .mod_t4c_megamenu {
+            ul.sf-menu {
+                > li {
+                    margin: 0px 0px 4px 0px;
+                }
+                > li > a {
+                    height: 38px;
+                    line-height: 38px;
+                    position: relative;
+                    padding: 0px 6px;
+                }
+                > li > a:before {
+                    content: "";
+                    height: 1px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 30px;
+                    opacity: 0;
+                    @include transition(all, .2s, ease-out);
+                }
+                > li > a:after {
+                    content: "";
+                    height: 1px;
+                    background: $mainMenuHoverTextColor;
+                    width: 100%;
+                    position: absolute;
+                    left: 0px;
+                    top: 30px;
+                    opacity: 0;
+                    @include transition(all, .2s, ease-out);
+                }
+                > li > a:hover,
+                > li.active > a,
+                > li > a.trail,
+                > li.sfHover > a {
+                    color: $mainMenuHoverTextColor;
+                }
+                > li > a:hover:before,
+                > li.active > a:before,
+                > li > a.trail:before,
+                > li.sfHover > a:before {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+                > li > a:hover:after,
+                > li.active > a:after,
+                > li > a.trail:after,
+                > li.sfHover > a:after {
+                    top: 0px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+#t4c_modal_menu_content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.mod_sitemap,
+.mod_navigation,
+.mod_customnav,
+.mod_t4c_megamenu {
+    i {
+        display: none;
+    }
+}
+.mod_customnav.t4c_show_icons i,
+.mod_sitemap.t4c_show_icons i,
+.mod_navigation.t4c_show_icons i,
+.mod_t4c_megamenu.t4c_show_icons i {
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+}
+.header_style_7 #header {
+    #logo {
+        display: inline-block;
+        float: right;
+    }
+    #header.stuck .t4c_search_form {} #t4c_modal_menu {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+         border: 1px solid $headerIconBorderColor;
+		background:$headerIconBackgroundColor;
+        color: $headerIconColor;;
+        text-align: center;
+        cursor: pointer;
+        color: $headerIconColor;
+        position: absolute;
+        top: 50%;
+        margin-top: -17px;
+        left: 0px;
+        @include borderRadius($searchFormIconBorderRadius);
+        @include transition();
+        a {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            @include transition();
+        }
+    }
+    .t4c_main_nav {
+       height: $headerHeight - $mainMenuTopMargin;
+		margin-top: $mainMenuTopMargin;
+        display: inline-block;
+        float: left;
+        position: relative;
+    }
+    #t4c_modal_menu:hover {
+        border: 1px solid $headerIconHoverBorderColor;
+        background: $headerIconHoverBackgroundColor;
+        a {
+            color: $headerIconHoverColor;
+        }
+    }
+    .t4c_search_form {
+        height: $headerHeight - $mainMenuTopMargin;
+        position: absolute;
+        top: 0;
+        margin-top: 0px;
+        left: 37px;
+        width: 34px;
+        .t4c_search_form_icon {
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            display: block;
+            width: 34px;
+            height: 34px;
+            line-height: 32px;
+            border: 1px solid $headerIconBorderColor;
+			background:$headerIconBackgroundColor;
+            color: $headerIconColor;;
+            text-align: center;
+            cursor: pointer;
+            @include borderRadius($searchFormIconBorderRadius);
+        }
+		
+		.t4c_search_form_icon:hover{
+			border: 1px solid $headerIconHoverBorderColor;
+			background:$headerIconHoverBackgroundColor;
+			color: $headerIconHoverColor;
+		}
+		
+        .t4c_search_form_box {
+            background-color: $searchFormBoxColor;
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0px;
+            position: absolute;
+            left: 0px;
+            top: 120%;
+            width: 360px;
+            margin: 0;
+            z-index: 9;
+            opacity: 0;
+            line-height: 1;
+            @include transition(all, .2s, linear);
+            > div {
+                padding: 10px 15px;
+            }
+            .close {
+                display: block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 14px;
+                text-align: center;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                text-decoration: none;
+                color: inherit;
+            }
+            .close {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        input.text {
+            height: 32px;
+            padding: 0px 15px;
+            border: 1px solid #d1d2d3;
+            color: $toolbarInputTextColor;
+            background: $toolbarInputBackgroundColor;
+            margin: 0px 0px 10px 0px;
+            width: 265px;
+            float: left;
+        }
+        button.submit {
+            height: 32px;
+            width: 32px;
+            padding: 0px;
+            border: none;
+            color: $inputSubmitColor;
+            background: $inputSubmitBackround;
+            margin: 0px 0px 0px 0px;
+            float: left;
+        }
+        .t4c_search_form_box.visible {
+            opacity: 1;
+            max-height: 1000px;
+            bottom: auto;
+            display: block;
+            overflow: visible;
+            visibility: visible;
+        }
+    }
+}
+.header_style_7 #header.stuck {
+    height: $headerStickyHeight;
+    #logo {
+        height: $headerStickyHeight;
+        display: inline-block;
+        padding: $stickyLogoPadding;
+        float: left;
+    }
+    .t4c_main_nav {
+        height: $headerStickyHeight;
+        border: none;
+        display: inline-block;
+        width: auto;
+        float: right;
+        clear: none;
+    }
+    .t4c_search_form {
+        height: $headerStickyHeight;
+    }
+    .t4c_search_form .t4c_search_form_box.visible {
+        top: $headerStickyHeight;
+    }
+}
+@media (min-width: 992px) {
+    .header_style_7 #header {
+        .mod_navigation, .mod_t4c_megamenu {
+            .sf-menu .sf-mega {
+                width: 100%;
+            }
+        }
+    }
+}

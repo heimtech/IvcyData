@@ -1,0 +1,16 @@
+<div id="iconpicker-popup">
+    <div id="iconpicker-popup-search">
+        <div class="inside">
+            <label for="iconpicker-popup-keyword"><?php echo $this->search; ?></label>
+            <input type="text" id="iconpicker-popup-keyword" value="" class="tl_text">
+        </div>
+    </div>
+
+    <div class="tl_listing_container" id="iconpicker-popup-icons">
+        <?php foreach ($this->icons as $icon): ?>
+            <div class="icon" data-value="<?php echo $icon['class']; ?>" data-tags="<?php echo implode(',', $icon['tags']); ?>">
+                <span class="<?php echo $icon['class']; ?>"></span>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

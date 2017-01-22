@@ -1,0 +1,17 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php 
+	if($this->t4c_ib_layout=='layout_1' || $this->t4c_ib_layout=='layout_2' || $this->t4c_ib_layout=='layout_4' || $this->t4c_ib_layout=='layout_5' || $this->t4c_ib_layout=='layout_9'  || $this->t4c_ib_layout=='layout_10'){
+		echo $this->Template->box_icon;
+		echo $this->Template->box_text;
+	}
+	
+	if($this->t4c_ib_layout=='layout_3' || $this->t4c_ib_layout=='layout_6' || $this->t4c_ib_layout=='layout_11'){		
+		echo $this->Template->box_text;
+		echo $this->Template->box_icon;		
+	}
+	
+	if($this->t4c_ib_layout=='layout_7' || $this->t4c_ib_layout=='layout_8' || $this->t4c_ib_layout=='layout_12' || $this->t4c_ib_layout=='layout_13'){
+		echo $this->Template->box_text;
+	}
+?>
+</div>

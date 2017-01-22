@@ -1,0 +1,11 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <ul>
+    <?php foreach ($this->items as $item): ?>
+      <li<?php if ($item['class']): ?> class="<?php echo $item['class']; ?>"<?php endif; ?>><i class="<?php echo $this->t4c_icon; ?>" <?php if($this->t4c_icon_color): ?>style="color:<?php echo $this->t4c_icon_color; ?>;"<?php endif; ?>></i> <span><?php echo $item['content']; ?></span></li>
+    <?php endforeach; ?>
+  </ul>
+
+<?php $this->endblock(); ?>

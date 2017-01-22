@@ -1,0 +1,15 @@
+<div class="<?php echo $this->class; ?> <?php echo $this->t4c_text_align; ?> <?php echo $this->position; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> data-endval="<?php echo $this->t4c_qf_number; ?>" data-duration="<?php echo $this->t4c_c_rolling_time; ?>" data-separator="<?php echo $this->t4c_thousands_separator; ?>" data-decimal="<?php echo $this->t4c_decimal_point; ?>" data-prefix="<?php echo $this->t4c_prefix; ?>" data-suffix="<?php echo $this->t4c_surffix; ?>">
+	<?php if ($this->position == 'number_bottom' || $this->position == 'number_right'): ?>
+    	<div class="desc">
+			<h3><?php echo $this->t4c_title; ?></h3>
+			<div class="text"><?php echo $this->t4c_qf_description; ?></div>
+		</div>
+		<div class="number" id="counter_<?php echo $this->id; ?>" >0</div>		                
+    <?php else: ?>
+    	<div class="number" id="counter_<?php echo $this->id; ?>" >0</div>
+        <div class="desc">
+			<h3><?php echo $this->t4c_title; ?></h3>
+			<div class="text"><?php echo $this->t4c_qf_description; ?></div>
+		</div>
+    <?php endif; ?>
+</div>

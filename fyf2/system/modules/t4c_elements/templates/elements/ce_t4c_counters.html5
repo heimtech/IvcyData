@@ -1,0 +1,20 @@
+<?php $random = substr(number_format(time() * mt_rand(),0,'',''),0,10); ?>
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> data-endval="<?php echo $this->t4c_c_value; ?>" data-duration="<?php echo $this->t4c_c_rolling_time; ?>" data-separator="<?php echo $this->t4c_thousands_separator; ?>" data-decimal="<?php echo $this->t4c_decimal_point; ?>" data-prefix="<?php echo $this->t4c_prefix; ?>" data-suffix="<?php echo $this->t4c_surffix; ?>">
+	<?php if ($this->t4c_icon_position == 'bottom' || $this->t4c_icon_position == 'right'): ?>
+		<div class="t4c_text">
+			<h3><?php echo $this->t4c_title; ?></h3>
+			<div class="number" id="counter_<?php echo $random; ?>">0</div>
+		</div>
+		<?php echo $this->Template->box_icon; ?>
+    <?php else: ?>
+    	<?php echo $this->Template->box_icon; ?>
+        <div class="t4c_text">
+			<div class="number" id="counter_<?php echo $random; ?>">0</div>
+            <h3><?php echo $this->t4c_title; ?></h3>
+		</div>		
+    <?php endif; ?>
+</div>
+
+
+
+

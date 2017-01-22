@@ -1,0 +1,10 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="t4c_intense" data-image="<?php echo $this->href; ?>" <?php if ($this->linkTitle): ?>data-title="<?php echo $this->linkTitle; ?>"<?php endif; ?> <?php if ($this->caption): ?>data-caption="<?php echo $this->caption; ?>"<?php endif; ?>>
+	<figure class="image_container"<?php if ($this->margin): ?> style="<?php echo $this->margin; ?>"<?php endif; ?>>
+    <?php $this->insert('picture_default', $this->picture); ?>
+  </figure>
+</div>
+<?php $this->endblock(); ?>

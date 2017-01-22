@@ -1,0 +1,5 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<?php foreach ($this->items as $item): ?>
+	<?php echo $item; ?>
+<?php endforeach; ?>
+</div>

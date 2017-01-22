@@ -1,0 +1,13 @@
+<div class="<?php echo $this->class; ?> block gt_<?php echo $this->t4c_googleID; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php
+$w = '';
+$h = '';
+if ($this->t4c_googletr_width){
+	$w = '&amp;w='.(int)$width;
+} 
+if ($this->t4c_googletr_height){
+	$h = '&amp;h='.(int)$height;
+}
+?>	
+<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&amp;q=<?php echo $this->t4c_googletr_terms; ?>&cmpt=q&amp;geo=<?php echo $this->t4c_googletr_location; ?>&amp;content=1&amp;cid=<?php echo $this->t4c_googletr_graph; ?>&amp;export=5<?php echo $w.$h; ?>"></script>
+</div>

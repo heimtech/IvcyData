@@ -1,0 +1,28 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?= $this->embed_pre ?>
+  <a href="<?= $this->href ?>" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?> <?= $this->button_style; ?>>
+  <?php if ($this->t4c_icon_position == 'bottom' || $this->t4c_icon_position == 'right'): ?>
+  		<?php if ($this->title): ?>
+        	<span class="button_label"><?= $this->title ?></span>
+       	<?php endif; ?>
+        
+        <?php if ($this->t4c_icon): ?>
+        	<span class="button_icon" <?= $this->icon_style; ?>><i class="<?= $this->t4c_icon; ?>"></i></span>
+        <?php endif; ?>
+  <?php else: ?>
+  		<?php if ($this->t4c_icon): ?>
+        	<span class="button_icon" <?= $this->icon_style; ?>><i class="<?= $this->t4c_icon; ?>"></i></span>
+        <?php endif; ?>
+		
+		<?php if ($this->title): ?>
+        	<span class="button_label"><?= $this->title ?></span>
+       	<?php endif; ?>
+  <?php endif; ?>
+  </a>	
+ 
+  <?= $this->embed_post ?>
+
+<?php $this->endblock(); ?>

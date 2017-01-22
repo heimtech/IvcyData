@@ -1,0 +1,69 @@
+/**    Blockquote    **/
+.ce_t4c_blockquote {
+	background:$blockquoteBgColor;
+	padding:30px;
+	position:relative;
+	overflow:hidden;
+	color: $blockquoteTextColor;
+	@include borderRadius($blockquoteBorderRadius);
+	
+	.t4c_author{
+		display:block;
+		margin-top:15px;
+		font-weight:bold;
+	}
+	
+	&.text-align-left{
+		text-align:left;
+		padding-left:70px;
+	
+		.quotation{
+			position:absolute;
+			font-size:55px;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-weight:bold;
+			color:$blockquoteMarksColor;
+			top:15px;
+			left:15px;
+			@include rotate(360deg);
+		}
+	}
+	
+	&.text-align-right{
+		text-align:right;
+		padding-right:70px;
+	
+		.quotation{
+			position:absolute;
+			font-size:45px;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-weight:bold;
+			color:$blockquoteMarksColor;
+			top:15px;
+			right:15px;
+			@include rotate(360deg);
+		}
+	}
+	
+	&.text-align-center{
+		text-align:center;
+		padding-bottom:55px;
+	
+		.quotation{
+			position:absolute;
+			font-size:45px;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-weight:bold;
+			color:$blockquoteMarksColor;
+			bottom:35px;
+			left:0px;
+			text-align:center;
+			width:100%;
+			@include rotate(360deg);
+		}
+	}
+	
+	p{
+		margin:0px;
+	}
+}

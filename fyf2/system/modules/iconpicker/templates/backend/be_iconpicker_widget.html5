@@ -1,0 +1,26 @@
+<h3>
+    <label><?php echo $this->label; ?></label>
+</h3>
+
+<div id="iconpicker_<?php echo $this->id; ?>" class="iconpicker_container">
+    <div class="preview">
+        <span class="<?php echo $this->value; ?>"></span>
+    </div>
+
+    <input type="text" id="ctrl_<?php echo $this->id; ?>" class="tl_text" name="<?php echo $this->name; ?>" value="<?php echo $this->value; ?>">
+
+    <a href="<?php echo $this->url; ?>" class="tl_submit"><?php echo $GLOBALS['TL_LANG']['MSC']['iconpicker.select']; ?></a>
+</div>
+
+<?php if ($this->hasErrors()): ?>
+    <?php echo $this->getErrorAsHTML(); ?>
+<?php endif; ?>
+
+<script>
+    window.addEvent('domready', function() {
+        new IconPicker($('iconpicker_<?php echo $this->id; ?>'), {
+            'width': 740,
+            'title': '<?php echo specialchars($GLOBALS['TL_LANG']['MSC']['iconpicker.popup']); ?>'
+        });
+    });
+</script>

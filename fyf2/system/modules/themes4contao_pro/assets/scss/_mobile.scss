@@ -1,0 +1,234 @@
+/**    Navigation    **/
+
+#header{
+	.mod_navigation,
+	.mod_t4c_megamenu{
+		color:#bdbdbd;
+		overflow:visible;
+		
+		h1,h2,h3,h4,h5,h6{
+			color:#fff;	
+		}
+		
+		.block{
+			overflow:hidden;
+		}
+		
+		.sf-menu {
+		  	margin: 0;
+		  	padding: 0;
+		  	list-style: none;
+		  	
+			li{
+				border-bottom: 1px solid $mobileLevel1BorderColor;
+					
+				> a{						
+					color: $mobileLevel1TextColor;
+					background: $mobileLevel1BgColor;
+					display:block;
+					width:100%;
+					padding:10px 10px;
+					text-decoration:none;
+					text-transform:$menuTextTransform;
+					font-family: $mobileMenuFont;
+					font-size: $mobileMenuFontSize;
+					@include transition();
+				}
+					
+				> a:hover{
+					background: $mobileLevel1ActiveBgColor;
+					color: $mobileLevel1ActiveTextColor;
+					text-decoration:none;
+				}
+			}
+			
+			li:hover > .sf-mega,
+			li.sfHover > .sf-mega,
+			li:hover > ul,
+			li.sfHover > ul {
+				display: block;
+			}
+			
+			ul{
+				list-style: none;
+				margin:0;
+				padding:0;
+			}
+			
+			.sf-mega{
+				height:auto;
+				background:none;
+				padding: 0px;
+				ul{
+					display: block;
+					position:relative;
+					width:100%;
+					border-bottom:none;
+					text-align:left;
+					
+					li{
+						border-bottom: none;
+					}
+				}
+			}
+			
+			ul{
+				position: relative;
+				display: none;
+				top: 0px;
+				left: 0px;
+				z-index: 99;
+				font-size: $mobileMenuFontSize;
+				background:#202020;
+					
+				li {
+					border-bottom:  1px solid $mobileLevel2BorderColor;
+						
+					a{
+						color: $mobileLevel2TextColor;
+						background: $mobileLevel2BgColor;
+						text-transform:none;
+						font-size:$mobileMenuFontSize - 1;
+					}
+								
+					a:hover{
+						background: $mobileLevel2ActiveBgColor;
+						color: $mobileLevel2ActiveTextColor;
+					}
+				}
+							
+				ul{
+					li{
+						border-bottom:  1px solid $mobileLevel3BorderColor;			
+						
+						a{
+							color: $mobileLevel3TextColor;
+							background: $mobileLevel3BgColor;
+						}
+					
+						a:hover{
+							background: $mobileLevel3ActiveBgColor;
+							color: $mobileLevel3ActiveTextColor;
+						}	
+					}
+				}
+			}
+			
+			.sf-mega {
+				position: relative;
+				display: none;
+				top: 0px;
+				left: 0px;
+				z-index: 99;
+				font-size: $mobileMenuFontSize;
+				background:#202020;
+					
+				ul li {
+					border-bottom:  1px solid $mobileLevel2BorderColor;
+						
+					a{
+						color: $mobileLevel2TextColor;
+						background: $mobileLevel2BgColor;
+					}
+								
+					a:hover{
+						background: $mobileLevel2ActiveBgColor;
+						color: $mobileLevel2ActiveTextColor;
+					}
+				}
+							
+				ul ul{
+					li{
+						border-bottom:  1px solid $mobileLevel3BorderColor;			
+						
+						a{
+							color: $mobileLevel3TextColor;
+							background: $mobileLevel3BgColor;
+						}
+					
+						a:hover{
+							background: $mobileLevel3ActiveBgColor;
+							color: $mobileLevel3ActiveTextColor;
+						}	
+					}
+				}
+			}
+			
+					
+		}
+	}
+	
+}
+
+#t4c_mobile_menu{
+	display: block;
+}
+
+
+#t4c_show_header{
+	display:none;
+}
+
+#t4c_mobile_menu{
+	display: inline-block;
+	width:34px;
+	height:34px;
+	line-height:34px;
+	border: 1px solid $headerIconBorderColor;
+	background:$headerIconBackgroundColor;
+	color: $headerIconColor;
+	text-align:center;
+	cursor:pointer;
+	color:$headerIconColor;
+	position:absolute;
+	top:50%;
+	margin-top: -17px;
+	right:15px;
+	z-index:9999;
+		
+	@include borderRadius($searchFormIconBorderRadius);
+	@include transition();
+		
+	a{
+		color: inherit;
+		text-decoration:none;
+		display:inline-block;
+		width:34px;
+		height:34px;
+		line-height:34px;
+			
+		@include transition();
+	}
+}
+
+#t4c_mobile_menu:hover{
+	border: 1px solid $headerIconHoverBorderColor;
+	background:$headerIconHoverBackgroundColor;
+	color: $headerIconHoverColor;
+}
+
+.mod_sitemap,
+.mod_navigation,
+.mod_customnav,
+.mod_t4c_megamenu{
+	i {
+		display: none;
+	}
+}
+
+.mod_customnav.t4c_show_icons i,
+.mod_sitemap.t4c_show_icons i,
+.mod_navigation.t4c_show_icons i,
+.mod_t4c_megamenu.t4c_show_icons i{
+	display: inline-block;
+	margin:0px 10px 0px 0px;
+}
+
+#header i.sub{
+	display:none;
+}
+
+.t4c_show_menu_arrows #header i.sub{
+	display: inline;
+	float:right;
+}	

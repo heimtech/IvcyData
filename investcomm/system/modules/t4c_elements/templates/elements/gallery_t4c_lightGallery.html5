@@ -1,0 +1,57 @@
+
+<?php $random = substr(number_format(time() * mt_rand(),0,'',''),0,10); ?>
+<ul id="t4c_lightGallery_<?php echo $random; ?>" class="cols_<?php echo $this->perRow; ?> t4c_lightGallery">
+  <?php foreach ($this->body as $class=>$row): ?>
+    <?php foreach ($row as $col): ?>
+      <?php if ($col->addImage): ?>
+      <?php 
+	  	if( $this->t4c_size_mobile[0] != '' || $this->t4c_size_mobile[1]){
+			$mobile_src = Image::get($col->href,$this->t4c_size_mobile[0],$this->t4c_size_mobile[1],$this->t4c_size_mobile[2]);
+		} else {
+			$mobile_src = $col->href;
+		}
+	  ?>
+        <li class="<?php echo $class; ?> <?php echo $col->class; ?>" <?php if ($col->margin): ?> style="<?php echo str_replace('margin','padding',$col->margin); ?>"<?php endif; ?> data-src="<?php echo $col->href; ?>"  data-responsive-src="<?php echo $mobile_src; ?>" <?php if($this->t4c_lg_show_title || $this->t4c_lg_show_description): ?>data-sub-html="<?php if($this->t4c_lg_show_title): ?><h3><?php echo $col->alt; ?></h3><?php endif; ?><?php if($this->t4c_lg_show_description): ?><p><?php echo $col->caption; ?></p><?php endif; ?>"<?php endif; ?>>
+            <?php $this->insert('picture_default', $col->picture); ?>
+        </li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+</ul>
+<script type="text/javascript">
+	(function ($) { $(document).ready(function() {
+		$("#t4c_lightGallery_<?php echo $random; ?>").lightGallery({
+			mode : "<?php echo $this->t4c_lg_mode; ?>",
+			useCSS : <?php echo ($this->t4c_lg_use_css)? 'true' : 'false' ; ?>,
+			cssEasing : "<?php echo $this->t4c_lg_css_easing; ?>",
+			easing : "<?php echo $this->t4c_lg_easing; ?>",
+			speed : <?php echo $this->t4c_lg_speed; ?>,
+			<?php if($this->t4c_lg_class): ?>addClass : "<?php echo $this->t4c_lg_class; ?>",<?php endif; ?>
+			preload : <?php echo $this->t4c_lg_preload; ?>, 
+			showAfterLoad : <?php echo ($this->t4c_lg_show_after_load)? 'true' : 'false' ; ?>,
+			thumbnail : <?php echo ($this->t4c_lg_thumbnail)? 'true' : 'false' ; ?>,
+			showThumbByDefault : <?php echo ($this->t4c_lg_show_thumbnail)? 'true' : 'false' ; ?>, 
+			animateThumb : <?php echo ($this->t4c_lg_animate_thumbnail)? 'true' : 'false' ; ?>,
+			currentPagerPosition : "<?php echo $this->t4c_lg_pager_position; ?>",
+			thumbWidth : <?php echo $this->t4c_lg_thumb_width; ?>, 
+			thumbMargin : <?php echo $this->t4c_lg_thumb_margin; ?>, 
+			controls : <?php echo ($this->t4c_lg_controls)? 'true' : 'false' ; ?>, 
+			hideControlOnEnd : <?php echo ($this->t4c_lg_hide_controls)? 'true' : 'false' ; ?>, 
+			loop : <?php echo ($this->t4c_lg_loop) ? 'true' : 'false' ; ?>,
+			auto : <?php echo ($this->t4c_lg_auto)? 'true' : 'false' ; ?>,
+			pause : <?php echo ($this->t4c_lg_pause)? 'true' : 'false' ; ?>,
+			escKey : <?php echo ($this->t4c_lg_esc)? 'true' : 'false' ; ?>, 
+			closable :<?php echo ($this->t4c_lg_closable)? 'true' : 'false' ; ?>, 
+			counter : <?php echo ($this->t4c_lg_counter)? 'true' : 'false' ; ?>,
+			lang : { allPhotos: "<?php echo $this->t4c_lg_lang; ?>" }, 
+			mobileSrc : <?php echo ($this->t4c_lg_mobile_src) ? 'true' : 'false' ;?>, 
+			mobileSrcMaxWidth : <?php echo $this->t4c_lg_mobile_src_width; ?>,					
+			swipeThreshold : <?php echo $this->t4c_lg_swipe; ?>, 
+			enableTouch : <?php echo ($this->t4c_lg_touch)? 'true' : 'false' ; ?>, 
+			enableDrag : <?php echo ($this->t4c_lg_drag)? 'true' : 'false' ; ?>
+		});
+	}) })(jQuery);
+</script>
+
+
+

@@ -1,0 +1,34 @@
+<div id="t4c_flipbox_<?php echo $this->id; ?>" class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> ontouchstart="this.classList.toggle('hover');">
+	<div class="t4c_flipper">
+		<div class="t4c_front" <?php echo $this->front_style; ?>>
+			<?php echo $this->box_icon; ?>
+			<?php if ($this->t4c_fb_front_title): ?>
+            	<h3><?php echo $this->t4c_fb_front_title; ?></h3>
+            <?php endif; ?>
+    
+            <?php if ($this->t4c_fb_front_text): ?>
+            	<div><?php echo $this->t4c_fb_front_text; ?></div>
+            <?php endif; ?>
+		</div>
+        
+        <div class="t4c_back" <?php echo $this->back_style; ?>>
+			<?php if ($this->t4c_fb_back_title): ?>
+            	<h3><?php echo $this->t4c_fb_back_title; ?></h3>
+            <?php endif; ?>
+    
+            <?php if ($this->t4c_fb_back_text): ?>
+            	<div><?php echo $this->t4c_fb_back_text; ?></div>
+            <?php endif; ?>
+            
+			<?php if ($this->t4c_ib_add_button && $this->url): ?>
+            <div class="t4c-box-more">
+				<a href="<?php echo $this->url; ?>" <?php echo $this->button_style; ?> class="<?php echo $this->t4c_icon_button_hover; ?>">
+				<?php echo $this->t4c_ib_button_text; ?>
+				</a>
+            </div>
+            <?php endif; ?>
+            
+		</div>
+   </div>
+</div>            
+			

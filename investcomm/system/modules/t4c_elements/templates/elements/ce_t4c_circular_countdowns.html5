@@ -1,0 +1,41 @@
+<?php $random = substr(number_format(time() * mt_rand(),0,'',''),0,10); ?>
+<div class="<?php echo $this->class; ?> block circular_countdowns_<?php echo $random; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> data-date="<?php echo date('Y-m-d H:i:s', $this->t4c_fc_end_date) ; ?>">
+</div>
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function(){
+			$(".circular_countdowns_<?php echo $random; ?>").TimeCircles({
+				"animation": "<?php echo $this->t4c_cc_anim_type; ?>",
+			    "direction": "<?php echo $this->t4c_cc_direction; ?>",
+				"bg_width": <?php echo $this->t4c_cc_background_width; ?>,
+			    "fg_width": <?php echo $this->t4c_cc_circle_width; ?>,
+			    "circle_bg_color": "<?php echo $this->t4c_bgcolor; ?>",
+				    "time": {
+				        "Days": {
+				        	"text": "<?php echo $this->t4c_cc_days_label; ?>",
+					   	    "color": "<?php echo $this->t4c_cc_days_color; ?>",
+					       	"show": <?php echo ($this->t4c_cc_days) ? 'true' : 'false'; ?>
+				        },
+						"Hours": {
+							"text": "<?php echo $this->t4c_cc_hours_label; ?>",
+							"color": "<?php echo $this->t4c_cc_hours_color; ?>",
+							"show": <?php echo ($this->t4c_cc_hours) ? 'true' : 'false'; ?>
+						},
+						"Minutes": {
+							"text": "<?php echo $this->t4c_cc_minutes_label; ?>",
+							"color": "<?php echo $this->t4c_cc_minutes_color; ?>",
+							"show": <?php echo ($this->t4c_cc_minutes) ? 'true' : 'false'; ?>
+						},
+						"Seconds": {
+							"text": "<?php echo $this->t4c_cc_seconds_label; ?>",
+							"color": "<?php echo $this->t4c_cc_seconds_color; ?>",
+							"show": <?php echo ($this->t4c_cc_seconds) ? 'true' : 'false'; ?>
+						}
+					}
+			}); 
+		});
+		$(window).resize(function() {
+    		$(".circular_countdowns_<?php echo $random; ?>").TimeCircles().rebuild();
+		});
+	})(jQuery);
+</script>

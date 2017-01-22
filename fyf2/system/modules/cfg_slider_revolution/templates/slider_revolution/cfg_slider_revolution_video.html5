@@ -1,0 +1,28 @@
+<div class="rs-background-video-layer"
+     data-forcerewind="<?= $this->forcerewind ?>"
+     data-volume="<?= $this->forcerewind ?>"
+     data-videorate="<?= $this->videorate ?>"
+     data-videowidth="<?= $this->videowidth ?>"
+     data-videoheight="<?= $this->videoheight ?>"
+     data-videocontrols="<?= $this->videocontrols ?>"
+     data-videostartat="<?= $this->videostartat ?>"
+     data-videoendat="<?= $this->videoendat ?>"
+     data-videoloop="<?= $this->videoloop ?>"
+     data-forceCover="<?= $this->forceCover ?>"
+     data-aspectratio="<?= $this->aspectratio ?>"
+     data-autoplay="<?= $this->autoplay ?>"
+     data-autoplayonlyfirsttime="<?= $this->autoplayonlyfirsttime ?>"
+     data-nextslideatend="<?= $this->nextslideatend ?>"
+     <?php if ($this->ytid): ?>
+     data-ytid="<?= $this->ytid ?>"
+     <?php endif; ?>
+     <?php if ($this->vimeoid): ?>
+     data-vimeoid="<?= $this->vimeoid ?>"
+     <?php endif; ?>
+     <?php if ($this->files): ?>
+         <?php foreach ($this->files as $type => $file): ?>
+             data-video<?= $type ?>="<?= $file ?>"
+         <?php endforeach; ?>
+     <?php endif; ?>
+     data-videoattributes="<?= $this->videoattributes ?>"
+    ></div>

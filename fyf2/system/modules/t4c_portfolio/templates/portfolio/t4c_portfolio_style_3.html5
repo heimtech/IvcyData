@@ -1,0 +1,45 @@
+<div class="portfolio_list  portfolio_list_clmd_<?php echo $this->columns_md; ?> portfolio_list_clsm_<?php echo $this->columns_sm; ?> portfolio_list_cl_<?php echo $this->columns; ?> <?php echo $this->class; ?>"  <?php echo $this->item_style; ?> data-count="<?php echo $this->count; ?>" data-sorting="<?php echo $this->sorting; ?>">
+   <div class="inside">
+       <figure class="image_container img_normal">
+          <?php $this->insert('picture_default', $this->picture); ?>
+        </figure>
+        <?php if ($this->image->picture): ?>
+        <figure class="image_container img_hover">
+          <?php $this->insert('picture_default', $this->image->picture); ?>
+        </figure>
+        <?php endif; ?>
+        <div class="t4c_portfolio_hover" <?php echo $this->hover_style; ?>>
+            <div class="t4c_portfolio_table">
+                <div class="t4c_portfolio_cell">
+                    <div class="t4c_portfolio_icons">
+                         <?php if ($this->fullImage && $this->display_full): ?>
+	                        <a href="<?php echo $this->fullImage ?>" class="t4c_portfolio_icon" title="<?php echo $this->title; ?>" data-lightbox="portfolio_<?php echo $this->portfolio_id; ?>"><i class="pro-search"></i></a>
+                        <?php endif; ?>
+                        <?php if ($this->hasContent() && $this->display_more): ?>
+	                        <a href="<?php echo $this->url; ?>" class="t4c_portfolio_icon"><i class="pro-chain"></i></a>
+                        <?php endif; ?>
+                        <?php if ($this->online && $this->display_redirect): ?>
+    	                    <a href="<?php echo $this->online; ?>" class="t4c_portfolio_icon" target="_blank"><i class="pro-mail-forward"></i></a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="t4c_portfolio_info">                        						
+						<?php if ($this->display_name): ?>
+                        	<?php if ($this->hasContent()): ?>
+                            	<a href="<?php echo $this->url; ?>" class="name" title="<?php echo $this->title; ?>"><?php echo $this->name; ?></a>
+                            <?php else: ?>
+                            	<span class="name"><?php echo $this->name; ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if ($this->display_category): ?>
+                        	<span class="category"><?php echo $this->category; ?></span>
+                        <?php endif; ?>
+                        <?php if($this->display_client && $this->display_category && $this->client): ?>&nbsp;|&nbsp;<?php endif; ?>
+                        <?php if ($this->display_client): ?>
+                        	<span class="client"><?php echo $this->client; ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

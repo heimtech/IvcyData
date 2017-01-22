@@ -1,0 +1,318 @@
+$themeColor: 							#f15034!default;
+$themeTextColor: 						#656565 !default;
+$themeStrongTextColor: 					#333 !default;
+$defaultTextSize: 						13px !default;
+$bodyBackgroundColor: 					none !default;
+$contentBackgroundColor: 				none !default;
+$bodyBackgroundImage: 					none !default;
+$bodyBackgroundImageRepeat: 			repeat !default;
+$bodyBackgroundImagePosiion: 			inherit !default;
+$bodyBackgroundImagetSize: 				inherit !default;
+$bodyBackgroundAttachment: 				scroll !default;
+$menuTextColor:							#333 !default;
+$pageMargin:							0px auto !default;
+$mediumWidth:							970px !default;
+$largeWidth:							1170px !default;
+$defaultBorderRadius: 					3px !default;
+$buttonDefaultRadius:					$defaultBorderRadius !default;
+$darkGrey:								#333;
+$lightGrey:								#fafafa;
+$errorTextColor: 						#c60000;
+$containerMargin:						0px auto !default;
+$containerPadding:						0px !default;
+$headlineTextTransform:					uppercase !default;
+$menuTextTransform:						uppercase !default;
+
+
+// Font family
+$defaultFont: 							'Open Sans',Arial, Helvetica, sans-serif !default;
+$headlineFont:							$defaultFont !default;
+$menuFont:								$defaultFont !default;
+$sidebarMenuFont:						$defaultFont !default;
+
+//Typogrphy
+$headlineColor: 						#333 !default;
+$headlineH1margin:						45px 0px 30px 0px !default;
+$headlineH2margin: 						40px 0px 30px 0px !default;
+$headlineH3margin: 						35px 0px 25px 0px !default;
+$headlineH4margin: 						30px 0px 20px 0px !default;
+$headlineH5margin: 						30px 0px 20px 0px !default;
+$headlineH6margin: 						30px 0px 15px 0px !default;
+$headlineH1size: 						27px !default;
+$headlineH2size: 						22px !default;
+$headlineH3size: 						18px !default;
+$headlineH4size: 						16px !default;
+$headlineH5size: 						14px !default;
+$headlineH6size: 						12px !default;
+
+
+$linkColor: 							$themeColor !default;
+$linkHoverColor: 						$themeColor !default;
+
+$dividerColor:							#d4d4d4 !default;
+
+
+
+$headerWidth: 							284px !default;
+$headerHeight: 							110px !default;
+$headerStickyHeight: 					52px !default;
+$headerBackgroundColor: 				none !default;
+$headerStickyBackgroundColor: 			#fff !default;
+$logoPadding: 							36px 0px !default;
+$stickyLogoPadding: 					15px 0px !default;
+$logoMobilePadding:						$logoPadding !default;
+$subheaderHeight:						140px !default;
+$headerMargin:							0px auto !default;
+
+$headerBackgroundImage:					none !default;
+$headerBackgroundRepeat:				inherit !default;
+$headerBackgroundPosition:				inherit !default;
+
+
+
+// Breadcrumb
+$breadcrumbHeight: 						33px !default;
+$breadcrumbBackground: 					#f8f8f8 !default;
+$breadcrumbFontSize: 					12px !default;
+$breadcrumbColor: 						$themeTextColor !default;
+
+// Toolbar
+$toolbarHeight: 						33px;
+$toolbarBackground: 					#f8f8f8 !default;
+$toolbarDropdownBackground:				#f8f8f8 !default;
+$toolbarFontSize: 						12px;
+$toolbarColor: 							#a9a9a9 !default;
+$toolbarBottomBorder: 					none !default;
+$toolbarInputRadius: 					$buttonDefaultRadius;
+$toolbarInputBackgroundColor:			#fff;
+$toolbarInputTextColor: 				$themeTextColor;
+$toolbarSubmitBackgroundColor: 			$darkGrey;
+$toolbarSubmitTextColor: 				#fff;
+$toolbarSeparatorColor: 				#c7c7c7 !default;
+$toolbarSocialIconSize: 				14px;
+$toolbarTaglineColor: 					#7b7b7b;
+$toolbarTaglineSize: 					20px;
+
+
+//Comments
+$commentsColor: 						$themeTextColor !default;
+$commentsBackground: 					#f8f8f8 !default;
+
+$mainMenuTopMargin:						0px !default;
+$menuBreakpoint: 						992px !default;
+$mainMenuFontSize:						14px !default;
+$mainMenuTextColor:						#343434 !default;
+$mainMenuHoverTextColor: 				$themeColor !default;
+$mainMenuSubmenuTextColor: 				$mainMenuTextColor !default;
+$mainMenuItemsMargin: 					21px !default;
+$mainMenuItemsMarginSticky:				$mainMenuItemsMargin !default;
+$submenuBackgroundColor:	 			#fafafa !default;
+$submenuWidth: 							260px !default;	
+$topBorderColor: 						#e0e0e0 !default;
+$submenuSeparator: 						#e0e0e0 !default;
+$mainMenuBorderRadius: 					$buttonDefaultRadius;
+$submenuHoverBackgroundColor: 			$themeColor !default;
+$submenuHoverTextColor: 				#fff !default;
+
+// Sidebar Menu 
+$sidebarMenuFont:						$defaultFont !default;
+$sidebarMenuFontSize:					13px !default;
+$level1TextColor: 						$darkGrey !default;
+$level1BgColor: 						#ebebeb !default;
+$level1ActiveTextColor: 				#fff !default;
+$level1ActiveBgColor: 					$darkGrey !default;
+$level2TextColor: 						$darkGrey !default;
+$level2BgColor: 						#e4e4e4 !default;
+$level2ActiveTextColor: 				#fff !default;
+$level2ActiveBgColor: 					$darkGrey !default;
+$level3TextColor: 						$darkGrey !default;
+$level3BgColor: 						#d7d7d7 !default; 
+$level3ActiveTextColor: 				#fff !default;
+$level3ActiveBgColor: 					$darkGrey !default;
+$level1BorderColor:						#fff !default;
+$level2BorderColor:						#fff !default;
+$level3BorderColor:						#fff !default;
+
+// Mobile menu
+$mobileLevel1TextColor: 				#fff !default;
+$mobileLevel1BgColor: 					none !default;
+$mobileLevel1ActiveTextColor: 			#fff !default;
+$mobileLevel1ActiveBgColor: 			$themeColor !default;
+$mobileLevel2TextColor: 				#fff !default;
+$mobileLevel2BgColor: 					#1d1d1e !default;
+$mobileLevel2ActiveTextColor: 			#fff !default;
+$mobileLevel2ActiveBgColor: 			$themeColor !default;
+$mobileLevel3TextColor: 				#fff !default;
+$mobileLevel3BgColor: 					#323232 !default; 
+$mobileLevel3ActiveTextColor: 			#fff !default;
+$mobileLevel3ActiveBgColor: 			$themeColor !default;
+$mobileLevel1BorderColor:				#424242 !default;
+$mobileLevel2BorderColor:				$mobileLevel1BorderColor !default;
+$mobileLevel3BorderColor:				$mobileLevel1BorderColor !default;
+$mobileMenuBackground: 					#101011 !default;
+$mobileMenuFont:						$defaultFont !default;
+$mobileMenuFontSize:					14px !default;
+
+$headerIconColor:						$mainMenuTextColor !default;
+$headerIconBackgroundColor:				#fff !default;
+$headerIconBorderColor:					#e8e8e8 !default;
+$headerIconHoverColor:					#fff !default;
+$headerIconHoverBackgroundColor:		$themeColor !default;
+$headerIconHoverBorderColor:			$themeColor !default;
+
+// Search Form
+$searchFormIconBorderColor: 			#e8e8e8;
+$searchFormIconColor: 					$mainMenuTextColor;
+$searchFormIconBorderRadius: 			$buttonDefaultRadius;
+$searchFormBoxColor: 					#f8f8f8 !default;
+
+
+// Form
+$inputSubmitBackround: 					$themeColor !default;
+$inputSubmitColor:  					#fff !default;
+$inputBorderColor: 						#d1d2d3 !default;
+$inputFocusBorderColor: 				#b4b4b4 !default;
+$inputBackgroundColor:					#f8f8f8 !default;
+$inputTextColor:						inherit !default;
+$inputFocusBackgroundColor:				#f8f8f8 !default;
+$formLabelColor:						inherit !default;
+$inputRadius: 							$buttonDefaultRadius !default;
+$quickContactBackground:				$lightGrey !default;
+
+
+
+// Portfolio
+$portfolioFilterTextColor: $mainMenuTextColor;
+$portfolioFilterActiveColor: $themeColor;
+$portfolioFilterItemMargin: 0px 25px;
+$portfolioFilterHeight: 48px;
+$portfolioFilterButtonRadius: $buttonDefaultRadius;
+
+// Icon box
+$iconBoxIconColor: $themeColor;
+$iconBoxHeadlineColor: $headlineColor;
+$alertBoxTextSize: $defaultTextSize;
+$alertBoxIconSize: 25px;
+
+// Blockquote
+$blockquoteBgColor: $lightGrey;
+$blockquoteTextColor: $themeTextColor;
+$blockquoteMarksColor: $themeColor;
+$blockquoteBorderRadius: $defaultBorderRadius;
+
+// Counters
+$countersIconColor:$themeColor;
+$countersTextColor:	$themeTextColor;
+$countersNumerColor:$darkGrey;
+
+
+
+
+//Footer
+$footerTextColor: #979797;
+$footerLinkColor: $footerTextColor;
+
+//Pagination
+$paginationTextColor: $themeTextColor;
+$paginationBorderColor: $dividerColor;
+$paginationBackgroundColor: #fff;
+$paginationTextColorActive: #fff;
+$paginationBorderColorActive: $themeColor;
+$paginationBackgroundColorActive: $themeColor;
+
+
+// Border Radius
+@mixin borderRadius($radius:3px)
+{
+    -webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+
+// use: .class { @include transition(all, .5s, ease-in); }
+@mixin transition($elements: all, $time: .25s, $ease: ease-out) {
+	-webkit-transition: $elements $time $ease;
+	   -moz-transition: $elements $time $ease;
+	    -ms-transition: $elements $time $ease;
+	     -o-transition: $elements $time $ease;
+	        transition: $elements $time $ease;
+}
+
+
+// Extend this class to save bytes
+.transparent-background {
+  background-color: transparent;
+  zoom: 1;
+}
+ 
+// The mixin
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  @extend .transparent-background;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+}
+
+@mixin delay($time: .25s) {
+			transition-delay: $time;
+			-webkit-transition-delay: $time; /* Safari */
+}
+
+
+
+@mixin box_sizing( $box: content-box){
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+@mixin scale($zoom: 1.2){
+	-webkit-transform: scale($zoom);
+	-moz-transform: scale($zoom);
+	-o-transform: scale($zoom);
+	-ms-transform: scale($zoom);
+	transform: scale($zoom);
+}
+
+@mixin rotate($rotate: 0){
+-webkit-transform: rotate($rotate);
+-moz-transform: rotate($rotate);
+-o-transform: rotate($rotate);
+-ms-transform: rotate($rotate);
+transform: rotate($rotate);
+}
+
+@mixin translate($x: 0px,$y: 5px){
+	-webkit-transform: translate($x,$y);
+	-moz-transform: translate($x,$y);
+	-o-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+	transform: translate($x,$y);
+}
+
+
+@mixin shadow($x: 0px, $y: 0px, $size: 4px, $color: #000){
+	-webkit-box-shadow: $x $y $size $color;
+	-moz-box-shadow: $x $y $size $color;
+	box-shadow: $x $y $size $color;
+}
+
+@mixin animation_duration($duration:300ms){
+	-webkit-animation-duration: $duration; 
+	-moz-animation-duration: $duration; 
+	-o-animation-duration: $duration; 
+	animation-duration: $duration;
+}
+
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity); 
+}
+
+
+
+
+

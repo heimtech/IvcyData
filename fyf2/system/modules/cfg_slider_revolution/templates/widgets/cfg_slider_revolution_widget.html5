@@ -1,0 +1,122 @@
+<h3><?= $this->generateLabel() . $this->xlabel ?></h3>
+
+<div id="ctrl_<?= $this->strId ?>" class="cfg_slider_revolution_widget<?php if ($this->strClass): ?> <?= $this->strClass ?><?php endif; ?>">
+    <?php if ($this->cfg_slider_revolution_menu): ?>
+        <?php
+            $default = null;
+            $hasData = false;
+            $values  = [];
+
+            // Find the default selected option (based on current value)
+            foreach ($this->cfg_slider_revolution_menu as $k => $v) {
+                $matches = true;
+
+                foreach ($v['config'] as $kk => $vv) {
+                    if ($hasData === false && @$this->varValue[$kk] != '') {
+                        $hasData = true;
+                    }
+
+                    // Split the delay
+                    if ($kk == 'split' || $kk == 'splitdelay') {
+                        continue;
+                    }
+
+                    if (@$this->varValue[$kk] != $vv) {
+                        $matches = false;
+                        break;
+                    }
+                }
+
+                if ($matches === true) {
+                    $default = $k;
+                    break;
+                }
+            }
+
+            // Set the custom as default
+            if (!$default && $hasData) {
+                $default = 'custom';
+            }
+
+            unset($values);
+        ?>
+
+        <div class="slider_menu">
+            <div class="slider_menu_label">
+                <label for="ctrl_<?= $this->strId ?>_menu"><?= $GLOBALS['TL_LANG']['MSC']['cfg_slider_revolution.widget_menu'] ?></label>
+            </div>
+            <div class="slider_menu_select">
+                <select id="ctrl_<?= $this->strId ?>_menu" class="tl_select">
+                    <option value="">-</option>
+                    <option value="-"<?php if ($default === 'custom'): ?> selected="selected"<?php endif; ?>><?= $GLOBALS['TL_LANG']['MSC']['cfg_slider_revolution.widget_custom'] ?></option>
+                    <?php foreach ($this->cfg_slider_revolution_menu as $name => $data): ?>
+                        <option value="<?= $name ?>"<?php if ($default === $name): ?> selected="selected"<?php endif; ?>><?= $data['label'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="slider_toggle">
+                <a href="#" title="<?= $GLOBALS['TL_LANG']['MSC']['cfg_slider_revolution.widget_toggle'] ?>"><?= $GLOBALS['TL_LANG']['MSC']['cfg_slider_revolution.widget_toggle'] ?></a>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <div class="slider_fields<?php if ($this->cfg_slider_revolution_menu): ?> invisible<?php endif; ?>">
+        <table>
+            <?php foreach ($this->cfg_slider_revolution_fields as $field): ?>
+                <tr>
+                    <td class="col_0"><label for="ctrl_<?= $this->strId ?>_<?= $field ?>"><?= $this->cfg_slider_revolution_labels[$field][0] ?>:</label></td>
+                    <td class="col_1"><input type="text" name="<?= $this->strName ?>[<?= $field ?>]" id="ctrl_<?= $this->strId ?>_<?= $field ?>" class="tl_text" value="<?= specialchars(@$this->varValue[$field]) ?>"<?= $this->getAttributes() ?> onfocus="Backend.getScrollOffset()" data-slider-field="<?= $field ?>"></td>
+                    <td class="col_2"><?= $this->cfg_slider_revolution_labels[$field][1] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+
+    <?php if ($this->cfg_slider_revolution_menu): ?>
+        <?php
+            $fields = [];
+
+            foreach ($this->cfg_slider_revolution_menu as $name => $data) {
+                $fields[$name] = $data['config'];
+            }
+        ?>
+
+        <script>
+            window.addEvent('domready', function () {
+                var wrapper = document.getElementById('ctrl_<?= $this->strId ?>');
+                var fields_container = wrapper.getElement('.slider_fields');
+                var fields = fields_container.getElements('input');
+                var select = wrapper.getElement('select');
+                var data = <?= json_encode($fields) ?>;
+
+                // Toggle the text fields
+                wrapper.getElement('.slider_toggle a').addEvent('click', function (e) {
+                    e.preventDefault();
+                    fields_container.toggleClass('invisible');
+                });
+
+                // Update the text fields upon <select> change
+                select.addEvent('change', function () {
+                    var value = this.get('value');
+
+                    if (value === '-') {
+                        return;
+                    }
+
+                    for (var i = 0; i < fields.length; i++) {
+                        fields[i].set('value', data[value] ? data[value][fields[i].get('data-slider-field')] : '');
+                    }
+                });
+
+                // Set the <select> to custom option when text value is changed
+                for (var i = 0; i < fields.length; i++) {
+                    fields[i].addEvent('change', function () {
+                        select.set('value', '-').fireEvent('change');
+                    });
+                }
+            });
+        </script>
+    <?php endif; ?>
+</div>
+
+<?= $this->getErrorAsHTML() ?>

@@ -1,0 +1,40 @@
+
+.t4c_column_stop_settings > div.tl_content.indent_1.wrapper_stop,
+.t4c_column_stop_settings > div.tl_content.indent_3.wrapper_stop{
+	border-bottom: 10px solid #f3f3f3;
+}
+
+.tl_content.indent_3.wrapper_start, .tl_content.indent_3.wrapper_separator, .tl_content.indent_3.wrapper_stop {
+    background: #e2e2e2;
+}
+
+.tl_content.indent_4 {
+    border-left-color: #e2e2e2;
+    border-right-color: #e2e2e2;
+   
+}
+
+.t4c_column_stop_settings .tl_content_right a,
+.t4c_column_stop_settings .tl_content_right .drag-handle{
+	display:none;
+}
+
+
+.t4c_wrapper_stop_settings .tl_content_right a.edit,
+.t4c_wrapper_stop_settings .tl_content_right a.copy,
+.t4c_wrapper_stop_settings .tl_content_right a.cut,
+.t4c_wrapper_stop_settings .tl_content_right a.delete,
+.t4c_wrapper_stop_settings .tl_content_right a.toggle,
+.t4c_wrapper_stop_settings .tl_content_right a.show,
+.t4c_wrapper_start_settings .tl_content_right a.copy,
+.t4c_wrapper_start_settings .tl_content_right a.cut,
+.t4c_column_start_settings .tl_content_right a.copy,
+.t4c_column_start_settings .tl_content_right a.cut,
+.t4c_column_start_settings .tl_content_right a.delete,
+.t4c_column_start_settings .tl_content_right a.toggle,
+.t4c_column_start_settings .tl_content_right a.show,
+.t4c_column_start_settings .tl_content_right .drag-handle{
+	display:none;
+}
+
+

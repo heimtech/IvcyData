@@ -1,0 +1,70 @@
+/**    Alert Box    **/
+.ce_t4c_alert_box{
+	display:table;
+	margin-bottom:0px 0px 35px 0px;
+	padding:15px;
+	position:relative;
+	width:100%;
+	font-size: $alertBoxTextSize;
+	@include borderRadius(3px);
+	
+	p{
+		margin: 0px;
+	}
+	
+	p + p{
+		margin: 20px 0px 0px 0px;
+	}
+			
+	i{
+		display: table-cell;
+		font-size: $alertBoxIconSize;
+		margin:0px 0px 0px 0px;
+		text-align:center;
+		width:2.5em;
+		vertical-align:middle;
+	}
+		
+	i.close_icon{
+		cursor: pointer;
+		display: table-cell;
+		font-size:18px;
+		margin-top:-7px;
+		vertical-align:middle;
+	}
+		
+	.text{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	&.warning{
+		background:#ffe38b;
+		color:#6e5a1a;
+	}
+	
+	&.info{
+		background:#2b94d9;
+		color:#fff;
+	}
+	
+	&.success{
+		background:#aae263;
+		color:#6e5a1a;
+	}
+	
+	&.error{
+		background:#f75051;
+		color:#fff;
+	}
+	
+	&.pos-left{
+		padding-left:0px;
+		text-align:left;
+	}
+	
+	&.pos-right{
+		padding-right:0px;
+		text-align:right;
+	}
+}

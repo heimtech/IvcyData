@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: mysql5.heim-tech.de
+    database_port: null
+    database_name: db459210_14
+    database_user: db459210_14
+    database_password: fqhpu-V5pRtL
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: fc240d2446f2304e3a67ab1b4fdecd86009e3fb2

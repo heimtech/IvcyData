@@ -1,0 +1,16 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<ul>
+    	<?php foreach($this->items as $item): ?>
+        	<li>
+                <a href="<?php echo $item['t4c_social_icons_url']; ?>" target="_blank" <?php if ($item['t4c_social_icons_text']) echo 'class="' . $item['t4c_social_icons_text'] . '"'; ?>>
+                <div class="inside">
+                 	<i class="<?php echo $item['t4c_social_icons_icon']; ?>" <?php echo $this->icon_style; ?>></i>
+                    <?php if ($this->t4c_tooltip_add_social): ?>
+                        <div class="desc" <?php echo $this->tooltip_style; ?>><?php echo $item['t4c_social_icons_text']; ?></div>
+                    <?php endif; ?>
+                </div>
+                </a>
+            </li>
+    	<?php endforeach; ?>
+    </ul>
+</div>

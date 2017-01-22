@@ -1,0 +1,190 @@
+
+<?php
+
+
+
+
+if (FE_USER_LOGGED_IN)
+{
+     $objUser = FrontendUser::getInstance();
+     $groupID = $objUser->groups[0];
+   
+if($groupID == "3") {
+
+echo "<script>var showInterestLink = true</script>";
+
+
+} else {
+echo "<script>var showInterestLink = false</script>";
+
+}
+		    
+    
+} else {
+echo "<script>var showInterestLink = false</script>";
+
+}
+
+
+?>
+
+<?php
+
+if (version_compare(VERSION, '3', '>=')) 
+{ 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css|static'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js|static'; 
+  
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css|static'; 
+     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js|static'; 
+ 
+
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.css|static'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.min.js|static';  
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.css|static'; 
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight_custom.css|static'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.js|static';  
+
+
+                             
+} 
+else 
+{ 
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js'; 
+
+
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css'; 
+     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js'; 
+ 
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.css'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.min.js';  
+
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.css'; 
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight_custom.css'; 
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.js';  
+
+
+}
+
+?>
+
+
+
+<?php
+
+if (version_compare(VERSION, '3', '>=')) 
+{ 
+ 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js|static';   
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/ownProduct.js|static'; 
+                             
+} 
+else 
+{ 
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js';     
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/ownProduct.js'; 
+
+}
+
+
+?>
+
+
+<script type='text/javascript'>
+
+
+<?php
+
+$productID = $_GET['id']; 
+
+if (FE_USER_LOGGED_IN)
+{
+echo ('var userID = '.FrontendUser::getInstance()->id.';');
+}
+echo ('var productID = '.$productID.';');
+echo('var productData = { productID : '.$productID.' };');
+
+
+
+
+?>
+
+</script>
+
+
+
+<div id="ownProduct" class="row">
+	<div id="productImages" class="col-md-6 col-xs-12">
+		<div class="eagle-gallery img300">
+			<div id="imageContainer" class="owl-carousel">
+				<!--
+        <img src="img/pictures/p1-mini.jpg" data-medium-img="img/pictures/p1-medium.jpg" data-big-img="img/pictures/p1-big.jpg" data-title="" alt="">
+        <img src="img/pictures/p2-mini.jpg" data-medium-img="img/pictures/p2-medium.jpg" data-big-img="img/pictures/p2-big.jpg" data-title="Mustang Shelby GT500 - big black car with red lines is very beautiful and powerful" alt="">
+        <img src="img/pictures/p3-mini.jpg" data-medium-img="img/pictures/p3-medium.jpg" data-big-img="img/pictures/p3-big.jpg" data-title="" alt="">
+        <img src="img/pictures/p4-mini.jpg" data-medium-img="img/pictures/p4-medium.jpg" data-big-img="img/pictures/p4-big.jpg" data-title="The R/T Plus is both an athlete and a scholar. 2015 Challenger R/T Plus kicks the HEMI® V8 engine up a notch by adding upgraded technology and features." alt="">
+        -->
+
+
+			</div>
+		</div>
+
+
+	</div>
+	<div id="productData" class="col-md-6 col-xs-12">
+		<h2 id="productTitle"></h2> 
+		<h3 id="productShortDescription"></h3>
+		<div id="productDescription"></div>
+		<div id="productPrice"></div>
+		<div id="productMetadata"></div>
+
+        <button class="greenButton openLightBox" >Interesse bekunden</button>
+
+    </div>
+
+</div>
+
+
+
+<div class="inviContainer"><div id="mylightbox">
+<form onSubmit="event.preventDefault(); OwnProduct.sendMessage()" method="post">
+
+<div class="formCombo formComboInfo1">
+<span>Info 1</span>
+<input type="text" placeHolder="Info 1"  class="info1"></input>
+</div>
+<div class="formCombo formComboInfo2">
+<span>Info 2</span>
+<input type="text" placeHolder="Info 2" class="info2"></input>
+</div>
+<div class="formCombo formComboInfo3">
+<span>Info 3</span>
+<input type="text" placeHolder="Info 3" class="info3"></input>
+</div>
+
+
+<div class="formCombo formComboMessage">
+<span>Nachricht</span>
+<textarea rows="4" cols="50" name="message" id="message"></textarea>
+</div>
+
+<input type="submit" id="sendButton" value="Senden"></input>
+
+</form>
+</div></div>
+
+
+
+
+
+
+
+
+
+

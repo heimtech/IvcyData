@@ -1,0 +1,15 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<?php if ($this->href): ?>
+    	<a href="<?php echo $this->href; ?>">
+    <?php endif; ?>
+    <div class="photo">
+		<?php $this->insert('picture_default', $this->picture); ?>
+	</div>
+    <div class="text">		 
+		<h4 <?php echo $this->t4c_slogan_style; ?>><?php echo $this->t4c_slogan; ?></h4>
+		<h3 <?php echo $this->t4c_title_style; ?>><?php echo $this->t4c_title; ?></h3>
+	</div>
+    <?php if ($this->href): ?>
+    	</a>
+    <?php endif; ?>
+</div>

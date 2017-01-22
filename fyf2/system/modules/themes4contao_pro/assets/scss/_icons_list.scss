@@ -1,0 +1,229 @@
+/**    Icons List    **/
+
+.ce_t4c_icons_list{
+
+	ul{
+		list-style:none;
+		margin:0;
+		padding:0;
+		display:table;
+		table-layout:fixed;
+		width:100%;
+		
+		li{
+			
+			.icon{						
+				position:relative;
+			
+				.icon_container{
+					text-align:center;
+					display: inline-block;
+					position:relative;
+					vertical-align:middle;
+					z-index:9;
+					color:$themeColor;
+					font-size:55px;
+					background:#ffffff;
+					width:55px;
+					height:55px;
+					line-height:55px;
+				}	
+				.connector{
+				 	border-right-style: dashed;
+    			 	border-right-width: 1px;
+					border-color:#cacaca;
+					height:100%;
+					left: 50%;
+					position:absolute;
+					top:auto;
+					z-index:1;
+					
+					@include animation_duration(1000ms);
+				}
+				
+				i{
+					
+					line-height:inherit;
+				}
+				
+			}
+			
+			.description{
+				width:100%;
+				padding-bottom: 30px;
+				h3{ 
+					color: $headlineColor;
+					margin:0px 0px 4px 0px;
+					font-weight:bold;
+					font-size:14px;
+				}
+				
+				.text{
+					line-height:22px;
+				}
+			}
+		}
+		
+		&.simple .icon i{
+			background-color: inherit;
+		}
+	}
+	
+	&.pos-top{
+		
+		li {
+			clear: both;
+			display: block;
+		}
+		
+		.icon{
+			display: table-cell;
+			line-height:1;
+			padding-bottom:50px;
+			text-align:center;
+			vertical-align:top;
+		}
+		
+		.description{
+			display:table-cell;
+			padding-top: 0px;
+			padding-left:35px;
+			vertical-align:top;
+			text-align:left;
+		}
+	}
+	
+	&.pos-left{
+		
+		li {
+			clear: both;
+			display: block;
+			
+		}
+		
+		.icon{
+			display: table-cell;
+			line-height:1;
+			padding-bottom:50px;
+			text-align:center;
+			vertical-align:top;
+		}
+		
+		.description{
+			display:table-cell;
+			padding-top: 0px;
+			padding-left:35px;
+			vertical-align:top;
+			text-align:left;
+		}
+	}
+	
+	&.pos-right{
+		
+		li {
+			clear: both;
+			display: block;
+			
+		}
+		
+		.icon{
+			display: table-cell;
+			line-height:1;
+			padding-bottom:50px;
+			text-align:center;
+			vertical-align:top;
+		}
+		
+		.description{
+			display:table-cell;
+			padding-top: 0px;
+			padding-right:35px;
+			vertical-align:top;
+			text-align:right;
+		}
+	}
+	
+	
+	
+	& li:last-child .connector{
+			display:none!important;
+	}
+	
+	&.square .icon_container{
+			background: $lightGrey;
+			border:1px solid $lightGrey;
+				
+		}
+		
+	&.rounded .icon_container{
+		background: $lightGrey;
+		border:1px solid $lightGrey;
+		
+		@include borderRadius(15px);
+	}
+		
+	&.circle .icon_container{
+		background: $lightGrey;
+		border:1px solid $lightGrey;
+			
+		@include borderRadius(50%);
+	}
+	
+}
+
+.ce_t4c_icons_list.pos-left .icon:last-child,
+.ce_t4c_icons_list.pos-right .icon:last-child{
+	margin-bottom: 0px;
+}
+
+@media only screen and (min-width : 768px) {
+	.ce_t4c_icons_list ul li .description{
+		padding-bottom:0px;
+	}
+	
+	.ce_t4c_icons_list{
+		
+		&.pos-top{
+		
+		li{
+			display:table-cell;
+			text-align:center;
+			clear:none;
+		}
+		
+		.description{
+			text-align:center;
+			padding:0px 20px;
+		}
+		
+		.icon{
+			display: block;
+			text-align:center;
+			padding-bottom:0px;
+			margin:0px 0px 20px 0px;
+			overflow:visible;
+			
+			.icon_container{
+				margin:0px auto 0px auto;
+				display:block;
+			}
+			
+			.connector{
+				 	border-top-style: dashed;
+    			 	border-top-width: 1px;
+					border-color:#cacaca;
+					height:1px;
+					width:100%;
+					left: aut0;
+					position:absolute;
+					top:50%;
+					width:100%;
+					z-index:1;
+					
+					@include animation_duration(1000ms);
+			}
+			
+		}
+		
+	}
+}}

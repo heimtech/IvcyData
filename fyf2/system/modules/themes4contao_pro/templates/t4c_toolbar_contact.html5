@@ -1,0 +1,8 @@
+<div class="t4c_toolbar_contact t4c_toolbar_element <?php echo $this->elementClass; ?> <?php if($this->header_contactinfo_position == 'right') echo 'pull-right'; else echo 'pull-left'; ?>">
+   	<?php if( $this->toolbar_phone ):?>
+       	<span class="t4c_toolbar_phone <?php if( $this->toolbar_email && $this->toolbar_phone):?>t4c_toolbar_contact_separator<?php endif; ?>"><?php echo $this->toolbar_phone; ?></span>
+    <?php endif; ?>
+    <?php if( $this->toolbar_email ):?>
+      	<span class="t4c_toolbar_email"><?php echo $this->toolbar_email; ?></span>
+     <?php endif; ?>
+</div>

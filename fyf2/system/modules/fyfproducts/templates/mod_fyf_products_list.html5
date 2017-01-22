@@ -1,0 +1,19 @@
+
+<div id="productList" class="row top24 resultContainer">
+
+<div id="searchResult" class="col-xs-12">
+
+</div>
+<div class="mapSearchContainer col-xs-12">
+<div id="searchMap" style="width:100%;height:380px;"></div>
+</div>
+</div>
+
+
+
+	
+
+
+
+
+

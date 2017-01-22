@@ -1,0 +1,39 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	 <?php if ($this->addImage): ?>
+    <figure class="image_container<?= $this->floatClass ?>"<?php if ($this->margin): ?> style="<?= $this->margin ?>"<?php endif; ?>>
+
+      <?php if ($this->href): ?>
+        <a href="<?= $this->href ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle ?>"<?php endif; ?><?= $this->attributes ?>>
+      <?php endif; ?>
+
+      <?php $this->insert('picture_default', $this->picture); ?>
+
+      <?php if ($this->href): ?>
+        </a>
+      <?php endif; ?>
+
+      <?php if ($this->caption): ?>
+        <figcaption class="caption"><?= $this->caption ?></figcaption>
+      <?php endif; ?>
+
+    </figure>
+  <?php endif; ?>
+    <h3><?php echo $this->name; ?></h3>
+    <span class="position"><?php echo $this->position; ?></span>
+	<?php echo $this->about; ?>
+    <?php if ($this->email): ?>
+    	<a href="<?php echo $this->email; ?>" class="t4c_team_icon" target="_blank"><i class="pro-envelope-o"></i></a>
+    <?php endif; ?>
+    <?php if ($this->facebook): ?>
+    	<a href="<?php echo $this->facebook; ?>" class="t4c_team_icon" target="_blank"><i class="pro-facebook"></i></a>
+    <?php endif; ?>
+    <?php if ($this->twitter): ?>
+    	<a href="<?php echo $this->twitter; ?>" class="t4c_team_icon" target="_blank"><i class="pro-twitter"></i></a>
+    <?php endif; ?>
+    <?php if ($this->google): ?>
+    	<a href="<?php echo $this->google; ?>" class="t4c_team_icon" target="_blank"><i class="pro-google-plus"></i></a>
+    <?php endif; ?>
+    <?php if ($this->linkedin): ?>
+    	<a href="<?php echo $this->linkedin; ?>" class="t4c_team_icon" target="_blank"><i class="pro-linkedin"></i></a>
+    <?php endif; ?>
+</div>

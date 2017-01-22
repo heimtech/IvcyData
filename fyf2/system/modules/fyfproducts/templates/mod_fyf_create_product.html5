@@ -1,0 +1,202 @@
+<?php
+
+if (version_compare(VERSION, '3', '>=')) 
+{ 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css|static'; 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css|static'; 
+
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js|static';
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productCreate.js|static'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.validate.min.js|static'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/additional-methods.min.js|static'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js|static';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.form.js|static';
+
+
+
+                             
+} 
+else 
+{ 
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css'; 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css'; 
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productCreate.js'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.validate.min.js'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/additional-methods.min.js'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.form.js';
+
+}
+
+if (FE_USER_LOGGED_IN)
+{
+     $objUser = FrontendUser::getInstance();
+     $userid = $objUser->id;
+
+
+
+    
+		    
+    
+}
+
+
+
+
+
+$addedProduct = $_GET['addedProduct'];
+
+if($addedProduct == "true") {
+echo("<script>$.toast({
+    text: 'Ihr Produkt wurde ihrem Portfolio hinzugefügt', // Text that is to be shown in the toast
+    heading: 'Vielen Dank', // Optional heading to be shown on the toast
+    icon: 'info', // Type of toast icon
+    showHideTransition: 'fade', // fade, slide or plain
+    allowToastClose: true, // Boolean value true or false
+    hideAfter: 4000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
+    stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+    position: 'top-center', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+    
+    
+    
+    textAlign: 'left',  // Text alignment i.e. left, right or center
+    loader: true,  // Whether to show loader or not. True by default
+    loaderBg: '#9EC600',  // Background color of the toast loader
+    beforeShow: function () {}, // will be triggered before the toast is shown
+    afterShown: function () {}, // will be triggered after the toat has been shown
+    beforeHide: function () {}, // will be triggered before the toast gets hidden
+    afterHidden: function () {}  // will be triggered after the toast has been hidden
+});</script>");
+}
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<div class="<?php echo $this->class; ?> block">
+	
+	<h2 class="purpleHead">Erstellen Sie ihr eigenes Produkt</h2>
+	<div class="stroke"></div>
+
+<form  action="/fyfdata/web/products/create" id="createForm" method="POST" enctype="multipart/form-data"  >
+<input type=hidden" name="userID" id="userID" value="<?php echo $userid; ?>">
+<div class="formCombo">
+<span>Produktname</span>
+<input type="text" placeHolder="Produktname eingeben" name="productName" id="productName"/>
+</div>
+<div class="formCombo">
+<span>Preis</span>
+<input type="text" placeHolder="Preis eingeben" name="price" id="price" />
+</div>
+<div class="formCombo">
+<span>für</span>
+    <div class="twoInputs">
+<input type="text" placeHolder="Stückzahl eingeben" name="quantityOfPieces" id="quantityOfPieces" />
+
+           <select id="quantityCategory" name="quantityCategory">
+            <option value="kg">kg</option>
+            <option value="l">l</option>
+               <option value="stueck">Stück</option>
+               <option value="paket">Paket</option>
+               <option value="ml">ml</option>
+               <option value="g">g</option>
+
+           </select>
+    </div>
+</div>
+    <div class="formCombo">
+        <span>Anbauart</span>
+
+        <div class="checkboxGroup">
+        <input type="checkbox" name="anbauart" value="biologisch">biologisch<br>
+        <input type="checkbox" name="anbauart" value="konventionell" >konventionell<br>
+        <input type="checkbox" name="anbauart" value="freilandhaltung" >Freilandhaltung & ökologisch<br>
+        <input type="checkbox" name="anbauart" value="demeter" >demeter<br>
+</div>
+    </div>
+
+<div class="formCombo">
+<span>Versandart</span>
+<div class="checkboxGroup">
+    <input type="checkbox" name="lieferArt" value="Abholung" checked>Abholung<br>
+    <input type="checkbox" name="lieferArt" value="Versand">Versand<br>
+</div>
+
+</div>
+<div class="formCombo typeOfDelivery">
+<span>Lieferdauer (Tage)</span>
+    <select id="quantityCategory" name="deliveryTime" id="deliveryTime">
+        <option value="1">1 Tag</option>
+        <option value="2">2 Tage</option>
+        <option value="3">3 Tage</option>
+        <option value="4">4 Tage</option>
+        <option value="5">5 Tage</option>
+        <option value="6">6 Tage</option>
+        <option value="7">1 Woche</option>
+        <option value="14">2 Wochen</option>
+        <option value="21">3 Wochen</option>
+        <option value="31">1 Monat</option>
+
+    </select>
+</div>
+<div class="formCombo">
+<span>Verpackungstyp</span>
+<input type="text" placeHolder="Verpackungstyp eingeben" name="typeOfPackage" id="typeOfPackage" />
+</div>
+    <div class="formCombo">
+        <span>Kurzbeschreibung</span>
+        <textarea rows="4" placeHolder="Kurzbeschreibung einfügen" name="shortDescription" id="shortDescription" ></textarea>
+    </div>
+
+    <div class="formCombo">
+        <span>Beschreibung</span>
+        <textarea rows="4" cols="50" placeHolder="Ausführliche Beschreibung Ihres Produkts" name="description" id="description" ></textarea>
+    </div>
+
+<input type="file" name="file1" id="uploadImageInput1"  onchange="ProductCreate.addImage(event)" value="Bild hochladen" accept=".png, .jpg, .jpeg" />
+<input type="file" name="file2" id="uploadImageInput2"  onchange="ProductCreate.addImage(event)" value="Bild hochladen" accept=".png, .jpg, .jpeg" />
+<input type="file" name="file3" id="uploadImageInput3"  onchange="ProductCreate.addImage(event)" value="Bild hochladen" accept=".png, .jpg, .jpeg" />
+<input type="file" name="file4" id="uploadImageInput4"  onchange="ProductCreate.addImage(event)" value="Bild hochladen" accept=".png, .jpg, .jpeg" />
+<input type="file" name="file5" id="uploadImageInput5"  onchange="ProductCreate.addImage(event)" value="Bild hochladen" accept=".png, .jpg, .jpeg" />
+
+<div class="formCombo">
+<span>Produktbilder</span>
+<button id='imageButtonUpload'>Produktbild hinzufügen</button>
+</div>
+
+
+
+<div id="imagePreviewGallery">
+
+</div>
+<div class="formCombo">
+<span></span>
+<input type="submit" form="createForm" value="Produkt hinzufügen" id="createProductButton"></button>
+</div>
+
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+

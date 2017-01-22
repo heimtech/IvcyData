@@ -1,0 +1,42 @@
+/**    Rows    **/
+.t4c_row_full_hieght{
+	height:100%;
+}
+
+.t4c_mask{
+	position:relative;
+	
+	.container > div{
+		position: relative;
+	}
+	
+	.container-fluid > div{
+		position: relative;
+	}
+	.t4c_mask_overlay{
+		position: absolute !important;
+		top:0px;
+		left:0px;
+		bottom:0px;
+		right:0px;
+		margin: auto;
+		overflow: auto;
+		z-index:0;
+	}
+}
+
+.t4c_videobcg {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -1000;
+     overflow: hidden;
+}
+
+.t4c_full_width{
+	overflow:hidden;
+} 

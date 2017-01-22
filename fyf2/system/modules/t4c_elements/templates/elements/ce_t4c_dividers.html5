@@ -1,0 +1,8 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style || $this->top_padding || $this->bottom_padding): ?> style="<?php echo $this->style; echo $this->bottom_padding; echo $this->top_padding; ?>"<?php endif; ?>>
+	<?php if ($this->t4c_divider_type =='title_text'): ?>
+		<h4 class="<?php echo $this->t4c_text_align; ?>"><span style="<?php echo $this->textStyle; ?>"><?php echo $this->t4c_title; ?></span></h4>	
+	<?php endif; ?>
+	<?php if ($this->t4c_divider_type =='icon'): ?>		
+		<h4 class="<?php echo $this->t4c_text_align; ?>" ><span><?php for($i=1; $i<= $this->t4c_divider_icon_repeat; $i++) 	echo '<i class="' . $this->t4c_icon . '" style=" ' . $this->iconStyle . '"></i>'; echo '</span></h4>'; ?>
+	<?php endif; ?>	
+</div>

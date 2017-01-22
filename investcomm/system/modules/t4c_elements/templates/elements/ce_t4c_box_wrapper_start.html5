@@ -1,0 +1,2 @@
+<div id="ce_t4c_box_wrapper_start_<?php echo $this->id; ?>"  class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> data-hover="<?php echo $this->hover_color; ?>">
+<div class="hover_inside" style="<?php echo $this->hover_bg; ?>"></div>

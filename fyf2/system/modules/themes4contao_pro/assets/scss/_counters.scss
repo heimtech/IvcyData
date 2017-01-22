@@ -1,0 +1,150 @@
+/**    Counters    **/
+.ce_t4c_counters{
+	&.text-left{
+		text-align:left;
+	}
+	
+	&.text_right{
+		text-align:right;
+	}
+	
+	&.text_center{
+		text-align:center;
+	}
+	
+	&.text_left{
+		text-align:left;
+	}
+	
+	i{	
+		color: $countersIconColor;
+		font-size: 55px;
+		padding:0;
+		position:relative;
+		display: inline-block;
+		height:110px;
+		line-height:110px;
+		margin:0px auto;
+		padding: 0px;
+		text-align:center;
+		width:110px;
+		border-style:solid;		
+		@include box_sizing(content-box);
+		@include transition();
+	}
+	
+	.inside{
+		cursor: pointer;
+		display:inline-block;
+		position: relative;
+	}
+	
+	.t4c-icon-box-icon{
+		text-align:center;
+	}
+	
+	&.opacity:hover i{
+		opacity: 0.6;
+	}
+	
+	&.zoom:hover i{
+		@include scale(1.2);
+	}
+	
+	&.rotate:hover i{
+		@include rotate(360deg);
+	}
+	
+	&.opacity:hover img{
+		opacity: 0.6;
+	}
+	
+	&.zoom:hover img{
+		@include scale(1.2);
+	}
+	
+	&.rotate:hover img{
+		@include rotate(360deg);
+	}
+	
+	h3{
+		font-size: 14px;
+		font-weight:normal;
+		color:$countersTextColor;
+	}
+	
+	&.pos_top {
+		width:100%;
+		
+		.number{
+			color:$countersNumerColor;
+			font-size: 28px;
+			font-weight:bold;
+			padding:15px 0px;
+		}
+		
+		h3{ 
+			margin-top:0px;
+		}
+	}
+	
+	&.pos_bottom{
+		width:100%;
+		
+		 .number{
+			color:$countersNumerColor;
+			font-size: 28px;
+			font-weight:bold;
+			padding:0px 0px 15px 0px;
+		}
+	}
+	
+	&.pos_left {
+		.t4c-icon-box-icon{
+			display:table-cell;
+			padding-right:30px;
+		}
+		
+		.t4c_text{
+			display:table-cell;
+			vertical-align:middle;
+			
+			h3{
+				margin-bottom: 0px;
+				margin-top:0px;
+			}
+		}
+		.number{
+			color:$countersNumerColor;
+			font-size: 24px;
+			font-weight:bold;
+		}
+	}
+	
+	&.pos_right {
+		text-align:right;
+		
+		.t4c-icon-box-icon{
+			display:table-cell;
+			padding-left:30px;
+		}
+		
+		.t4c_text{
+			display:table-cell;
+			vertical-align:middle;
+			
+			h3{
+				margin-bottom: 0px;
+				margin-top:0px;
+			}
+		}
+		
+		.number{
+			color:$countersNumerColor;
+			font-size: 24px;
+			font-weight:bold;
+		}
+	}
+}
+
+

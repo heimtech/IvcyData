@@ -1,0 +1,20 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?> style=" text-align: center; display:table;margin: 0 auto!important; width: auto; <?php echo $this->style; ?>"></div>
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function(){
+			 var clock = $(".flip_clock_<?php echo $this->random; ?>").FlipClock(<?php echo $this->diff; ?>,{
+				clockFace : "<?php echo $this->t4c_fc_type; ?>"
+				<?php if ($this->t4c_fc_type != 'TwelveHourClock' && $this->t4c_fc_type != 'TwentyFourHourClock' && $this->t4c_fc_type != 'Counter'): ?>
+					,countdown : "<?php echo $this->countdown; ?>"	
+				<?php endif; ?>	
+				});
+				<?php if ($this->t4c_fc_type == 'Counter'): ?>
+					setTimeout(function() {
+					setInterval(function() {
+						clock.increment();
+						},<?php echo $this->t4c_fc_timeout; ?>);
+					});
+				<?php endif; ?>	
+		});			
+	})(jQuery);	
+</script>

@@ -1,0 +1,92 @@
+/* ========================================================================== *
+ * Animated Modal
+ * ========================================================================== */
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+.animatedModal-off {
+  opacity: 0;
+  height: 0;
+  display:none; }
+
+.ce_t4c_animated_modal_button {
+  text-align: center; }
+
+.ce_t4c_animated_modal_window {
+  di-splay: none; }
+
+.ce_t4c_animated_modal {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 16px;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in; }
+
+.ce_t4c_animated_modal {
+  text-decoration: none; }
+
+.ce_t4c_animated_modal:hover {
+  text-decoration: none !important;
+  opacity: 0.7; }
+
+
+.ce_t4c_modal_content {
+  padding-top: 200px;
+  padding-bottom: 200px; 
+ }
+
+.ce_t4c_close_button {
+  font-size: 30px;
+  line-height: 42px;
+  color:  inherit;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in; }
+  .ce_t4c_close_button.square {
+    border: 1px solid #fff; }
+  .ce_t4c_close_button.circle {
+    border: 1px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%; }
+  .ce_t4c_close_button.pos-top-left {
+    top: 80px;
+    left: 30px; }
+  .ce_t4c_close_button.pos-top-right {
+    top: 80px;
+    right: 30px; }
+  .ce_t4c_close_button.pos-top-center {
+    top: 80px;
+    left: 50%;
+    margin-left: -15px; }
+  .ce_t4c_close_button.pos-bottom-left {
+    bottom: 80px;
+    left: 30px; }
+  .ce_t4c_close_button.pos-bottom-right {
+    bottom: 80px;
+    right: 30px; }
+  .ce_t4c_close_button.pos-bottom-center {
+    bottom: 80px;
+    left: 50%;
+    margin-left: -15px; }
+
+.ce_t4c_close_button:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg); }
+  
+ 

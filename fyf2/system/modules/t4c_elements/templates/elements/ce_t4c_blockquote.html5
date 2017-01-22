@@ -1,0 +1,5 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?> data-circle-value="<?php echo $this->t4c_cp_value; ?>" data-size="<?php echo $this->t4c_cp_size; ?>" data-reverse="<?php echo $this->t4c_cp_reverse; ?>" data-thickness="<?php echo $this->t4c_cp_thickness; ?>" data-linecap="<?php echo $this->t4c_cp_line_cap; ?>" data-fill="<?php echo $this->t4c_cp_fill; ?>" data-emptyfill="<?php echo $this->t4c_cp_empty_fill; ?>" data-animation="<?php echo $this->t4c_cp_duration; ?>" 	data-animationstartvalue="<?php echo $this->t4c_cp_animation_start_value; ?>" data-color = "<?php echo $this->t4c_cp_color; ?>" data-gradient1 = "<?php echo $this->t4c_cp_gradient_1; ?>" data-gradient2 = "<?php echo $this->t4c_cp_gradient_2; ?>" data-gradient3 = "<?php echo $this->t4c_cp_gradient_3; ?>" data-image = "<?php echo $this->image; ?>">
+	<div><?php echo $this->text; ?></div>
+	<span class="t4c_author"><?php echo $this->t4c_author ?></span>
+	<div class="quotation" <?php echo $this->quotation_marks_color; ?>>,,</div>
+</div>

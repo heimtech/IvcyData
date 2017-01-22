@@ -1,0 +1,11 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+	<?php if ($this->t4c_ab_icon_position == "left"): ?>
+    	<i class="<?php echo $this->t4c_icon; ?>" <?php if ($this->t4c_ab_type == 'custom' && $this->t4c_icon_size) echo 'style="' . $this->t4c_icon_size . 'px;"';  ?>></i>
+        <div class="text"><?php echo $this->text; ?></div>
+        <?php if ($this->t4c_ab_close_icon):?><i class="close_icon">&times;</i><?php endif; ?>
+    <?php else: ?>
+	    <?php if ($this->t4c_ab_close_icon):?><i class="close_icon">&times;</i><?php endif; ?>
+        <div class="text"><?php echo $this->text; ?></div>
+    	<i class="<?php echo $this->t4c_icon; ?>" <?php if ($this->t4c_ab_type == 'custom' && $this->t4c_icon_size) echo 'style="' . $this->t4c_icon_size . 'px;"';  ?>></i>
+    <?php endif; ?>    
+</div>

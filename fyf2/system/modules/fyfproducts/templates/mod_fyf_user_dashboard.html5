@@ -1,0 +1,188 @@
+
+
+
+<?php
+
+include 'memberdata.php';
+
+
+if (version_compare(VERSION, '3', '>=')) 
+{ 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css|static'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js|static'; 
+  
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css|static'; 
+     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js|static'; 
+     $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/member.js|static'; 
+
+
+
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.css|static'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.min.js|static';  
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.css|static'; 
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight_custom.css|static'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.js|static';  
+
+
+                             
+} 
+else 
+{ 
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js'; 
+
+
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.css'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery.toast.min.js'; 
+ $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/member.js'; 
+
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.css'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/eaglegallery/eagle.gallery.min.js';  
+
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.css'; 
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight_custom.css'; 
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/featherlight/featherlight.min.js';  
+
+
+}
+
+?>
+
+
+
+<?php
+
+if (version_compare(VERSION, '3', '>=')) 
+{
+
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productUtil.js|static';
+
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js|static';
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/userdash.js|static';   
+
+                             
+} 
+else 
+{
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productUtil.js';
+
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js';   
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/userdash.js';     
+
+}
+
+
+?>
+
+
+<script type='text/javascript'>
+
+
+<?php
+
+echo ('var currentUser = '.FrontendUser::getInstance()->id.';');
+echo ('var groupID='.FrontendUser::getInstance()->groups[0].';');
+?>
+
+</script>
+
+<div class="row">
+<h2 class="purpleHead">Ihre Nachrichten</h2>
+<div class="stroke"></div>
+
+<div id="myMessages" class="col-md-4 col-xs-12">
+<div id="myMessageTable">
+
+</div>
+</div>
+    <div class="col-md-8 col-xs-12">
+<div id="mySingleMessage">
+</div>
+        </div>
+</div>
+
+
+<div class="row productTitle">
+    <h2 class="purpleHead top2em">Ihre Produkte</h2>
+    <div class="stroke"></div>
+</div>
+<div class="row">
+<div id="myProducts" class="col-xs-12">
+    <div class="createNewProduct resultItem col-md-3 col-sm-4 col-xs-12">
+        <div class="resultWrapper">
+<?php
+           echo "<span><a href='". $this->replaceInsertTags('{{link_url::119}}') ."'>Neues Produkt hinzufügen</a></span>";
+
+
+            echo "<span class='plus'><a href='". $this->replaceInsertTags('{{link_url::119}}') ."'>+</a></span>";
+
+?>
+        </div>
+    </div>
+
+</div>
+    </div>
+
+
+
+
+<?php
+
+echo "<script type='text/javascript'>";
+
+echo "$(document).ready(function() {";
+
+
+if (FE_USER_LOGGED_IN)
+{
+
+//Farmer
+    $objUser = FrontendUser::getInstance();
+    $groupID = $objUser->groups[0];
+
+    if($groupID == "3") {
+
+        echo "$('.productTitle').hide();";
+        echo "$('#myProducts').hide();";
+
+    } else if( $groupID == "2") {
+
+        echo "$('.productTitle').show();";
+        echo "$('#myProducts').show();";
+
+
+    }
+
+
+
+
+
+
+
+
+}
+
+echo "});";
+
+echo "</script>";
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+

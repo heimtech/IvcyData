@@ -1,0 +1,192 @@
+
+<?php
+
+include 'memberdata.php';
+
+
+?>
+
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvi5uva3LF-3lh73EQ-Aje5NG9M82_AeI&signed_in=true&callback=initialize"
+         defer>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+if (version_compare(VERSION, '3', '>=')) 
+{ 
+ $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css|static'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js|static'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/googlemap.js|static'; 
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/member.js|static';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productUtil.js|static';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js|static';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productList.js|static'; 
+                             
+} 
+else 
+{ 
+
+  $GLOBALS['TL_CSS'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.css'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/jquery-ui.min.js'; 
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/googlemap.js';   
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/member.js';
+
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productUtil.js';
+
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/product.js';   
+      
+  $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/fyfproducts/assets/productList.js'; 
+
+}
+
+
+
+?>
+
+<script type="text/javascript">
+
+function initialize() {
+
+
+GoogleMap.initialize(document.getElementById('searchMap'));
+}
+</script>
+
+
+
+
+<div class="<?php echo $this->class; ?> block">
+<div class="searchTop row">
+<div class="search col-xs-12 col-sm-5 col-md-4 dirtbggrey">
+<div class="dirtbg2"></div>
+
+<div class="arrangetop">
+	<span>Finden Sie frische Produkte</span>
+
+<form class="productListForm" onSubmit="event.preventDefault(); ProductList.fillProductList()" method="post">
+
+<input type="text" placeHolder="Produktname"
+name="productName" id="productName" />
+<div id="extendedSearchContent">
+
+<div class="formCombo">
+<span>Preis in €</span>
+<div class="sliderCombo">
+<input type="text" id="priceLow" />
+ - 
+<input type="text" id="priceHigh" />
+
+<div id="priceSlider"></div>
+</div>
+</div>
+<div class="formCombo">
+<span>Lieferart</span>
+<select name="lieferArt" id="lieferArt">
+  <option value="abholung">Nur Abholung</option>
+  <option value="versand">Abholung + Versand</option>
+</select>
+</div>
+<div class="formCombo lieferDauerCombo">
+<span>Maximale Lieferdauer: <label for="deliveryTimeSlider" id="deliveryTimeSliderLabel">-</label> Tage </span>
+<div class="sliderCombo">
+
+
+<div id="deliveryTimeSlider"></div>
+</div>
+</div>
+
+
+<div class="formCombo standortsuche">
+<span>PLZ oder Ort </span>
+<input type="text" placeHolder="PLZ oder Ort "
+name="standortSuche" id="standortSuche" /> 
+<select id="umkreis">
+<option value="5">+ 5 km</option>
+<option value="10">+ 10 km</option>
+<option value="20">+ 20 km</option>
+<option value="50">+ 50 km</option>
+<option value="100">+ 100 km</option>
+<option value="200">+ 200 km</option>
+
+
+</select>
+</div>
+
+
+</div>
+	<input type="submit" id="searchButton" value="Suchen"></input>
+
+</form>
+<button id="extendedSearch" class="linkButton" >Erweiterte Suche</button>
+
+</div>
+</div>
+<div class="spacer col-md-4 col-sm-2 col-xs-12"></div>
+<div class="ownProduct col-xs-12 col-sm-5 col-md-4 dirtbggrey">
+<div class="seedbg"></div>
+<h2>Eigene Produkte anbieten</h2>
+
+
+</div>
+
+</div>
+<div class="row foundProducts">
+<span class="foundProductsSpan purpleHead">Gefundene Produkte</span>
+<div class="stroke"></div>
+</div>
+
+</div>
+		
+	
+<?php
+
+echo "<script type='text/javascript'>";
+
+echo "$(document).ready(function() {";
+
+
+
+if (FE_USER_LOGGED_IN)
+{
+     $objUser = FrontendUser::getInstance();
+     $groupID = $objUser->groups[0];
+   
+
+//Farmer
+if($groupID == "2") {
+echo "$('.ownProduct').click(function() { window.location.href ='" .  $this->replaceInsertTags('{{link_url::119}}') . "';});";
+
+
+
+
+} else {
+
+echo "$('.ownProduct').hide();";
+
+
+}
+
+} else {
+
+echo "$('.ownProduct').click(function() { window.location.href ='" .  $this->replaceInsertTags('{{link_url::107}}') . "';});";
+
+}
+
+echo "});";
+
+echo "</script>";
+
+
+?>

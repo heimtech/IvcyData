@@ -1,0 +1,919 @@
+@import "mobile";
+
+.t4c_search_form_icon{
+	display:none;
+}
+
+.header_style_4 #header{		
+	#logo{
+		text-align:right;
+	}
+	
+	#logo_wrapper {
+		position: relative;
+	}
+	
+	.t4c_tagline_wrapper{
+		text-align:center;
+		height:auto;
+		overflow:hidden;
+		width:100%;
+		border-top: 1px solid $topBorderColor;
+		
+		.t4c_toolbar_tagline{
+			display: block;
+			text-align:center;
+			margin-top:10px;
+		}
+		
+		.t4c_header_social_list {
+    		height:34px;
+			margin:10px 0px;
+			li {
+				margin-left: 3px;
+			}
+		}
+	}
+	
+	#t4c_mobile_menu{
+		left: 0px;
+	}
+	
+	.t4c_tagline_wrapper_desktop{
+		display: none;
+	}
+	
+	.t4c_tagline_wrapper_mobile{
+		display: inline-block;
+	}
+}
+.t4c_search_form_box{
+	padding:10px 15px;
+	width:290px;
+	margin: 35px auto;
+	
+	input.text {
+		height: 32px;
+		padding: 0px 15px;
+		border:none;
+		color: #fff;
+		background:#38383c;
+		margin:0px 0px 10px 0px;
+		width:228px;
+		float:left;		
+		@include borderRadius( $toolbarInputRadius 0 0  $toolbarInputRadius );
+		@include transition();
+	}
+	
+	input.text:focus{
+		background: #5d5e61;
+	}
+		
+	button.submit{
+		height: 32px;
+		width: 32px;
+		padding: 0px;
+		border:none;
+		color: $inputSubmitColor;
+		background:$inputSubmitBackround;
+		margin:0px 0px 0px 0px;
+		float:left;
+		@include borderRadius( 0 $toolbarInputRadius $toolbarInputRadius 0 );
+		@include transition();
+	}
+	
+	button.submit:hover{
+		opacity: 0.7
+	}
+	
+	.close{
+		display:none;
+	}
+}
+
+.header_style_4 #header.stuck {
+	.t4c_tagline_wrapper_desktop{
+		display: none;
+	}
+	
+	.t4c_tagline_wrapper_mobile{
+		display: none;
+	}
+}
+
+
+
+@media (max-width: $menuBreakpoint) {	
+	.t4c_main_nav{
+		position: fixed;
+		width:90%;
+		background:$mobileMenuBackground;
+		top:0px;
+		right:-90%;
+		z-index: 99999;
+		height: 100%;
+		overflow-y:scroll;
+		@include transition();
+		
+		> nav {
+			padding:0px 15px;
+		}
+	}
+
+	.t4c_main_nav.t4c_mobile_menu_active{
+		right: 0;
+	}
+}
+
+@media (min-width: $menuBreakpoint) {	
+	.header_style_4 #header{		
+		.t4c-header-table{
+			position:relative;
+		}
+		
+		#logo{		
+			padding:$logoPadding;
+			height: $headerHeight - 53;
+			display:inline-block;
+			float:right;
+			text-align:right;
+		}
+		
+		.t4c_tagline_wrapper{
+			display: inline-block;
+			text-align:right;
+			float:left;
+			margin-top: ($headerHeight - 53 - 34)/2;
+			height:34px;
+			overflow:hidden;
+			padding:0;
+			width:auto;
+			border:none;
+		}
+		
+		#logo_wrapper {
+			float:right;
+		}
+		
+		.t4c_search_form .t4c_search_form_box.visible{
+			top:52px;
+		}
+		
+		.t4c_search_form{
+			margin-right:2 * $mainMenuItemsMargin;
+			width:34px;
+			float: left;
+			position:relative;
+			height: 52px;			
+			@include transition();
+			
+			.t4c_search_form_icon{
+				position: absolute;
+				top: 50%;
+				margin-top:-17px;
+				@include transition();
+			}
+		}
+		
+		.t4c_main_nav{
+			width:100%;
+			clear:both;
+			display:block;
+			border-top: 1px solid $topBorderColor;
+			vertical-align:middle;
+			@include box_sizing();
+			
+			nav{
+				float: left;
+				display: inline-block;
+			}
+	
+			.t4c_search_form{
+				display: inline-block;
+				margin-left: 42px;
+					
+				.t4c_search_form_icon{
+					position: relative;
+				}
+			}
+		}
+		
+		.t4c_tagline_wrapper{		
+			.t4c_toolbar_tagline{
+				display: inline-block;				
+				margin-right:30px;
+				margin-top:0px;
+				height:34px;
+				line-height:33px;
+				float:left;
+			}
+					
+			 .t4c_header_social_list{
+				margin:0;
+				
+				li{
+					margin-left:3px;	
+				}
+			}
+		}
+		
+		.t4c_tagline_wrapper_desktop{
+			display: inline-block;
+		}
+	
+		.t4c_tagline_wrapper_mobile{
+			display: none;
+		}
+		
+		.mod_navigation,
+		.mod_t4c_megamenu{
+			font-size:0;
+			padding: 0px 0px;				
+			
+			.sf-menu {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				
+				li a{
+						font-family: $menuFont;
+					}
+			
+				ul,
+				.sf-mega {
+					position: absolute;
+					display: none;
+					top: 120%;
+					left: 0;
+					z-index: 99;
+					background: $submenuBackgroundColor;
+					font-size:13px;
+					border-bottom:3px solid $mainMenuHoverTextColor;
+				}
+				
+				.sf-mega{
+					height:auto;
+					padding: 15px;
+					width:100%;
+			
+					ul{
+						display: block;
+						position:relative;
+						width:100%;
+						border-bottom:none;
+						text-align:left;
+						background: none;
+			
+						li{
+							border-bottom: none;
+						}
+					}
+				}
+				
+				ul{
+					width: $submenuWidth;
+					left: auto;
+				
+					li{
+						position: relative;
+						
+						a{
+							background: none;
+							color: $mainMenuSubmenuTextColor;
+						}
+						
+						a:hover,
+						a.sfHover{
+							background: $submenuHoverBackgroundColor;
+							color: $submenuHoverTextColor;
+						}
+					}
+				}
+				
+				ul ul{
+					width: $submenuWidth;
+					left: $submenuWidth;
+					top: 0% !important;
+					background: $submenuBackgroundColor;
+				
+					li{						
+						@include transition(all, .3s, ease-in-out);
+						border-bottom: 1px solid $submenuSeparator;
+						line-height:22px;
+						
+						a{
+							background: none;
+							color: $mainMenuSubmenuTextColor;
+							@include transition(all, .3s, ease-in-out);
+							text-decoration:none;
+							padding:7px 15px;
+							display:block;
+							text-align:left;
+						}
+						
+						a:hover,
+						a.sfHover{
+							background: $submenuHoverBackgroundColor;
+							color: $submenuHoverTextColor;
+						}
+					}
+				}
+				
+				
+				> li {
+					display: inline-block;
+					border-bottom:none;	
+					margin-left: $mainMenuItemsMargin;
+					margin-right: $mainMenuItemsMargin;			
+				}
+				
+				> li.first{
+					margin-left:0px;
+				}
+				
+				> li.last{
+					margin-right:0px;
+				}
+				
+				li:hover > .sf-mega,
+				li.sfHover > .sf-mega,
+				li:hover > ul,
+				li.sfHover > ul {
+					display: block;
+				}
+				
+				> li:hover > a,
+				> li.sfHover > a{
+					background:none;
+				}
+				
+				> li > a {
+					display: block;
+					position: relative;
+					font-size: $mainMenuFontSize;
+					color:	$mainMenuTextColor;
+					text-decoration:none;
+					padding:0;
+					background:none;					
+					@include transition(all, .3s, ease-in-out);
+				}
+				
+				> li.menu-on-right{
+					position: relative;
+					
+					> ul{
+						right:0px;
+					}
+				}
+				ul li.menu-on-right{
+					ul {
+						left: -($submenuWidth);
+					}
+				}
+				
+				ul{
+					list-style:none;
+					margin:0;
+					padding:0;
+					
+					li{						
+						@include transition(all, .3s, ease-in-out);
+						border-bottom: 1px solid $submenuSeparator;
+						line-height:22px;
+						
+						a{
+							color: $mainMenuSubmenuTextColor;
+							@include transition(all, .3s, ease-in-out);
+							text-decoration:none;
+							padding:7px 15px;
+							display:block;
+							text-align:left;
+						}
+					}
+					
+					li:hover,
+					li.sfHover{
+						background: $submenuHoverBackgroundColor;
+						
+						> a{
+							color:$submenuHoverTextColor;
+							background:none;
+						}
+					}
+				}				
+			}
+		}
+	
+	
+		// Menu Style 1
+		.menu_style1 {
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				ul.sf-menu{
+					
+					> li{
+						
+						> a{
+							line-height:  52px;
+							height:52px;
+						}
+						
+					}
+					
+					> li.last {
+						margin-right: 0px;
+					}
+					
+					> li.first {
+						margin-left: 0px;
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+				}
+			}
+		}
+		
+		&.stuck .menu_style1{
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				ul.sf-menu{
+					> li > a{
+						line-height: $headerStickyHeight;
+					}
+				}
+			}
+		}
+		// Menu Style 1 - end
+		
+		// Menu Style 2
+		.menu_style2 {
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				ul.sf-menu{
+					
+					> li > a{
+						position:relative;
+						height:52px;
+						line-height:52px;
+					}
+					
+					> li > a:before{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						bottom:30px;
+						opacity:0;
+						@include transition();
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+					> li > a:hover:before,
+					> li.active > a:before,
+					> li > a.trail:before,
+					> li.sfHover > a:before{
+						bottom:0px;
+						opacity:1;
+					}
+				}
+			}
+		}
+		
+		&.stuck .menu_style2 {
+			.mod_navigation,
+			.mod_t4c_megamenu{			
+				
+				ul.sf-menu > li > a{
+					position:relative;
+					height:$headerStickyHeight;
+					line-height:$headerStickyHeight;
+				}
+			}
+		}
+		// Menu Style 2 - end
+		
+		
+		// Menu Style 3
+		.menu_style3 {
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				ul.sf-menu{
+					
+					> li > a{
+						position:relative;
+						height:52px;
+						line-height:52px;
+					}
+					
+					> li > a:before{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						bottom:30px;
+						opacity:0;
+						
+						@include transition();
+					}
+					
+					> li > a:after{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						top:30px;
+						opacity:0;
+						@include transition();
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+					> li > a:hover:before,
+					> li.active > a:before,
+					> li > a.trail:before,
+					> li.sfHover > a:before{
+						bottom:0px;
+						opacity:1;
+					}
+					
+					> li > a:hover:after,
+					> li.active > a:after,
+					> li > a.trail:after,
+					> li.sfHover > a:after{
+						top:0px;
+						opacity:1;
+					}
+				}
+			}
+		}	
+		
+		&.stuck .menu_style3 {
+			.mod_navigation,
+			.mod_t4c_megamenu{			
+				
+				ul.sf-menu > li > a{
+					position:relative;
+					height:$headerStickyHeight;
+					line-height:$headerStickyHeight;
+				}
+			}
+		}
+		// Menu Style 3 - end
+		
+		// Menu Style 4
+		.menu_style4 {
+			height: 53px;
+			
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: 7px;
+				float:left;
+				@include transition();
+				
+				ul.sf-menu{
+					
+					> li > a{
+						height: 38px;
+						line-height: 38px;
+					}
+					
+					> li > a:before{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						bottom:-30px;
+						opacity:0;
+						@include transition();
+					}
+					
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+					> li > a:hover:before,
+					> li.active > a:before,
+					> li > a.trail:before,
+					> li.sfHover > a:before{
+						bottom:0px;
+						opacity:1;
+					}
+				}
+			}
+		}
+		
+		&.stuck .menu_style4{
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: ($headerStickyHeight - 38)/2;
+			}
+		}
+			
+		// Menu Style 4 - end
+		
+		// Menu Style 5
+		.menu_style5 {
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				ul.sf-menu{
+					
+					> li > a{
+						height:52px;
+						line-height:52px;
+						padding:0px 14px;
+						position:relative;
+						background:none;
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: #fff;
+						background: $mainMenuHoverTextColor;
+					}
+				}
+			}
+		}
+		
+		&.stuck .menu_style5 {
+			.mod_navigation,
+			.mod_t4c_megamenu{			
+				
+				ul.sf-menu > li > a{
+					position:relative;
+					height:$headerStickyHeight;
+					line-height:$headerStickyHeight;
+				}
+			}
+		}	
+		// Menu Style 5 - end
+		
+		// Menu Style 6
+		.menu_style6 {
+			height: 53px;
+			
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: 12px;
+				@include transition();
+				
+				ul.sf-menu{
+					
+					> li > a{
+						height: 30px;
+						line-height: 30px;
+						padding:0px 20px;
+						position:relative;
+						background:none;
+						@include borderRadius($mainMenuBorderRadius);
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: #fff;
+						background: $mainMenuHoverTextColor;
+					}
+				}
+			}
+		}
+		
+		&.stuck .menu_style6{
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: ($headerStickyHeight - 30)/2;
+			}
+		}
+	
+		// Menu Style 6 - end
+		
+		// Menu Style 7
+		.menu_style7 {
+			height: 53px;
+			
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				
+				padding-top:7px;
+				@include transition();
+				ul.sf-menu{
+					
+					> li > a{
+						height: 38px;
+						line-height: 38px;
+						position:relative;
+						padding:0px 15px;
+					}
+					
+					> li > a:before{
+						content: "]";
+						
+						position:absolute;
+						right:5px;
+						top:auto;
+						opacity:0;
+						@include transition(all, .2s, ease-out);
+					}
+					
+					> li > a:after{
+						content: "[";
+					
+						position:absolute;
+						left:5px;
+						top:auto;
+						opacity:0;
+						@include transition(all, .2s, ease-out);
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+					> li > a:hover:before,
+					> li.active > a:before,
+					> li > a.trail:before,
+					> li.sfHover > a:before{
+						right:0px;
+						opacity:1;
+					}
+					
+					> li > a:hover:after,
+					> li.active > a:after,
+					> li > a.trail:after,
+					> li.sfHover > a:after{
+						left:0px;
+						opacity:1;
+					}
+				}
+			}
+		}	
+		
+		&.stuck .menu_style7{
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: 7px;
+			}
+		}
+		// Menu Style 7 - end
+		
+		// Menu Style 8
+		.menu_style8 {
+			height: 53px;
+			
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: 8px;
+				@include transition();
+				ul.sf-menu{
+					
+					> li > a{
+						height: 38px;
+						line-height: 38px;
+						position:relative;
+						padding: 0px 6px;
+					}
+					
+					> li > a:before{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						bottom:30px;
+						opacity:0;
+						@include transition(all, .2s, ease-out);
+					}
+					
+					> li > a:after{
+						content: "";
+						height:3px;
+						background: $mainMenuHoverTextColor;
+						width:100%;
+						position:absolute;
+						left:0px;
+						top:30px;
+						opacity:0;
+						@include transition(all, .2s, ease-out);
+					}
+					
+					> li > a:hover,
+					> li.active > a,
+					> li > a.trail,
+					> li.sfHover > a{
+						color: $mainMenuHoverTextColor;
+					}
+					
+					> li > a:hover:before,
+					> li.active > a:before,
+					> li > a.trail:before,
+					> li.sfHover > a:before{
+						bottom:0px;
+						opacity:1;
+					}
+					
+					> li > a:hover:after,
+					> li.active > a:after,
+					> li > a.trail:after,
+					> li.sfHover > a:after{
+						top:0px;
+						opacity:1;
+					}
+				}
+			}
+		}
+		
+		&.stuck .menu_style8{
+			.mod_navigation,
+			.mod_t4c_megamenu{
+				padding-top: ($headerStickyHeight - 38)/2;
+			}
+		}
+		// Menu Style 8 - end
+		
+	} // Header - end
+	
+	.header_style_4 #header.stuck{
+		height: $headerStickyHeight;
+		
+		.mod_navigation,
+		.mod_t4c_megamenu{
+			.sf-menu {
+		
+				> li {
+					margin-left: $mainMenuItemsMarginSticky;
+					margin-right: $mainMenuItemsMarginSticky;				
+				}
+				
+				> li.first{
+					margin-left:0px;
+				}
+						
+				> li.last{
+					margin-right:0px;
+				}
+			}
+		}
+		
+		#logo{
+			display: inline-block;
+			padding:$stickyLogoPadding;
+			float: right;
+		}
+		
+		.t4c_tagline_wrapper{
+			display: none;
+		}
+		
+		.t4c_search_form{
+			height: $headerStickyHeight;
+		}
+	
+		.t4c_main_nav{
+			border:none;
+			display:inline-block;
+			width:auto;
+			float:left;
+			clear:none;
+		}
+	}
+}

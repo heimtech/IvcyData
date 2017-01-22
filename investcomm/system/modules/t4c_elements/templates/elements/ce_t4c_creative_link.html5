@@ -1,0 +1,28 @@
+klkl
+
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?= $this->embed_pre ?>
+  <?php 
+  	if( $this->t4c_cl_efffect == 't4c-cl-effect-2' || $this->t4c_cl_efffect == 't4c-cl-effect-5' || $this->t4c_cl_efffect == 't4c-cl-effect-10' || $this->t4c_cl_efffect == 't4c-cl-effect-15' || $this->t4c_cl_efffect == 't4c-cl-effect-16' || $this->t4c_cl_efffect == 't4c-cl-effect-19' || $this->t4c_cl_efffect == 't4c-cl-effect-20'  || $this->t4c_cl_efffect == 't4c-cl-effect-11'){
+		$options = 'data-hover="' . $this->link . '"';			
+	}	
+  ?>
+  
+  <?php if ($this->t4c_cl_efffect == 't4c-cl-effect-15' || $this->t4c_cl_efffect == 't4c-cl-effect-16' || $this->t4c_cl_efffect == 't4c-cl-effect-11'): ?>
+  	<a href="<?= $this->href ?>" <?php echo $options; ?> class="hyperlink_txt <?php echo $this->t4c_cl_efffect; ?>" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>><?= $this->link ?>
+  <?php else: ?>
+  	<a href="<?= $this->href ?>" class="hyperlink_txt <?php echo $this->t4c_cl_efffect; ?>" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>>
+	<span <?php echo $options; ?>><?= $this->link ?></span>
+  <?php endif; ?>
+  
+  <?php if ($this->t4c_cl_efffect == 't4c-cl-effect-9'): ?>
+  	<span><?php echo $this->title; ?></span>
+  <?php endif; ?>
+  
+  </a>
+  <?= $this->embed_post ?>
+
+<?php $this->endblock(); ?>

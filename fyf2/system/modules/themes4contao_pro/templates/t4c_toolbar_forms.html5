@@ -1,0 +1,31 @@
+<div class="t4c_toolbar_element <?php echo $this->elementClass; ?> <?php if ($this->header_form_position == 'right') echo 'pull-right'; else echo 'pull-left'; ?>">
+
+	<?php if( $this->header_show_login_form == 1 && $this->header_login_form_module != 0):?>
+    <div class="t4c_toolbar_form t4c_hidden_form_button">
+	    <i class="pro-user"></i> <?php echo $GLOBALS['TL_LANG']['MSC']['t4c.login_title']; ?>
+	    <div class="t4c_toolbar_form_box t4c_hidden_form">
+        	<?php echo Contao\Controller::getFrontendModule($this->header_login_form_module); ?>
+    	</div>     
+    </div>
+    <?php endif; ?>
+                        
+	<?php if( $this->header_show_register_form == 1 && $this->header_register_form_module != 0 ):?>
+    <div class="t4c_toolbar_form t4c_hidden_form_button ">
+	    <i class="pro-sign-in"></i> <?php echo $GLOBALS['TL_LANG']['MSC']['t4c.register_title']; ?>
+	    <div class="t4c_toolbar_form_box t4c_hidden_form">
+        	<?php echo Contao\Controller::getFrontendModule($this->header_register_form_module); ?>
+	    </div>     
+    </div>
+    <?php endif; ?>
+                   
+	<?php if( $this->header_show_newsletter_form == 1 && $this->header_newletter_form_module != 0):?>
+    <div class="t4c_toolbar_form t4c_hidden_form_button">
+        <i class="pro-envelope"></i> <?php echo $GLOBALS['TL_LANG']['MSC']['t4c.subscribe_title']; ?>
+        <div class="t4c_toolbar_form_box t4c_hidden_form">
+	        <?php echo Contao\Controller::getFrontendModule($this->header_newletter_form_module); ?>
+        </div>     
+    </div>
+    <?php endif; ?>
+
+</div>
+

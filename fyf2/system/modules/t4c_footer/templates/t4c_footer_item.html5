@@ -1,0 +1,17 @@
+<div class="t4c_footer_item t4c_footer_item_<?php echo $this->id; ?> <?php echo $this->cssClass; ?>" <?php if ($this->layout != 'boxed') echo $this->style; ?>>
+	<?php if ($this->layout != 'full_content_no_paddings'): ?>
+        <div class="<?php echo ($this->layout == 'full_content') ? 'container-fluid' : 'container';  ?>"  <?php if ($this->layout == 'boxed') echo $this->style; ?>>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $this->content; ?>
+                </div>
+            </div>
+        </div>
+    <?php else: ?>
+    	<div class="row">
+                <div class="col-md-12">
+                    <?php echo $this->content; ?>
+                </div>
+            </div>
+    <?php endif; ?>
+</div>

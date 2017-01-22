@@ -1,0 +1,2 @@
+
+<div class="<?php if ($this->class): ?><?php echo $this->class; ?> <?php endif; ?>row block">

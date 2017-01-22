@@ -1,0 +1,469 @@
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+/* ========================================================================== *
+ * Icon Box
+ * ========================================================================== */
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+.ce_t4c_icon_box {
+  cursor: pointer;
+  padding: 0px 30px; }
+  .ce_t4c_icon_box .t4c-icon-box-icon {
+    text-align: center;
+    color: #0eb493;
+    font-size: 55px;
+    line-height: 0;
+    margin: 0px 0px 20px 0px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in; }
+    .ce_t4c_icon_box .t4c-icon-box-icon i {
+      text-align: center;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -ms-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+      width: 95px;
+      hieght: 95px;
+      line-height: 95px;
+      display: inline-block; }
+  .ce_t4c_icon_box h3 {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 18px;
+    margin: 35px 0px 30px 0px;
+    text-transform: uppercase; }
+    .ce_t4c_icon_box h3 a {
+      color: inherit;
+      text-decoration: none; }
+  .ce_t4c_icon_box .t4c-icon-box-more {
+    margin-top: 25px; }
+    .ce_t4c_icon_box .t4c-icon-box-more a {
+      color: #0eb493;
+      display: inline-block;
+      font-size: 12px;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-sizing: content-box;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -ms-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in; }
+    .ce_t4c_icon_box .t4c-icon-box-more a:hover {
+      opacity: 0.7; }
+  .ce_t4c_icon_box.layout_1 {
+    text-align: center; }
+  .ce_t4c_icon_box.layout_2 {
+    text-align: left; }
+    .ce_t4c_icon_box.layout_2 h3 {
+      margin-top: 0px;
+      margin-bottom: 15px; }
+    .ce_t4c_icon_box.layout_2 .t4c-icon-box-icon {
+      display: table-cell;
+      padding: 0px 20px 0px 0px;
+      vertical-align: top; }
+    .ce_t4c_icon_box.layout_2 .t4c-icon-box-text {
+      display: table-cell;
+      vertical-align: top; }
+  .ce_t4c_icon_box.layout_3 {
+    text-align: right; }
+    .ce_t4c_icon_box.layout_3 h3 {
+      margin-top: 0px;
+      margin-bottom: 15px; }
+    .ce_t4c_icon_box.layout_3 .t4c-icon-box-icon {
+      display: table-cell;
+      padding: 0px 0px 0px 20px;
+      vertical-align: top; }
+    .ce_t4c_icon_box.layout_3 .t4c-icon-box-text {
+      display: table-cell;
+      vertical-align: top; }
+  .ce_t4c_icon_box.layout_4 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    text-align: center; }
+    .ce_t4c_icon_box.layout_4 .t4c-icon-box-icon {
+      margin-bottom: 0px; }
+  .ce_t4c_icon_box.layout_5 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    text-align: left; }
+    .ce_t4c_icon_box.layout_5 h3 {
+      margin-top: 0px;
+      margin-bottom: 15px; }
+    .ce_t4c_icon_box.layout_5 .t4c-icon-box-icon {
+      display: table-cell;
+      padding: 0px 20px 0px 0px;
+      vertical-align: top; }
+    .ce_t4c_icon_box.layout_5 .t4c-icon-box-text {
+      display: table-cell;
+      vertical-align: top; }
+  .ce_t4c_icon_box.layout_6 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    text-align: right; }
+    .ce_t4c_icon_box.layout_6 h3 {
+      margin-top: 0px;
+      margin-bottom: 15px; }
+    .ce_t4c_icon_box.layout_6 .t4c-icon-box-icon {
+      display: table-cell;
+      padding: 0px 0px 0px 20px;
+      vertical-align: top; }
+    .ce_t4c_icon_box.layout_6 .t4c-icon-box-text {
+      display: table-cell;
+      vertical-align: top; }
+  .ce_t4c_icon_box.layout_7 h3 {
+    margin-top: 0px;
+    margin-bottom: 25px; }
+    .ce_t4c_icon_box.layout_7 h3 i {
+      margin-right: 20px;
+      display: inline-block; }
+  .ce_t4c_icon_box.layout_8 {
+    text-align: right; }
+    .ce_t4c_icon_box.layout_8 h3 {
+      margin-top: 0px;
+      margin-bottom: 25px; }
+      .ce_t4c_icon_box.layout_8 h3 i {
+        margin-left: 20px;
+        display: inline-block; }
+  .ce_t4c_icon_box.layout_9 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    margin-top: 47px;
+    padding: 30px 30px 30px 30px;
+    position: relative;
+    text-align: center; }
+    .ce_t4c_icon_box.layout_9 h3 {
+      margin-top: 0px; }
+    .ce_t4c_icon_box.layout_9 .t4c-icon-box-icon {
+      left: 0;
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      top: -47px;
+      width: 100%; }
+  .ce_t4c_icon_box.layout_10 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    position: relative;
+    text-align: left; }
+    .ce_t4c_icon_box.layout_10 h3 {
+      margin-top: 0px;
+      margin-bottom: 25px; }
+    .ce_t4c_icon_box.layout_10 .t4c-icon-box-icon {
+      left: -47px;
+      margin: -47px 0px 0px 0px;
+      padding: 0px;
+      position: absolute;
+      top: 50%; }
+    .ce_t4c_icon_box.layout_10 .t4c-icon-box-text {
+      padding: 0px 0px 0px 47px; }
+  .ce_t4c_icon_box.layout_11 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    position: relative;
+    text-align: right; }
+    .ce_t4c_icon_box.layout_11 h3 {
+      margin-top: 0px;
+      margin-bottom: 25px; }
+    .ce_t4c_icon_box.layout_11 .t4c-icon-box-icon {
+      right: -47px;
+      margin: -47px 0px 0px 0px;
+      padding: 0px 0px 0px 0px;
+      position: absolute;
+      top: 50%; }
+    .ce_t4c_icon_box.layout_11 .t4c-icon-box-text {
+      padding: 0px 47px 0px 0px; }
+  .ce_t4c_icon_box.layout_12 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    text-align: left; }
+    .ce_t4c_icon_box.layout_12 h3 {
+      margin-top: 0px;
+      margin-bottom: 20px; }
+      .ce_t4c_icon_box.layout_12 h3 i {
+        margin-right: 20px; }
+  .ce_t4c_icon_box.layout_13 {
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 30px;
+    text-align: right; }
+    .ce_t4c_icon_box.layout_13 h3 {
+      margin-top: 0px;
+      margin-bottom: 20px; }
+      .ce_t4c_icon_box.layout_13 h3 i {
+        margin-left: 20px; }
+  .ce_t4c_icon_box .t4c-icon-box-more a {
+    background: #0eb493;
+    border: 1px solid #0eb493;
+    color: #fff;
+    height: 37px;
+    line-height: 37px;
+    padding: 0px 22px; }
+  .ce_t4c_icon_box.zoom:hover .t4c-icon-box-icon {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2); }
+  .ce_t4c_icon_box.opacity:hover .t4c-icon-box-icon {
+    opacity: 0.7; }
+  .ce_t4c_icon_box.rotate:hover .t4c-icon-box-icon i {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); }
+
+/* ========================================================================== *
+ * Circle Progress
+ * ========================================================================== */
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+.ce_t4c_circle_progress {
+  display: inline-block;
+  line-height: 1.2;
+  margin: 6px 6px 20px;
+  position: relative;
+  text-align: center; }
+  .ce_t4c_circle_progress strong {
+    font-size: 24px;
+    left: 0;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    width: 100%; }
+  .ce_t4c_circle_progress span {
+    display: block;
+    margin-top: 12px; }
+
+/* ========================================================================== *
+ * Blockquote
+ * ========================================================================== */
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+.ce_t4c_blockquote {
+  background: whitesmoke;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  color: #656565;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+  .ce_t4c_blockquote .t4c_author {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold; }
+  .ce_t4c_blockquote.text-align-left {
+    text-align: left;
+    padding-left: 70px; }
+    .ce_t4c_blockquote.text-align-left .quotation {
+      position: absolute;
+      font-size: 55px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: #0eb493;
+      top: 15px;
+      left: 15px;
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg); }
+  .ce_t4c_blockquote.text-align-right {
+    text-align: right;
+    padding-right: 70px; }
+    .ce_t4c_blockquote.text-align-right .quotation {
+      position: absolute;
+      font-size: 45px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: #0eb493;
+      top: 15px;
+      right: 15px;
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg); }
+  .ce_t4c_blockquote.text-align-center {
+    text-align: center;
+    padding-bottom: 70px; }
+    .ce_t4c_blockquote.text-align-center .quotation {
+      position: absolute;
+      font-size: 45px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      color: #0eb493;
+      bottom: 35px;
+      left: 0px;
+      text-align: center;
+      width: 100%;
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg); }
+  .ce_t4c_blockquote p {
+    margin: 0px; }
+
+/* ========================================================================== *
+ * Counters
+ * ========================================================================== */
+.transparent-background {
+  background-color: transparent;
+  zoom: 1; }
+
+.ce_t4c_counters .inside {
+  cursor: pointer;
+  display: inline-block;
+  position: relative; }
+
+.ce_t4c_counters.text-left {
+  text-align: left; }
+.ce_t4c_counters.text_right {
+  text-align: right; }
+.ce_t4c_counters.text_center {
+  text-align: center; }
+.ce_t4c_counters.text_left {
+  text-align: left; }
+.ce_t4c_counters i {
+  color: #0eb493;
+  font-size: 55px;
+  padding: 0;
+  position: relative;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out; }
+.ce_t4c_counters .icon {
+  text-align: center; }
+.ce_t4c_counters .icon.square i {
+  background: whitesmoke;
+  border: 1px solid whitesmoke;
+  display: inline-block;
+  height: 110px;
+  line-height: 110px;
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+  width: 110px; }
+.ce_t4c_counters .icon.rounded i {
+  background: whitesmoke;
+  border: 1px solid whitesmoke;
+  display: inline-block;
+  height: 110px;
+  line-height: 110px;
+  margin: 0px auto;
+  text-align: center;
+  width: 110px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px; }
+.ce_t4c_counters .icon.circle i {
+  background: whitesmoke;
+  border: 1px solid whitesmoke;
+  display: inline-block;
+  height: 110px;
+  line-height: 110px;
+  margin: 0px auto;
+  text-align: center;
+  width: 110px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+.ce_t4c_counters.opacity:hover i {
+  opacity: 0.6; }
+.ce_t4c_counters.zoom:hover i {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); }
+.ce_t4c_counters.rotate:hover i {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg); }
+.ce_t4c_counters.opacity:hover img {
+  opacity: 0.6; }
+.ce_t4c_counters.zoom:hover img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); }
+.ce_t4c_counters.rotate:hover img {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg); }
+.ce_t4c_counters h3 {
+  font-size: 14px;
+  font-weight: normal; }
+.ce_t4c_counters.pos_top {
+  width: 100%; }
+  .ce_t4c_counters.pos_top .number {
+    color: #242424;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px 0px; }
+  .ce_t4c_counters.pos_top h3 {
+    margin-top: 0px; }
+.ce_t4c_counters.pos_bottom {
+  width: 100%; }
+  .ce_t4c_counters.pos_bottom .number {
+    color: #242424;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0px 0px 15px 0px; }
+.ce_t4c_counters.pos_left .icon {
+  display: table-cell;
+  padding-right: 30px; }
+.ce_t4c_counters.pos_left .t4c_text {
+  display: table-cell;
+  vertical-align: middle; }
+  .ce_t4c_counters.pos_left .t4c_text h3 {
+    margin-bottom: 0px;
+    margin-top: 0px; }
+.ce_t4c_counters.pos_left .number {
+  color: #242424;
+  font-size: 24px;
+  font-weight: bold; }
+.ce_t4c_counters.pos_right {
+  text-align: right; }
+  .ce_t4c_counters.pos_right .icon {
+    display: table-cell;
+    padding-left: 30px; }
+  .ce_t4c_counters.pos_right .t4c_text {
+    display: table-cell;
+    vertical-align: middle; }
+    .ce_t4c_counters.pos_right .t4c_text h3 {
+      margin-bottom: 0px;
+      margin-top: 0px; }
+  .ce_t4c_counters.pos_right .number {
+    color: #242424;
+    font-size: 24px;
+    font-weight: bold; }

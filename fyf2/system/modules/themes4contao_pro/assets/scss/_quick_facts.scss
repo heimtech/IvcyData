@@ -1,0 +1,136 @@
+/**    Quick fact    **/
+  
+.ce_t4c_quick_facts{
+	text-align:center;
+	padding: 0px 30px;
+	
+	&.left{
+		text-align:left;
+	}
+	
+	&.center{
+		text-align:center;
+	}
+	
+	&.right{
+		text-align:right;
+	}
+	
+	h3{
+		color: $darkGrey;		
+		font-size:16px;
+		font-weight:bold;
+		margin:25px 0px 25px 0px;
+		padding:0px 0px 25px 0px;
+		position:relative;
+	}
+	
+	&.number_top h3:after{
+		background:$dividerColor;
+		content: "";
+		height:1px;
+		width: 40%;
+		position:absolute;
+		bottom: 0px;
+		left: 50%;
+		margin-left:-20%;
+	}
+	
+	&.number_bottom{
+		h3{
+			margin: 0px 0px 10px 0px;
+			padding:0px 0px 0px 0px;
+		}
+		.number{
+			padding:25px 0px 0px 0px;
+			position: relative;
+		}
+		
+		.number:after{
+			background:$dividerColor;
+			content: "";
+			height:1px;
+			width: 40%;
+			position:absolute;
+			top: 0px;
+			left: 50%;
+			margin-left:-20%;
+		}
+		
+		.desc{
+			padding:0px 0px 25px 0px;
+		}
+		
+	}
+	
+	&.number_left{
+		
+		h3{
+			margin: 0px 0px 0px 0px;
+		}
+		
+		.number{
+			display:table-cell;
+			font-size:36px;
+			padding:0px 40px 0px 0px;
+			position:relative;
+			vertical-align: middle;
+			
+		}
+		
+		.number:after{
+			background:$dividerColor;
+			content: "";
+			height:100%;
+			width: 1px;
+			position:absolute;
+			right: 20px;
+			top: 0px;
+		}
+		
+		.desc{
+			display:table-cell;
+		}
+	}
+	
+	
+	&.number_right{
+		
+		h3{
+			margin: 0px 0px 0px 0px;
+		}
+		
+		.number{
+			display:table-cell;
+			font-size:36px;
+			padding:0px 0px 0px 40px;
+			position:relative;
+			vertical-align: middle;
+			
+		}
+		
+		.number:after{
+			background:$dividerColor;
+			content: "";
+			height:100%;
+			width: 1px;
+			position:absolute;
+			left: 20px;
+			top: 0px;
+		}
+		
+		.desc{
+			display:table-cell;
+		}
+	}
+	
+	.number{
+		color: $themeColor;
+		font-size:36px;
+		font-weight:bold;
+	}
+	
+	.text{
+		line-height:22px;
+	}
+}

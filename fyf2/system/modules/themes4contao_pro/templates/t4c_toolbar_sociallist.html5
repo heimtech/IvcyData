@@ -1,0 +1,7 @@
+<div class="t4c_social t4c_toolbar_element <?php echo $this->elementClass; ?> <?php if($this->header_social_position == 'right') echo 'pull-right'; else echo 'pull-left'; ?>">
+	<ul class="t4c_social_list">
+	<?php foreach ($this->items as $item ): ?>
+		<li><a href="<?php echo $item['pro_social_networks_link']; ?>" target="_blank"><i class="<?php echo $item['pro_social_networks_icon']; ?>"></i></a></li>
+	<?php endforeach; ?>
+    </ul>
+</div>
