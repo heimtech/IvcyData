@@ -13,14 +13,11 @@ nbproject/
 # Contao
 /.htaccess
 /*.xml
-/composer
 /contao/update.phar.php
 /share/*.xml
 /system/cache/*
 /system/cron/cron.txt
 /system/logs/*
-/system/modules/!composer
-/system/modules/*/.skip
 /system/tmp/*
 
 
