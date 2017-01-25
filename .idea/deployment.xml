@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always">
+  <component name="PublishConfigData" autoUpload="Always" serverName="LocalWamp">
     <serverData>
       <paths name="LocalWamp">
         <serverdata>
@@ -13,7 +13,8 @@
       <paths name="LocalWamp2">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/investcomm" web="/" />
+            <mapping deploy="ivcty" local="$PROJECT_DIR$/ivcty" web="ivcty" />
           </mappings>
         </serverdata>
       </paths>

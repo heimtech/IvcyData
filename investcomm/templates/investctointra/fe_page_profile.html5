@@ -1,0 +1,30 @@
+<?php $this->extend('fe_page') ?>
+
+<?php $this->block('pageCustom') ?>
+	<?php $this->parent() ?>
+
+
+<script type='text/javascript'>
+
+
+	<?php
+
+	$userID = $_GET['id'];
+
+	if(!isset($userID) || trim($userID)==='') {
+
+
+
+		echo ('var idUser = '.FrontendUser::getInstance()->id.';');
+
+} else {
+		echo ('var idUser = '.$userID.';');
+
+	}
+	// echo ('var groupID='.FrontendUser::getInstance()->groups[0].';');
+	?>
+	// var scope = angular.element(document.getElementById("website")).scope();
+	//   scope.invest_plan.user2 = currentUser;
+</script>
+<?php $this->endblock() ?>
+

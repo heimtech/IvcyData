@@ -29,8 +29,33 @@
     <?= $this->stylesheets ?>
     <?= $this->mooScripts ?>
     <?= $this->head ?>
-   
-   <?php 
+
+	<?php $this->block('pageCustom'); ?>
+
+	<script type='text/javascript'>
+
+
+		<?php
+
+		echo ('var currentUser = '.FrontendUser::getInstance()->id.';');
+
+
+
+		// echo ('var groupID='.FrontendUser::getInstance()->groups[0].';');
+		?>
+		// var scope = angular.element(document.getElementById("website")).scope();
+		//   scope.invest_plan.user2 = currentUser;
+	</script>
+
+
+
+
+
+	<?php $this->endblock(); ?>
+
+	<?php $this->block('linkCSS'); ?>
+
+	<?php
 
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/fontawesome/css/font-awesome.css|static';
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.css|static';
@@ -39,9 +64,18 @@
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css';
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/fonts/pe-icon-7-stroke/css/helper.css';
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/style.css';
-   
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/amcharts/components.css';
+   $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/main.css';
 
-      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery/dist/jquery.min.js';
+?>
+	<?php $this->endblock(); ?>
+
+
+
+
+	<?php $this->block('linkJS'); ?>
+<?php
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery/dist/jquery.min.js';
       
                      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/jquery-ui/jquery-ui.min.js';
                          $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/angular/angular.js';
@@ -59,7 +93,9 @@
 
      
 ?>
-   <?php $this->endblock(); ?>
+	<?php $this->endblock(); ?>
+
+	<?php $this->endblock(); ?>
   
 
 </head>

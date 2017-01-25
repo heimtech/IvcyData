@@ -9,61 +9,13 @@ use AppBundle\Entity\InvestPlan;
 use AppBundle\Entity\WalletProvider;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
 
 
 
 class InvestPlanController extends Controller {
 
-	public function listAction(Request $request) {
-		
-		
-	//	$myArray = $this->prepareQuery($request);
-					
-		
-		$em = $this->getDoctrine()->getManager();
-		
-		$queryString = 'SELECT p
-    FROM AppBundle:Member p';
-		
-		$isFirstElement = true;
-		
-		//$arrayKeys = array_keys($myArray);
-	/*	foreach($arrayKeys as $singleKey) {
-			
-			if(!$isFirstElement) {
-				$queryString = $queryString . " AND";
-			} else {
-				$isFirstElement = false;
-			}
-			
-			$queryString = $queryString . " WHERE p." . $singleKey . " LIKE :" . $singleKey;
-			
-		}; */
-		
-		
-		$query = $em->createQuery($queryString);
-		
-		/*
-		foreach($arrayKeys as $singleKey) {
-				
-		$query->setParameter($singleKey, '%' . $myArray[$singleKey] . '%');
-				
-		} */
-		
-	
-					
-		$products = $query->getResult();
-
-        echo var_dump($products);
-
-
-		$jsonContent = $this->generateJSONContentByEntity($products);
-			
-		return new Response($jsonContent);
-			
-					
-	
-	}
 
     public function createAction(Request $request) {
 
@@ -213,7 +165,29 @@ class InvestPlanController extends Controller {
 
 
     }
-	
+
+    public function listAction(Request $request) {
+
+
+        //	$myArray = $this->prepareQuery($request);
+
+        $params = json_decode(file_get_contents('php://input'),true);
+
+        $myArray = $this->prepareQuery($params);
+
+
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:InvestPlan');
+
+        $investments = $repository->findBy($myArray);
+        $jsonContent =  $this->generateJSONContentByEntity($investments);
+
+        return new Response($jsonContent);
+
+
+
+    }
 	
 	public function getSingleUserAction(Request $request) {
 	
@@ -236,9 +210,6 @@ class InvestPlanController extends Controller {
 	}
 	
 
-
-	
-	
 	public function getRefererRoute($request)
 	{
 		
@@ -258,34 +229,12 @@ class InvestPlanController extends Controller {
 	public function prepareQuery($request) {
 		
 		$myArray = [];
-		
-		$productID = $request->get("productID");
-		$owner = $request->get("owner");
-		$productName = $request->get("productName");
-		$typeOfDelivery 	= $request->get("lieferArt");
-		
-		if($productID != null) {
-			$myArray['id'] = $productID;
-		}
-		
-		if($owner != null) {
-			$myArray['owner'] = $owner;
-		}
-		
 
-		if($owner != null) {
-			$myArray['owner'] = $owner;
-		}
-		
+        if (array_key_exists('id', $request)) {
+            $id =  $request["id"];
 
-		if($productName != null) {
-			$myArray['name'] = $productName;
-		}
-		
-
-		if($typeOfDelivery != null) {
-			$myArray['deliveryType'] = $typeOfDelivery;
-		}
+            $myArray["member"] = $id;
+        }
 		
 	
 		

@@ -5,8 +5,8 @@
       <webServer id="dadcdc73-a9c7-4ee1-b812-843682657807" name="LocalWamp" url="http://localhost">
         <fileTransfer port="0" mountedRoot="C:\wamp64\www" accessType="MOUNT" />
       </webServer>
-      <webServer id="1569ccbd-374a-4775-b3f2-3acdb0056739" name="LocalWamp2" url="http://localhost">
-        <fileTransfer port="0" mountedRoot="C:\wamp\www" accessType="MOUNT" />
+      <webServer id="8a2571a2-338d-4358-9b82-925ddd2221fc" name="LocalWamp2" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\wamp64\www" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

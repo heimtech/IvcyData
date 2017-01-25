@@ -41,10 +41,7 @@ class Member
     private $username;
 
 
-    /**
-     * @ORM\OneToMany(targetEntity="InvestPlan", mappedBy="member", fetch="EAGER")
-     */
-    private $investments;
+
 
 
 
@@ -155,45 +152,6 @@ class Member
     {
         return $this->username;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->investments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
-    /**
-     * Add investment
-     *
-     * @param \AppBundle\Entity\InvestPlan $investment
-     *
-     * @return Member
-     */
-    public function addInvestment(\AppBundle\Entity\InvestPlan $investment)
-    {
-        $this->investments[] = $investment;
-
-        return $this;
-    }
-
-    /**
-     * Remove investment
-     *
-     * @param \AppBundle\Entity\InvestPlan $investment
-     */
-    public function removeInvestment(\AppBundle\Entity\InvestPlan $investment)
-    {
-        $this->investments->removeElement($investment);
-    }
-
-    /**
-     * Get investments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getInvestments()
-    {
-        return $this->investments;
-    }
+    
 }

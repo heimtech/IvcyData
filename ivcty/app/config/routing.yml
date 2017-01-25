@@ -13,10 +13,18 @@ member_list:
     path:      /member/list
     defaults:  { _controller: "AppBundle:Member:list" }
 
+member_get:
+    path:      /member/get
+    defaults:  { _controller: "AppBundle:Member:get" }
+
 
 invest_plan:
     path:      /investplan/create
     defaults:  { _controller: "AppBundle:InvestPlan:create" }
+
+invest_plan_list:
+    path:      /investplan/list
+    defaults:  { _controller: "AppBundle:InvestPlan:list" }
 
 
 create_unexisting_wallet:

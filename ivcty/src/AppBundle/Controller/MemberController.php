@@ -137,7 +137,40 @@ class MemberController extends Controller {
 					
 	
 	}
-	
+
+
+    public function getAction(Request $request) {
+
+
+
+        $result = null;
+
+
+        $params = json_decode(file_get_contents('php://input'), true);
+
+        if (array_key_exists('id', $params)) {
+
+            $userID = $params["id"];
+
+            $repository = $this->getDoctrine()
+                ->getRepository('AppBundle:Member');
+
+            $user = $repository->findOneById($userID);
+            $result = $user;
+
+
+        }
+
+
+
+
+        $jsonContent = $this->generateJSONContentByEntity($result);
+
+        return new Response($jsonContent);
+
+
+
+    }
 	
 
 	
