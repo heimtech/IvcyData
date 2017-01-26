@@ -26,6 +26,9 @@ invest_plan_list:
     path:      /investplan/list
     defaults:  { _controller: "AppBundle:InvestPlan:list" }
 
+invest_plan_get:
+    path:      /investplan/get
+    defaults:  { _controller: "AppBundle:InvestPlan:get" }
 
 create_unexisting_wallet:
     path:      /wallet/createunexisting

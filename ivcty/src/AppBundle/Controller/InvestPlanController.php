@@ -36,7 +36,37 @@ class InvestPlanController extends Controller {
         }
 
         if (array_key_exists('profitIncome', $params)) {
-            $investPlan->setProfitIncoming($params["profitIncome"]);
+
+
+            if ($params["profitIncome"] === "hour") {
+                $investPlan->setProfitIncoming(1);
+
+            }
+
+            if ($params["profitIncome"] === "day") {
+                $investPlan->setProfitIncoming(2);
+
+            }
+            if ($params["profitIncome"] === "week") {
+                $investPlan->setProfitIncoming(3);
+
+            }
+
+            if ($params["profitIncome"] === "month") {
+                $investPlan->setProfitIncoming(4);
+
+            }
+
+            if ($params["profitIncome"] === "year") {
+                $investPlan->setProfitIncoming(5);
+
+            }
+
+            if ($params["profitIncome"] === "end_of_runtime") {
+                $investPlan->setProfitIncoming(6);
+
+            }
+
         }
 
         if (array_key_exists('plan_name', $params)) {
@@ -211,6 +241,32 @@ class InvestPlanController extends Controller {
 
 
     }
+
+
+    public function getAction(Request $request) {
+
+
+        //	$myArray = $this->prepareQuery($request);
+
+        $params = json_decode(file_get_contents('php://input'),true);
+
+        $myArray = $this->prepareQuery($params);
+
+
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:InvestPlan');
+
+        $investments = $repository->findOneBy($myArray);
+        $jsonContent =  $this->generateJSONContentByEntity($investments);
+
+        return new Response($jsonContent);
+
+
+
+    }
+
+
 	
 	public function getSingleUserAction(Request $request) {
 	
@@ -253,13 +309,17 @@ class InvestPlanController extends Controller {
 		
 		$myArray = [];
 
-        if (array_key_exists('id', $request)) {
-            $id =  $request["id"];
+        if (array_key_exists('memberID', $request)) {
+            $id =  $request["memberID"];
 
             $myArray["member"] = $id;
         }
-		
-	
+
+        if (array_key_exists('investID', $request)) {
+            $id =  $request["investID"];
+
+            $myArray["id"] = $id;
+        }
 		
 		return $myArray;
 		

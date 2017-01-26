@@ -66,6 +66,8 @@
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/style.css';
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/amcharts/components.css';
    $GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/styles/main.css';
+	$GLOBALS['TL_CSS'][] = 'system/modules/ivcty_ext/assets/vendor/iCheck/skins/square/blue.css';
+
 
 ?>
 	<?php $this->endblock(); ?>
@@ -84,11 +86,31 @@
                        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/metisMenu/dist/metisMenu.min.js';
                        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/vendor/iCheck/icheck.min.js';
                        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/sparkline.js'; 
-      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/homer.js';        
-   	
+      $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/homer.js';
 
-                         $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/invest/myPM.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/moment.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/morris/morris.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/morris/raphael-min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/counterup/jquery.waypoints.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/counterup/jquery.counterup.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/fullcalendar/fullcalendar.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/horizontal-timeline/horizontal-timeline.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/flot/jquery.flot.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/flot/jquery.flot.resize.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/flot/jquery.flot.categories.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/plugins/jquery.sparkline.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/global/scripts/app.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/pages/scripts/dashboard.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/flacto/plugins/chartist/dist/chartist.min.js';
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/flacto/plugins/chartist/dist/chartist-plugin-tooltip.min.js';
+
+
+$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/invest/myPM.js';
    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ivcty_ext/assets/scripts/invest/directives/fileread.js';
+
+
 
 
      
