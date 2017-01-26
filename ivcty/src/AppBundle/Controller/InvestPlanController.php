@@ -13,7 +13,6 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 
 
-
 class InvestPlanController extends Controller {
 
 
@@ -34,6 +33,14 @@ class InvestPlanController extends Controller {
 
         if (array_key_exists('website', $params)) {
             $investPlan->setWebsite($params["website"]);
+        }
+
+        if (array_key_exists('profitIncome', $params)) {
+            $investPlan->setProfitIncoming($params["profitIncome"]);
+        }
+
+        if (array_key_exists('plan_name', $params)) {
+            $investPlan->setPlanname($params["plan_name"]);
         }
 
 
@@ -76,7 +83,18 @@ class InvestPlanController extends Controller {
         }
 
         if (array_key_exists('principal', $params)) {
-            $investPlan->setPrincipal($params["principal"]);
+
+
+            if ($params["principal"] === "back") {
+                $investPlan->setPrincipal(1);
+
+            }
+
+            if ($params["principal"] === "included") {
+                $investPlan->setPrincipal(2);
+
+            }
+
         }
 
         echo("before PayInWallet");
@@ -124,13 +142,18 @@ class InvestPlanController extends Controller {
             $investPlan->setAmount($params["amount"]);
         }
 
-        if (array_key_exists('date', $params)) {
-            $investPlan->setDate($params["date"]);
+        if (array_key_exists('date', $params) && array_key_exists('time', $params)) {
+
+
+            $dateTimeString  = $params["date"] . " " . $params["time"];
+
+            $format = 'd.m.Y H:i';
+            $date = \DateTime::createFromFormat($format, $dateTimeString);
+
+            $investPlan->setStartdatetime($date);
+
         }
 
-        if (array_key_exists('time', $params)) {
-            $investPlan->setTime($params["time"]);
-        }
 
         if (array_key_exists('comment', $params)) {
             $investPlan->setComment($params["comment"]);
